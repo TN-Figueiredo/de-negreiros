@@ -1,6 +1,5 @@
 import React from "react";
 import { graphql } from "gatsby";
-import Layout from "../containers/layout";
 import Logo from "../../assets/logo.png";
 import Construcao from "../../assets/construcao.png";
 
