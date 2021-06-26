@@ -61,19 +61,16 @@ const IndexPage = () => {
   return (
     <div
       style={{
-        backgroundColor: "red",
         height: "98.5vh",
+        textAlign: "center",
+        marginTop: "30vh",
       }}
     >
-      <div
-        style={{
-          backgroundColor: "green",
-          flexDirection: "column",
-          height: 1000,
-        }}
-      >
-        <img src={Logo} width="300" />
-        <img src={Construcao} width="300" />
+      <div className="">
+        <img style={{}} src={Logo} width="275" />
+      </div>
+      <div className="">
+        <img style={{}} src={Construcao} width="600" />
       </div>
     </div>
   );
