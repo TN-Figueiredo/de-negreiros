@@ -62,16 +62,14 @@ const IndexPage = () => {
     <div
       style={{
         height: "98.5vh",
-        textAlign: "center",
-        marginTop: "30vh",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
       }}
     >
-      <div className="">
-        <img style={{}} src={Logo} width="275" />
-      </div>
-      <div className="">
-        <img style={{}} src={Construcao} width="600" />
-      </div>
+      <img src={Logo} width="275" />
+      <img src={Construcao} width="600" />
     </div>
   );
 };
