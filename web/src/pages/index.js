@@ -68,7 +68,7 @@ const IndexPage = () => {
         alignItems: "center",
       }}
     >
-      <img src={Logo} width="180" />
+      <img src={Logo} width="185" />
       <img src={Construcao} width="300" />
     </div>
   );
