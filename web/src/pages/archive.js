@@ -1,4 +1,3 @@
-import Layout from "../containers/layout";
 import React from "react";
 import { graphql } from "gatsby";
 import { mapEdgesToNodes } from "../lib/helpers";
@@ -29,7 +28,7 @@ export const query = graphql`
 `;
 
 const ArchivePage = () => {
-  return <Layout></Layout>;
+  return null;
 };
 
 export default ArchivePage;

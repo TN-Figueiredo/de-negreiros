@@ -1,6 +1,5 @@
 import React from "react";
 import { graphql } from "gatsby";
-import Layout from "../containers/layout";
 import Logo from "../../assets/logo.png";
 import Construcao from "../../assets/construcao.png";
 
@@ -68,7 +67,7 @@ const IndexPage = () => {
         alignItems: "center",
       }}
     >
-      <img src={Logo} width="180" />
+      <img src={Logo} width="185" />
       <img src={Construcao} width="300" />
     </div>
   );
