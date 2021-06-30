@@ -22,7 +22,7 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-gtag`,
+      resolve: "gatsby-plugin-google-gtag",
       options: {
         trackingIds: [
           "G-F5PJRTLESS", // Google Analytics / GA
@@ -41,5 +41,6 @@ module.exports = {
         },
       },
     },
+    "gatsby-plugin-styled-components",
   ],
 };

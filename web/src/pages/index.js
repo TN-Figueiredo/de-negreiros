@@ -3,6 +3,8 @@ import { graphql } from "gatsby";
 import Logo from "../../assets/logo.png";
 import Construcao from "../../assets/construcao.png";
 
+import styled from "styled-components";
+
 export const query = graphql`
   fragment SanityImage on SanityMainImage {
     crop {
@@ -58,19 +60,19 @@ export const query = graphql`
 
 const IndexPage = () => {
   return (
-    <div
-      style={{
-        height: "98.5vh",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
+    <StyledContainer>
       <img src={Logo} width="185" />
       <img src={Construcao} width="300" />
-    </div>
+    </StyledContainer>
   );
 };
 
 export default IndexPage;
+
+const StyledContainer = styled.div`
+  height: 98.5vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
