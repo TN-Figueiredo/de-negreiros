@@ -29,5 +29,9 @@
     "react-icons": "^3.11.0",
     "sanity-plugin-dashboard-widget-document-list": "^0.0.13",
     "sanity-plugin-dashboard-widget-netlify": "^1.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.29.0",
+    "eslint-plugin-react": "^7.24.0"
   }
 }

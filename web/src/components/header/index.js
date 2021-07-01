@@ -1,8 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Logo from "../../../storybook/stories/atoms/Logo";
 
-const Header = (props) => {
-  return <div>Header</div>;
+import { HeaderTag, Navbar } from "./header.styles";
+
+const Header = () => {
+  return (
+    <HeaderTag>
+      <Navbar>
+        <Logo />
+        Início Blog Sobre nós Contato
+      </Navbar>
+    </HeaderTag>
+  );
 };
 
 Header.propTypes = {};

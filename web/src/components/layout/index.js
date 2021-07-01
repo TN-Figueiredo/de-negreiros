@@ -4,16 +4,16 @@ import Header from "../header";
 import Footer from "../footer";
 
 import theme from "../../theme";
-import { ThemeContainer, StyledContainer } from "./layout.styles";
+import { ThemeContainer } from "./layout.styles";
 
 const Layout = ({ children }) => {
   return (
-    <StyledContainer>
+    <>
       <ThemeContainer theme={theme} />
       <Header />
       {children}
       <Footer />
-    </StyledContainer>
+    </>
   );
 };
 

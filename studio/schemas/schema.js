@@ -11,6 +11,7 @@ import post from "./documents/post";
 import siteSettings from "./documents/siteSettings";
 
 // Object types
+import logo from "./objects/logo";
 import bodyPortableText from "./objects/bodyPortableText";
 import bioPortableText from "./objects/bioPortableText";
 import excerptPortableText from "./objects/excerptPortableText";
@@ -30,6 +31,7 @@ export default createSchema({
     post,
     category,
     author,
+    logo,
     mainImage,
     authorReference,
     bodyPortableText,

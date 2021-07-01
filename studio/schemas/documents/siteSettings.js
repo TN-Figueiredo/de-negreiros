@@ -32,5 +32,10 @@ export default {
       title: "Author",
       to: [{ type: "author" }],
     },
+    {
+      name: "logo",
+      type: "logo",
+      title: "Logo",
+    },
   ],
 };

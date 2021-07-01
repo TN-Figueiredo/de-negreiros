@@ -7,6 +7,9 @@ const useSiteSettings = () => {
         title
         description
         keywords
+        logo {
+          ...Logo
+        }
       }
     }
   `);

@@ -2,7 +2,7 @@ import { graphql, useStaticQuery } from "gatsby";
 
 const SanityImageQuery = () => {
   return useStaticQuery(graphql`
-    fragment SanityImage on SanityMainImage {
+    fragment Logo on SanityLogo {
       crop {
         _key
         _type
@@ -21,6 +21,16 @@ const SanityImageQuery = () => {
       }
       asset {
         _id
+        metadata {
+          _key
+          _type
+          lqip
+          hasAlpha
+          isOpaque
+          _rawLocation
+          _rawDimensions
+          _rawPalette
+        }
       }
     }
   `);
