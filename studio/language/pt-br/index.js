@@ -1,3 +1,6 @@
+import * as Banner from "./banner.pt";
+import * as Button from "./button.pt";
 import * as NavbarMenu from "./navbarMenu.pt";
+import * as Page from "./page.pt";
 
-export { NavbarMenu };
+export { Banner, Button, NavbarMenu, Page };

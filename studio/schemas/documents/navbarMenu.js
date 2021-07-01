@@ -27,9 +27,4 @@ export default {
     },
   ],
   singleInstance: true,
-  preview: {
-    select: {
-      title: "title",
-    },
-  },
 };
