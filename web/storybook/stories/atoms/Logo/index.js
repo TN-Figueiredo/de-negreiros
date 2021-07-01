@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import LogoImage from "../../../../assets/logo.png";
 import useSiteSettings from "../../../../src/hooks/useSiteSettings.hooks";
 import SanityImage from "gatsby-plugin-sanity-image";
 
