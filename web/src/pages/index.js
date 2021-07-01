@@ -7,7 +7,6 @@ import { Container } from "./index.styles";
 
 const IndexPage = () => {
   const site = useSiteSettings();
-  console.log("site", site);
   return (
     <Layout>
       <Container>

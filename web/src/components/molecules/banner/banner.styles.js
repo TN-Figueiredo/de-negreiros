@@ -3,27 +3,32 @@ import styled from "styled-components";
 export const Container = styled.div`
   width: 100vw;
   height: 700px;
-  display: flex;
+  position: relative;
   left: 0px;
   right: 0px;
-  top: 0px;
-  z-index: -100;
+  top: -90px;
+  z-index: -90;
+`;
+
+export const EndWave = styled.div`
+  width: 1140px;
+  height: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column-reverse;
 `;
 
 export const imageStyle = {
+  top: 0,
   left: "50%",
   marginLeft: "-50vw",
   marginRight: "-50vw",
   maxWidth: " 100vw",
-  position: "relative",
+  position: "absolute",
   right: "50%",
   width: "100vw",
-  maxHeight: 715,
+  maxHeight: 700,
   objectFit: "cover",
+  zIndex: -100,
 };
-
-export const EndWave = styled.div`
-  height: 100px;
-  width: 1140px;
-  display: flex;
-`;

@@ -46,6 +46,81 @@ const { format } = require("date-fns");
 //     });
 // }
 
+const createCustomPages = async (graphql, actions) => {
+  const { createPage } = actions;
+  const result = await graphql(`
+    {
+      allSanityPage {
+        nodes {
+          title
+          slug {
+            current
+          }
+          sections {
+            _type
+            background {
+              caption
+              alt
+              asset {
+                _id
+                metadata {
+                  _key
+                  _type
+                  lqip
+                  hasAlpha
+                  isOpaque
+                  _rawLocation
+                  _rawDimensions
+                  _rawPalette
+                }
+              }
+              crop {
+                _key
+                _type
+                top
+                bottom
+                left
+                right
+              }
+              hotspot {
+                _key
+                _type
+                x
+                y
+                height
+                width
+              }
+            }
+            bannerText {
+              children {
+                text
+                marks
+              }
+            }
+            buttons {
+              label
+              url
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  if (result.errors) throw result.errors;
+
+  const { nodes } = result.data.allSanityPage;
+
+  nodes.forEach(({ title, slug: { current }, sections }) => {
+    createPage({
+      path: `/${current}`,
+      component: require.resolve("./src/templates/page.js"),
+      context: { title, sections },
+    });
+  });
+};
+
 exports.createPages = async ({ graphql, actions }) => {
+  await createCustomPages(graphql, actions);
   // await createBlogPostPages(graphql, actions);
 };

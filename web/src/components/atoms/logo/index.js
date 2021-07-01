@@ -7,6 +7,7 @@ const Logo = ({ width, height, style }) => {
   const {
     site: { logo },
   } = useSiteSettings();
+  console.log("logo", logo);
   return (
     <SanityImage
       {...logo}

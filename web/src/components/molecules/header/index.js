@@ -5,18 +5,25 @@ import Menu from "./components/menu";
 import Logo from "../../atoms/logo";
 import Svg from "../../atoms/svg";
 
-import { HeaderTag, Navbar, LogoContainer } from "./header.styles";
+import {
+  HeaderTag,
+  Navbar,
+  LogoContainer,
+  SvgContainer,
+} from "./header.styles";
 
 const Header = () => {
   return (
     <HeaderTag>
-      <Svg name="upperWave" />
       <Navbar>
         <LogoContainer>
           <Logo width={500} style={{ height: 70 }} />
         </LogoContainer>
-        {/* <Menu /> */}
+        <Menu />
       </Navbar>
+      <SvgContainer>
+        <Svg name="upperWave" />
+      </SvgContainer>
     </HeaderTag>
   );
 };

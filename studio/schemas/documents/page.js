@@ -1,7 +1,13 @@
 import useLanguage from "../../hooks/useLanguage";
 
 const {
-  Page: { PAGE_TITLE, PAGE_TITLE_FIELD_TITLE, PAGE_TITLE_FIELD_DESCRIPTION },
+  Page: {
+    PAGE_TITLE,
+    PAGE_TITLE_FIELD_TITLE,
+    PAGE_TITLE_FIELD_DESCRIPTION,
+    PAGE_SLUG_TITLE,
+    PAGE_SLUG_DESCRIPTION,
+  },
 } = useLanguage();
 
 export default {
@@ -16,6 +22,18 @@ export default {
       description: PAGE_TITLE_FIELD_DESCRIPTION,
       validation: (Rule) => Rule.required(),
     },
+    {
+      name: "slug",
+      type: "slug",
+      title: PAGE_SLUG_TITLE,
+      description: PAGE_SLUG_DESCRIPTION,
+      validation: (Rule) => Rule.required(),
+      options: {
+        source: "title",
+        maxLength: 96,
+      },
+    },
+    // TODO: clean up if not using
     // {
     //   type: "string",
     //   name: "template",
