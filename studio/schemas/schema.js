@@ -5,10 +5,11 @@ import createSchema from "part:@sanity/base/schema-creator";
 import schemaTypes from "all:part:@sanity/base/schema-type";
 
 // document schemas
+import siteSettings from "./documents/siteSettings";
+import navbarMenu from "./documents/navbarMenu";
 import author from "./documents/author";
 import category from "./documents/category";
 import post from "./documents/post";
-import siteSettings from "./documents/siteSettings";
 
 // Object types
 import logo from "./objects/logo";
@@ -28,6 +29,7 @@ export default createSchema({
     // The following are document types which will appear
     // in the studio.
     siteSettings,
+    navbarMenu,
     post,
     category,
     author,
