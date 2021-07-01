@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Logo from "../atoms/logo";
+import Logo from "../../atoms/logo";
 
 import { HeaderTag, Navbar } from "./header.styles";
 

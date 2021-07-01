@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { ThemeProvider } from "styled-components";
-import Header from "../header";
+import Header from "../../molecules/header";
 import Footer from "../../molecules/footer";
 
 import theme from "../../../theme";
