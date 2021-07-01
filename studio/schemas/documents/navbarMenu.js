@@ -1,7 +1,11 @@
 import useLanguage from "../../hooks/useLanguage";
 
 const {
-  NavbarMenu: { NAVBAR_MENU_TITLE, NAVBAR_MENU_FIELD_MAIN_TITLE },
+  NavbarMenu: {
+    NAVBAR_MENU_TITLE,
+    NAVBAR_MENU_FIELD_MAIN_TITLE,
+    NAVBAR_MENU_FIELD_MAIN_DESCRIPTION,
+  },
 } = useLanguage();
 
 export default {
@@ -13,14 +17,19 @@ export default {
       type: "array",
       name: "main",
       title: NAVBAR_MENU_FIELD_MAIN_TITLE,
-      description: "Li",
+      description: NAVBAR_MENU_FIELD_MAIN_DESCRIPTION,
       validation: null,
       of: [
         {
-          type: "string",
+          type: "navbarMenuItems",
         },
       ],
     },
   ],
   singleInstance: true,
+  preview: {
+    select: {
+      title: "title",
+    },
+  },
 };

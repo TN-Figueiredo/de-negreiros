@@ -12,6 +12,7 @@ import category from "./documents/category";
 import post from "./documents/post";
 
 // Object types
+import navbarMenuItems from "./objects/navbarMenuItems";
 import logo from "./objects/logo";
 import bodyPortableText from "./objects/bodyPortableText";
 import bioPortableText from "./objects/bioPortableText";
@@ -30,6 +31,7 @@ export default createSchema({
     // in the studio.
     siteSettings,
     navbarMenu,
+    navbarMenuItems,
     post,
     category,
     author,

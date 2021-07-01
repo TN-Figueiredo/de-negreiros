@@ -1,15 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
+
 import Logo from "../../atoms/logo";
+import Menu from "./components/menu";
 
 import { HeaderTag, Navbar } from "./header.styles";
 
-const Header = (props) => {
+const Header = () => {
   return (
     <HeaderTag>
       <Navbar>
         <Logo />
-        Início Blog Sobre nós Contato
+        <Menu />
       </Navbar>
     </HeaderTag>
   );

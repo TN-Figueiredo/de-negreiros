@@ -1,3 +1,3 @@
-import * as NavbarMenu from "./navbarMenu.lang";
+import * as NavbarMenu from "./navbarMenu.en";
 
 export { NavbarMenu };
