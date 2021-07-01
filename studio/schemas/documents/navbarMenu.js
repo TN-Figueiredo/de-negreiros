@@ -14,6 +14,11 @@ export default {
   title: NAVBAR_MENU_TITLE,
   fields: [
     {
+      type: "string",
+      name: "title",
+      validation: null,
+    },
+    {
       type: "array",
       name: "main",
       title: NAVBAR_MENU_FIELD_MAIN_TITLE,
@@ -26,5 +31,9 @@ export default {
       ],
     },
   ],
-  singleInstance: true,
+  preview: {
+    select: {
+      title: "title",
+    },
+  },
 };
