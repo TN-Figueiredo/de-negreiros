@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Logo from "../../../storybook/stories/atoms/Logo";
+import Logo from "../atoms/logo";
 
 import { HeaderTag, Navbar } from "./header.styles";
 
-const Header = () => {
+const Header = (props) => {
   return (
     <HeaderTag>
       <Navbar>
