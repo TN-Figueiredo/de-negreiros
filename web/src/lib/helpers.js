@@ -1,5 +1,13 @@
 import { format, isFuture } from "date-fns";
 
+export const getYear = (pastYear) => {
+  if (pastYear) {
+    return format(pastYear, "yyyy");
+  } else {
+    return format(new Date(), "yyyy");
+  }
+};
+
 export function cn(...args) {
   return args.filter(Boolean).join(" ");
 }

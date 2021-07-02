@@ -37,5 +37,10 @@ export default {
       type: "logo",
       title: "Logo",
     },
+    {
+      name: "footerLogo",
+      type: "logo",
+      title: "Footer Logo",
+    },
   ],
 };

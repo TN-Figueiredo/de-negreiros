@@ -2,10 +2,14 @@ import React from "react";
 import PropTypes from "prop-types";
 import UpperWave from "./upperWave";
 import BottomWave from "./bottomWave";
+import FacebookStyled from "./facebookStyled";
+import InstagramStyled from "./instagramStyled";
 
 const icons = {
   upperWave: UpperWave,
   bottomWave: BottomWave,
+  facebookStyled: FacebookStyled,
+  instagramStyled: InstagramStyled,
 };
 
 const Svg = ({ name, fill = "#fff", width, height }) => {

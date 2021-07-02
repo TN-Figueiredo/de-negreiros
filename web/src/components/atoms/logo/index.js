@@ -1,13 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import useSiteSettings from "../../../hooks/useSiteSettings.hooks";
 import SanityImage from "gatsby-plugin-sanity-image";
 
-const Logo = ({ width, height, style }) => {
-  const {
-    site: { logo },
-  } = useSiteSettings();
-  console.log("logo", logo);
+const Logo = ({ logo, width, height, style }) => {
   return (
     <SanityImage
       {...logo}
@@ -20,6 +15,7 @@ const Logo = ({ width, height, style }) => {
 };
 
 Logo.propTypes = {
+  logo: PropTypes.shape({}),
   width: PropTypes.number,
   height: PropTypes.number,
   style: PropTypes.shape({}),
