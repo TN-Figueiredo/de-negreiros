@@ -1,4 +1,5 @@
 export const NAVBAR_MENU_TITLE = "Menu de navegação";
+export const NAVBAR_DEFAULT_TITLE = "Header Menu";
 
 export const NAVBAR_MENU_FIELD_MAIN_TITLE = "Menu principal";
 export const NAVBAR_MENU_FIELD_MAIN_DESCRIPTION =
