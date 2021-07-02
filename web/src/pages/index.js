@@ -1,17 +1,13 @@
 import React from "react";
-import useSiteSettings from "../hooks/useSiteSettings.hooks";
 import Layout from "../components/organisms/layout";
-import Banner from "../components/molecules/banner";
+import renderSections from "../components/organisms/sections";
 
 import { Container } from "./index.styles";
 
 const IndexPage = () => {
-  const site = useSiteSettings();
   return (
     <Layout>
-      <Container>
-        <Banner>Aqui vem o website</Banner>
-      </Container>
+      <Container>{renderSections(sections)}</Container>
     </Layout>
   );
 };

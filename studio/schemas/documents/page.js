@@ -7,6 +7,8 @@ const {
     PAGE_TITLE_FIELD_DESCRIPTION,
     PAGE_SLUG_TITLE,
     PAGE_SLUG_DESCRIPTION,
+    PAGE_SECTIONS_TITLE,
+    PAGE_SECTIONS_DESCRIPTION,
   },
 } = useLanguage();
 
@@ -47,8 +49,8 @@ export default {
     {
       type: "array",
       name: "sections",
-      title: "Sections",
-      description: "Home page sections.",
+      title: PAGE_SECTIONS_TITLE,
+      description: PAGE_SECTIONS_DESCRIPTION,
       validation: null,
       of: [
         {
