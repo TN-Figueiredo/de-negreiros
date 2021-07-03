@@ -4,15 +4,17 @@ import UpperWave from "./upperWave";
 import BottomWave from "./bottomWave";
 import FacebookStyled from "./facebookStyled";
 import InstagramStyled from "./instagramStyled";
+import Menu from "./menu";
 
 const icons = {
   upperWave: UpperWave,
   bottomWave: BottomWave,
   facebookStyled: FacebookStyled,
   instagramStyled: InstagramStyled,
+  menu: Menu,
 };
 
-const Svg = ({ name, fill = "#fff", width, height }) => {
+const Svg = ({ name, fill, width, height }) => {
   if (icons[name] === undefined) {
     return null;
   }

@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import useSiteSettings from "../../../hooks/useSiteSettings.hooks";
+import useTheme from "../../../hooks/useTheme.hooks";
 import Logo from "../../atoms/logo";
 import Svg from "../../atoms/svg";
 import { getYear } from "../../../lib/helpers";
@@ -28,6 +29,7 @@ const getCopy = () => {
 };
 
 const renderSocial = (socialMedia) => {
+  const theme = useTheme();
   if (socialMedia.length > 0) {
     return (
       <Social>
@@ -41,7 +43,12 @@ const renderSocial = (socialMedia) => {
                 href={url}
                 target="_blank"
               >
-                <Svg name={svgName} height={16} width={16} />
+                <Svg
+                  name={svgName}
+                  height={16}
+                  width={16}
+                  fill={theme.colors.$grey000}
+                />
               </SocialIcon>
             );
           }

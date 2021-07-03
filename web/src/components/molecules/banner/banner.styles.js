@@ -1,34 +1,37 @@
 import styled from "styled-components";
+import SanityImage from "gatsby-plugin-sanity-image";
 
 export const Container = styled.div`
   width: 100vw;
-  height: 610px;
-  position: relative;
-  left: 0px;
-  right: 0px;
-  top: -90px;
-  z-index: -90;
+  @media (max-width: 600px) {
+    height: 530px;
+  }
 `;
 
 export const EndWave = styled.div`
-  width: 1140px;
+  /* width: 1140px;
   height: 700px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column-reverse; */
 `;
 
-export const imageStyle = {
-  top: 0,
-  left: "50%",
-  marginLeft: "-50vw",
-  marginRight: "-50vw",
-  maxWidth: " 100vw",
-  position: "absolute",
-  right: "50%",
-  width: "100vw",
-  maxHeight: 700,
-  objectFit: "cover",
-  zIndex: -100,
-};
+export const StyledSanityImage = styled(SanityImage)`
+  max-height: 700px;
+  object-fit: cover;
+  z-index: -100;
+  @media (max-width: 600px) {
+    height: 530px;
+  }
+`;
+
+export const Overlay = styled.div`
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.47);
+  @media (max-width: 600px) {
+    height: 530px;
+  }
+`;

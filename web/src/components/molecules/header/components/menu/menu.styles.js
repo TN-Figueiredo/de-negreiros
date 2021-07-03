@@ -8,6 +8,9 @@ export const Container = styled.div`
   z-index: 10;
   padding-bottom: 25px;
   margin-right: 90px;
+  @media (max-width: 600px) {
+    display: none;
+  }
 `;
 
 export const LinkItem = styled(Link)`

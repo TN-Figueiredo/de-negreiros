@@ -7,20 +7,17 @@ const upperWave = ({ fill, width, height }) => {
       xmlns="http://www.w3.org/2000/svg"
       width={width}
       height={height}
-      viewBox="0 0 16 16"
+      viewBox="0 0 23 18.001"
     >
       <defs>
         <clipPath id="a">
-          <rect width="16" height="16" fill="none" />
+          <rect width="23" height="18.001" fill="none" />
         </clipPath>
       </defs>
       <g clipPath="url(#a)">
-        <rect width="16" height="16" fill="none" />
         <path
-          d="M85.422,16V8.711h2.489l.356-2.844H85.422V4.089c0-.8.267-1.422,1.422-1.422h1.511V.089C88,.089,87.111,0,86.133,0a3.431,3.431,0,0,0-3.644,3.733V5.867H80V8.711h2.489V16Z"
-          transform="translate(-76 0.001)"
+          d="M1,18a1,1,0,0,1-1-1v-.572a1,1,0,0,1,1-1H22a1,1,0,0,1,1,1V17a1,1,0,0,1-1,1Zm0-7.715a1,1,0,0,1-1-1V8.714a1,1,0,0,1,1-1H13.375a1,1,0,0,1,1,1v.571a1,1,0,0,1-1,1ZM1,2.571a1,1,0,0,1-1-1V1A1,1,0,0,1,1,0H22a1,1,0,0,1,1,1v.572a1,1,0,0,1-1,1Z"
           fill={fill ? fill : "#000000"}
-          fillRule="evenodd"
         />
       </g>
     </svg>
