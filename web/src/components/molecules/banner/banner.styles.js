@@ -67,6 +67,10 @@ export const Buttons = styled.div`
 `;
 
 export const ButtonContainer = styled.div`
-  margin-bottom: ${(props) => (props.upper ? "7px" : "0px")};
-  margin-top: ${(props) => (props.upper ? "0px" : "7px")};
+  margin-right: ${(props) => (props.first ? "7px" : "0px")};
+  margin-left: ${(props) => (props.first ? "0px" : "7px")};
+  @media (max-width: 600px) {
+    margin-bottom: ${(props) => (props.first ? "7px" : "0px")};
+    margin-top: ${(props) => (props.first ? "0px" : "7px")};
+  }
 `;

@@ -16,7 +16,7 @@ import {
 
 const renderButtons = (buttons) =>
   buttons.map(({ label, url }, index) => (
-    <ButtonContainer upper={index === 0}>
+    <ButtonContainer first={index === 0}>
       <Button
         label={label}
         url={url}
