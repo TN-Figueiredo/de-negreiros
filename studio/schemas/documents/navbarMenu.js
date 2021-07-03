@@ -13,6 +13,7 @@ export default {
   type: "document",
   name: "navbarMenu",
   title: NAVBAR_MENU_TITLE,
+  __experimental_actions: ["update", /* 'create', 'delete', */ "publish"],
   fields: [
     {
       type: "string",

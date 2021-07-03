@@ -5,7 +5,7 @@ import useNavbarMenu from "../../../../../hooks/useNavbarMenu.hooks";
 import { Container, LinkItem } from "./menu.styles";
 
 const Menu = () => {
-  const menu = useNavbarMenu().sort((a, b) => (a.weight > b.weight ? 1 : -1));
+  const menu = useNavbarMenu();
   const renderMenuItems = () => {
     return menu.map(({ identifier, title, url }) => (
       <LinkItem key={identifier} to={url}>

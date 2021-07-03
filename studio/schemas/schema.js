@@ -18,6 +18,7 @@ import navbarMenuItems from "./objects/navbarMenuItems";
 import logo from "./objects/logo";
 import banner from "./objects/sections/banner";
 import button from "./objects/button";
+import socialMedia from "./objects/socialMedia";
 import bodyPortableText from "./objects/bodyPortableText";
 import bioPortableText from "./objects/bioPortableText";
 import excerptPortableText from "./objects/excerptPortableText";
@@ -40,6 +41,7 @@ export default createSchema({
     navbarMenuItems,
     banner,
     button,
+    socialMedia,
     post,
     category,
     author,

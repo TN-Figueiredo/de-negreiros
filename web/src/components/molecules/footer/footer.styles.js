@@ -20,9 +20,14 @@ export const Social = styled.div`
   align-items: center;
 `;
 
-export const SocialIcon = styled.div`
+export const SocialIcon = styled.a`
   margin-right: ${(props) => (props.left ? "5px" : "")};
   margin-left: ${(props) => (props.left ? "" : "5px")};
+  height: 20px;
+  width: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const Copyright = styled.span`

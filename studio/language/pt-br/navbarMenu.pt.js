@@ -16,6 +16,3 @@ export const NAVBAR_MENU_TITLE_DESCRIPTION = "O título do item de menu";
 export const NAVBAR_MENU_URL_TITLE = "URL";
 export const NAVBAR_MENU_URL_DESCRIPTION =
   "O URL ao qual o item de menu se vincula";
-
-export const NAVBAR_MENU_WEIGHT_TITLE = "Weight";
-export const NAVBAR_MENU_WEIGHT_DESCRIPTION = "Posição para classificação";

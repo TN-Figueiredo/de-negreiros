@@ -13,6 +13,11 @@ import {
   Copyright,
 } from "./footer.styles";
 
+const allSocialIcons = {
+  instagram: "instagramStyled",
+  facebook: "facebookStyled",
+};
+
 const getCopy = () => {
   const deliverDate = getYear(new Date("07/02/2021"));
   if (deliverDate < getYear()) {
@@ -22,20 +27,37 @@ const getCopy = () => {
   }
 };
 
+const renderSocial = (socialMedia) => {
+  if (socialMedia.length > 0) {
+    return (
+      <Social>
+        {socialMedia.map(({ name, url }, index) => {
+          const svgName = allSocialIcons[name.toLowerCase()];
+          if (svgName) {
+            return (
+              <SocialIcon
+                key={name}
+                left={index === 0}
+                href={url}
+                target="_blank"
+              >
+                <Svg name={svgName} height={16} width={16} />
+              </SocialIcon>
+            );
+          }
+        })}
+      </Social>
+    );
+  }
+};
+
 const Footer = () => {
-  const { footerLogo } = useSiteSettings();
+  const { footerLogo, socialMedia } = useSiteSettings();
   return (
     <FooterTag>
       <LogoSocial>
         <Logo logo={footerLogo} style={{ height: 130 }} />
-        <Social>
-          <SocialIcon left={true}>
-            <Svg name="instagramStyled" height={16} width={16} />
-          </SocialIcon>
-          <SocialIcon>
-            <Svg name="facebookStyled" height={16} width={16} />
-          </SocialIcon>
-        </Social>
+        {renderSocial(socialMedia)}
       </LogoSocial>
       <Copyright>
         {getCopy()}

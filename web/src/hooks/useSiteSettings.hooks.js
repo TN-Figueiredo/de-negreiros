@@ -13,6 +13,12 @@ const useSiteSettings = () => {
         footerLogo {
           ...Logo
         }
+        email
+        socialMedia {
+          name
+          url
+        }
+        whastapp
       }
     }
   `);

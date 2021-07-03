@@ -15,6 +15,3 @@ export const NAVBAR_MENU_TITLE_DESCRIPTION = "The title of the menu item";
 
 export const NAVBAR_MENU_URL_TITLE = "URL";
 export const NAVBAR_MENU_URL_DESCRIPTION = "The URL the menu item links to";
-
-export const NAVBAR_MENU_WEIGHT_TITLE = "Weight";
-export const NAVBAR_MENU_WEIGHT_DESCRIPTION = "Position for sorting";
