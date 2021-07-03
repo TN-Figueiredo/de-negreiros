@@ -45,9 +45,12 @@ const useHomePage = () => {
                 }
               }
               bannerText {
+                _type
                 children {
-                  text
+                  _key
+                  _type
                   marks
+                  text
                 }
               }
               buttons {

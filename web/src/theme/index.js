@@ -1,11 +1,12 @@
 export default {
   colors: {
+    $grey000: "#FFFFFF",
     $grey200: "#BEBEBE",
     $grey600: "#393939",
     $grey700: "#343638",
-
+    $grey900: "#000000",
+    $blue500: "#206390",
     // After here is legacy
-    $grey000: "#FFFFFF",
     $grey100: "#F2F2F2",
     $grey050: "#FBFBFB",
     $grey400: "#D8D8D8",
@@ -13,7 +14,6 @@ export default {
     $grey800: "#343536",
     $grey850: "#1D1E20",
     $grey875: "#18191C",
-    $grey900: "#000000",
     $red500: "#FA4A6A",
     $red600: "#D81D1D",
     $green500: "#00BF6F",
@@ -36,17 +36,20 @@ export default {
     $colourBackgroundNeutral: "#808080",
   },
   fonts: {
+    $fontSizeLG: "22px",
+    $fontSizeXL: "32px",
+    $fontWeightMed: "Bold",
+    $lineHeightLG: "32px",
+
+    // After here is legacy
     $fontFamily: "Nunito",
     $fontFamilyHeading: "Montserrat",
     $fontSizeXXS: "10px",
     $fontSizeXS: "12px",
     $fontSizeSM: "14px",
     $fontSizeMD: "16px",
-    $fontSizeLG: "18px",
-    $fontSizeXL: "22px",
     $fontWeightLight: "Nunito-Light",
     $fontWeightReg: "Nunito-Regular",
-    $fontWeightMed: "Nunito-SemiBold",
     $fontWeightBold: "Nunito-ExtraBold",
     $fontStyleItalic: "Nunito-Italic",
     $fontStyleBoldItalic: "Nunito-BoldItalic",
@@ -58,6 +61,10 @@ export default {
     $letterSpacingSM: -0.005,
     $letterSpacingNM: "normal",
   },
+
+  $spacingMD: "16px",
+  $radiusSM: "6px",
+  // After here is legacy
   $sizingXXS: "12px",
   $sizingXS: "24px",
   $sizingSM: "48px",
@@ -67,7 +74,6 @@ export default {
   $spacingXXS: "4px",
   $spacingXS: "8px",
   $spacingSM: "12px",
-  $spacingMD: "16px",
   $spacingLG: "20px",
   $spacingXL: "32px",
   $spacingXXL: "40px",
@@ -75,7 +81,6 @@ export default {
   $level3: "0px 2px 12px rgba(25, 37, 56, 0.15);",
   $level5: "0px 0px 30px rgba(25, 37, 56, 0.15);",
   $radiusNone: "0px",
-  $radiusSM: "4px",
   $radiusMD: "12px",
   $radiusLG: "20px",
   $opacity70: "0.7",
