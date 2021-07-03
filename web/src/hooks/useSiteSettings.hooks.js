@@ -18,7 +18,8 @@ const useSiteSettings = () => {
           name
           url
         }
-        whastapp
+        whatsapp
+        whatsappMessage
       }
     }
   `);

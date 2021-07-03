@@ -15,6 +15,8 @@ const {
     SITE_SETTINGS_SOCIAL_MEDIA_TITLE,
     SITE_SETTINGS_WHATSAPP_TITLE,
     SITE_SETTINGS_WHATSAPP_DESCRIPTION,
+    SITE_SETTINGS_WHATSAPP_MESSAGE_TITLE,
+    SITE_SETTINGS_WHATSAPP_MESSAGE_DESCRIPTION,
   },
 } = useLanguage();
 
@@ -69,11 +71,17 @@ export default {
       of: [{ type: "socialMedia" }],
     },
     {
-      name: "whastapp",
+      name: "whatsapp",
       type: "string",
       title: SITE_SETTINGS_WHATSAPP_TITLE,
       description: SITE_SETTINGS_WHATSAPP_DESCRIPTION,
       validation: (Rule) => validatePhone(Rule),
+    },
+    {
+      name: "whatsappMessage",
+      type: "string",
+      title: SITE_SETTINGS_WHATSAPP_MESSAGE_TITLE,
+      description: SITE_SETTINGS_WHATSAPP_MESSAGE_DESCRIPTION,
     },
   ],
 };

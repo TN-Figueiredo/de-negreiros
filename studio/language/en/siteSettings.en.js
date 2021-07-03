@@ -20,3 +20,7 @@ export const SITE_SETTINGS_SOCIAL_MEDIA_TITLE = "Social media";
 export const SITE_SETTINGS_WHATSAPP = "Whatsapp";
 export const SITE_SETTINGS_WHATSAPP_DESCRIPTION =
   "Whatsapp number with area code(only digits)";
+
+export const SITE_SETTINGS_WHATSAPP_MESSAGE_TITLE = "Whatsapp default message";
+export const SITE_SETTINGS_WHATSAPP_MESSAGE_DESCRIPTION =
+  "The message default users will have predefined when clicking on a whatsapp link";

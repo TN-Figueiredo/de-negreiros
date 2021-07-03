@@ -20,3 +20,8 @@ export const SITE_SETTINGS_SOCIAL_MEDIA_TITLE = "Redes sociais";
 export const SITE_SETTINGS_WHATSAPP = "Whatsapp";
 export const SITE_SETTINGS_WHATSAPP_DESCRIPTION =
   "Número de whatsapp com código de área(apenas dígitos)";
+
+export const SITE_SETTINGS_WHATSAPP_MESSAGE_TITLE =
+  "Mensagem padrão do whatsapp";
+export const SITE_SETTINGS_WHATSAPP_MESSAGE_DESCRIPTION =
+  "A mensagem padrão que os usuários terão predefinida ao clicar em um link do Whatsapp";
