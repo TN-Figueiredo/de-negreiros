@@ -4,6 +4,7 @@ const getButtonBackground = (props) => {
   const backgroundOptions = {
     ["positive"]: props.theme.colors.$green600,
     ["blue"]: props.theme.colors.$blue500,
+    ["blueInverted"]: props.theme.colors.$grey000,
     ["transparentWhite"]: "transparent",
   };
   return backgroundOptions[props.variant]
@@ -15,6 +16,7 @@ const getButtonBorder = (props) => {
   const borderOptions = {
     ["positive"]: `1px solid ${props.theme.colors.$green600}`,
     ["blue"]: `1px solid ${props.theme.colors.$blue500}`,
+    ["blueInverted"]: `1px solid ${props.theme.colors.$grey000}`,
     ["transparentWhite"]: `1px solid ${props.theme.colors.$grey000}`,
   };
   return borderOptions[props.variant]
@@ -26,6 +28,7 @@ export const getButtonText = (props) => {
   const textOptions = {
     ["positive"]: props.theme.colors.$green600,
     ["blue"]: props.theme.colors.$grey000,
+    ["blueInverted"]: props.theme.colors.$blue500,
     ["transparentWhite"]: props.theme.colors.$grey000,
   };
   return textOptions[props.variant]

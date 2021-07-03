@@ -4,6 +4,7 @@ import * as HomePage from "./homePage.pt";
 import * as NavbarMenu from "./navbarMenu.pt";
 import * as Page from "./page.pt";
 import * as SiteSettings from "./siteSettings.pt";
+import * as SizedSection from "./sizedSection.pt";
 import * as SocialMedia from "./socialMedia.pt";
 
 export {
@@ -13,5 +14,6 @@ export {
   NavbarMenu,
   Page,
   SiteSettings,
+  SizedSection,
   SocialMedia,
 };

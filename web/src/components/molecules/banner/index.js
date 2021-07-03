@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import BlockContent from "@sanity/block-content-to-react";
 import Button from "../../atoms/button";
+import useTheme from "../../../hooks/useTheme.hooks";
 
 import {
   Container,
@@ -23,14 +24,14 @@ const renderButtons = (buttons) =>
         variant={index === 0 ? "blue" : "transparentWhite"}
         // TODO: add option for selecting icon on studio
         icon={index === 0 ? "whatsapp" : ""}
-        iconFill="#FFFFFF"
+        iconFill={useTheme().colors.$grey000}
       />
     </ButtonContainer>
   ));
 
 const Banner = ({ background, bannerText, buttons }) => {
   const { alt } = background;
-  console.log("bannerText", bannerText);
+  console.log("banner.js BLOCKCONTENT NEEDED", bannerText);
   return (
     <Container>
       <Overlay>

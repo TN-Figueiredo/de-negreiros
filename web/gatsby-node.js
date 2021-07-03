@@ -57,6 +57,7 @@ const createCustomPages = async (graphql, actions) => {
             current
           }
           sections {
+            _key
             _type
             background {
               caption

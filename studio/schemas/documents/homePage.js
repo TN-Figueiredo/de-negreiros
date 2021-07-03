@@ -29,6 +29,9 @@ export default {
         {
           type: "banner",
         },
+        {
+          type: "smallSection",
+        },
       ],
     },
   ],
