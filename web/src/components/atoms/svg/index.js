@@ -5,6 +5,7 @@ import BottomWave from "./bottomWave";
 import FacebookStyled from "./facebookStyled";
 import InstagramStyled from "./instagramStyled";
 import Menu from "./menu";
+import Whatsapp from "./whatsapp";
 
 const icons = {
   upperWave: UpperWave,
@@ -12,9 +13,10 @@ const icons = {
   facebookStyled: FacebookStyled,
   instagramStyled: InstagramStyled,
   menu: Menu,
+  whatsapp: Whatsapp,
 };
 
-const Svg = ({ name, fill, width, height }) => {
+const Svg = ({ name, fill, width = 16, height = 16 }) => {
   if (icons[name] === undefined) {
     return null;
   }

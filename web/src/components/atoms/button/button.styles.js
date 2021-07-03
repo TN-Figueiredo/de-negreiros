@@ -22,7 +22,7 @@ const getButtonBorder = (props) => {
     : `1px solid ${props.theme.colors.$grey600}`;
 };
 
-const getButtonText = (props) => {
+export const getButtonText = (props) => {
   const textOptions = {
     ["positive"]: props.theme.colors.$green600,
     ["blue"]: props.theme.colors.$grey000,
@@ -49,5 +49,13 @@ export const StyledButton = styled.a`
   @media (max-width: 600px) {
     height: 34px;
     width: 160px;
+  }
+`;
+
+export const StyledIcon = styled.div`
+  margin-top: 2px;
+  margin-left: ${(props) => props.theme.$spacingLG};
+  @media (max-width: 600px) {
+    margin-left: ${(props) => props.theme.$spacingXS};
   }
 `;

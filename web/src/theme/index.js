@@ -62,7 +62,9 @@ export default {
     $letterSpacingNM: "normal",
   },
 
+  $spacingXS: "8px",
   $spacingMD: "16px",
+  $spacingLG: "25px",
   $radiusSM: "6px",
   // After here is legacy
   $sizingXXS: "12px",
@@ -72,9 +74,7 @@ export default {
   $sizingLG: "120px",
   $sizingXL: null,
   $spacingXXS: "4px",
-  $spacingXS: "8px",
   $spacingSM: "12px",
-  $spacingLG: "20px",
   $spacingXL: "32px",
   $spacingXXL: "40px",
   $level0: 0,

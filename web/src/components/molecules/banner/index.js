@@ -21,6 +21,8 @@ const renderButtons = (buttons) =>
         label={label}
         url={url}
         variant={index === 0 ? "blue" : "transparentWhite"}
+        icon={index === 0 ? "whatsapp" : ""}
+        iconFill="#FFFFFF"
       />
     </ButtonContainer>
   ));
