@@ -21,6 +21,7 @@ const renderButtons = (buttons) =>
         label={label}
         url={url}
         variant={index === 0 ? "blue" : "transparentWhite"}
+        // TODO: add option for selecting icon on studio
         icon={index === 0 ? "whatsapp" : ""}
         iconFill="#FFFFFF"
       />
