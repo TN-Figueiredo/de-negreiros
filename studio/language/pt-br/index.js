@@ -6,6 +6,7 @@ import * as Page from "./page.pt";
 import * as SiteSettings from "./siteSettings.pt";
 import * as SizedSection from "./sizedSection.pt";
 import * as SocialMedia from "./socialMedia.pt";
+import * as TitleAndContent from "./titleAndContent.pt";
 
 export {
   Banner,
@@ -16,4 +17,5 @@ export {
   SiteSettings,
   SizedSection,
   SocialMedia,
+  TitleAndContent,
 };

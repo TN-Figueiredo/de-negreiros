@@ -4,9 +4,12 @@ const {
   SizedSection: {
     SMALL_SECTION_TITLE,
     SMALL_SECTION_TITLE_TITLE,
-    SMALL_SECTION_BUTTONS_TITLE,
-    SMALL_SECTION_BUTTONS_DESCRIPTION,
-    SMALL_SECTION_BUTTONS_ERROR,
+    SECTION_SELECT_TITLE,
+    SECTION_SELECT_ITEM1,
+    SECTION_SELECT_ITEM2,
+    SECTION_BUTTONS_TITLE,
+    SECTION_BUTTONS_DESCRIPTION,
+    SECTION_BUTTONS_ERROR,
   },
 } = useLanguage();
 
@@ -23,11 +26,11 @@ export default {
     {
       type: "string",
       name: "select",
-      title: "Select",
+      title: SECTION_SELECT_TITLE,
       options: {
         list: [
-          { title: "Buttons", value: "button" },
-          { title: "Content", value: "content" },
+          { title: SECTION_SELECT_ITEM1, value: "button" },
+          { title: SECTION_SELECT_ITEM2, value: "content" },
         ],
         layout: "dropdown", // <-- defaults to 'dropdown'
       },
@@ -35,20 +38,24 @@ export default {
     {
       type: "array",
       name: "buttons",
-      title: SMALL_SECTION_BUTTONS_TITLE,
-      description: SMALL_SECTION_BUTTONS_DESCRIPTION,
+      title: SECTION_BUTTONS_TITLE,
+      description: SECTION_BUTTONS_DESCRIPTION,
       validation: (Rule) =>
         Rule.custom((buttons, context) => {
           const {
             document: { sections },
           } = context;
 
-          const isSelected = sections[1].hasOwnProperty("select");
-          const selection = sections[1].select;
+          const section = sections.filter(
+            (section) => section._type === "smallSection"
+          );
+
+          const isSelected = section[0].hasOwnProperty("select");
+          const selection = section[0].select;
           if (isSelected && selection === "button") {
             return true;
           } else {
-            return SMALL_SECTION_BUTTONS_ERROR;
+            return SECTION_BUTTONS_ERROR;
           }
         }),
       of: [{ type: "button" }],

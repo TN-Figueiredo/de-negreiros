@@ -67,6 +67,28 @@ const useHomePage = () => {
               url
             }
           }
+          ... on SanityMediumSection {
+            _key
+            _type
+            select
+            title
+            content {
+              _key
+              title
+              content {
+                _key
+                _type
+                style
+                list
+                _rawChildren
+              }
+            }
+            buttons {
+              _key
+              label
+              url
+            }
+          }
         }
       }
     }

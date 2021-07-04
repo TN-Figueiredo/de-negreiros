@@ -32,6 +32,9 @@ export default {
         {
           type: "smallSection",
         },
+        {
+          type: "mediumSection",
+        },
       ],
     },
   ],
