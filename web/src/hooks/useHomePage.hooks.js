@@ -70,24 +70,24 @@ const useHomePage = () => {
           ... on SanityMediumSection {
             _key
             _type
-            select
-            title
             content {
-              _key
               title
+              _key
+              _type
               content {
                 _key
                 _type
                 style
                 list
-                _rawChildren
+                children {
+                  _key
+                  _type
+                  marks
+                  text
+                }
               }
             }
-            buttons {
-              _key
-              label
-              url
-            }
+            select
           }
         }
       }

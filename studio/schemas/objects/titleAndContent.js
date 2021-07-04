@@ -1,17 +1,17 @@
 export default {
   type: "object",
   name: "titleAndContent",
-  title: "Logo",
+  title: "Title and Content",
   fields: [
     {
       type: "string",
       name: "title",
-      title: "",
+      title: "title",
     },
     {
       type: "array",
       name: "content",
-      title: "",
+      title: "content",
       of: [
         {
           type: "block",

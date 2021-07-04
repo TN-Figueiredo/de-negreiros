@@ -1,16 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { renderSectionOptions } from "../components";
 
-import { Container, LeftContent, RightContent } from "./mediumSection.styles";
+import { Container } from "./mediumSection.styles";
 
 const MediumSection = (props) => {
-  console.log("props", props);
-  return (
-    <Container>
-      <LeftContent>LeftContent</LeftContent>
-      <RightContent>RightContent</RightContent>
-    </Container>
-  );
+  const { select } = props;
+  return <Container>{renderSectionOptions[select](props)}</Container>;
 };
 
 MediumSection.propTypes = {};
