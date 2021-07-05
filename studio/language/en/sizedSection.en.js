@@ -18,3 +18,6 @@ export const SECTION_CONTENT_DESCRIPTION =
   "Content to be displayed inside the section";
 export const SECTION_CONTENT_ERROR =
   "In order to add content you need to select it on the selector above";
+
+export const SECTION_IMAGE_TITLE = "Background image";
+export const SECTION_IMAGE_DESCRIPTION = "Full bleed image on background";

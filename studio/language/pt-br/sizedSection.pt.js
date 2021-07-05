@@ -18,3 +18,6 @@ export const SECTION_CONTENT_DESCRIPTION =
   "Conteúdo a ser exibido dentro da seção";
 export const SECTION_CONTENT_ERROR =
   "Para adicionar conteúdo, você precisa selecioná-lo no seletor acima";
+
+export const SECTION_IMAGE_TITLE = "Imagem do fundo";
+export const SECTION_IMAGE_DESCRIPTION = "Imagem de fundo da seção";

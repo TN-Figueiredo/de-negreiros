@@ -4,6 +4,8 @@ const {
   SizedSection: {
     SMALL_SECTION_TITLE,
     SMALL_SECTION_TITLE_TITLE,
+    SECTION_IMAGE_TITLE,
+    SECTION_IMAGE_DESCRIPTION,
     SECTION_SELECT_TITLE,
     SECTION_SELECT_ITEM1,
     SECTION_SELECT_ITEM2,
@@ -22,6 +24,12 @@ export default {
       type: "string",
       name: "title",
       title: SMALL_SECTION_TITLE_TITLE,
+    },
+    {
+      type: "mainImage",
+      name: "background",
+      title: SECTION_IMAGE_TITLE,
+      description: SECTION_IMAGE_DESCRIPTION,
     },
     {
       type: "string",

@@ -2,11 +2,18 @@ import React from "react";
 import PropTypes from "prop-types";
 import { renderSectionOptions } from "../components";
 
-import { Container } from "./smallSection.styles";
+import { Container, Overlay, StyledSanityImage } from "./smallSection.styles";
 
 const SmallSection = (props) => {
-  const { select, title } = props;
-  return <Container>{renderSectionOptions[select](props)}</Container>;
+  const { select, background, title } = props;
+  return (
+    <Container background={background}>
+      <Overlay>
+        {background.asset && <StyledSanityImage {...background} />}
+        {renderSectionOptions[select](props)}
+      </Overlay>
+    </Container>
+  );
 };
 
 SmallSection.propTypes = {};

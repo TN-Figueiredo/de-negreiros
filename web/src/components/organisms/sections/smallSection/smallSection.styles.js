@@ -1,28 +1,34 @@
 import styled from "styled-components";
+import SanityImage from "gatsby-plugin-sanity-image";
 
 export const Container = styled.div`
+  width: 100vw;
   height: 225px;
+  background-color: ${(props) =>
+    props.background.asset ? "" : props.theme.colors.$blue500};
+`;
+
+export const Overlay = styled.div`
+  width: 100vw;
+  position: absolute;
+  height: 225px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.47);
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${(props) => props.theme.colors.$blue500};
-`;
-
-export const Buttons = styled.div`
-  display: flex;
-  flex-direction: row;
   @media (max-width: 600px) {
-    flex-direction: column;
+    height: 530px;
   }
 `;
 
-export const ButtonContainer = styled.div`
-  @media (min-width: 601px) {
-    margin-right: ${(props) => (props.first ? "7px" : "0px")};
-    margin-left: ${(props) => (props.first ? "0px" : "7px")};
-  }
+export const StyledSanityImage = styled(SanityImage)`
+  position: absolute;
+  width: 100vw;
+  max-height: 225px;
+  object-fit: cover;
+  z-index: -100;
   @media (max-width: 600px) {
-    margin-bottom: ${(props) => (props.first ? "7px" : "0px")};
-    margin-top: ${(props) => (props.first ? "0px" : "7px")};
   }
 `;
