@@ -8,6 +8,29 @@ export const getYear = (pastYear) => {
   }
 };
 
+export const getYoutubeEmbed = (url) => {
+  const parsedUrl1 = url.split("/")[url.split("/").length - 1].split("?");
+  const parsedUrl2 = parsedUrl1.map((section) => {
+    if (section.split("v=").length > 1) {
+      return section.split("v=")[1];
+    } else return section;
+  });
+  let resolvedUrl = "https://www.youtube.com/embed/";
+
+  parsedUrl2.forEach((piece) => {
+    if (piece === "watch") {
+      return;
+    } else {
+      if (piece.split("t=").length > 1) {
+        resolvedUrl = `${resolvedUrl}?start=${piece.split("t=")[1]}`;
+      } else {
+        resolvedUrl = `${resolvedUrl}?${piece}`;
+      }
+    }
+  });
+  return resolvedUrl.replace("/embed/?", "/embed/");
+};
+
 export function cn(...args) {
   return args.filter(Boolean).join(" ");
 }
