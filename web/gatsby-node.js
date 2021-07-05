@@ -92,7 +92,7 @@ const createCustomPages = async (graphql, actions) => {
                 width
               }
             }
-            bannerText {
+            block {
               children {
                 text
                 marks

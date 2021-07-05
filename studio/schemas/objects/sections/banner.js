@@ -25,7 +25,7 @@ export default {
     },
     {
       type: "array",
-      name: "bannerText",
+      name: "block",
       title: BANNER_TEXT_TITLE,
       description: BANNER_TEXT_DESCRIPTION,
       of: [{ type: "block" }],

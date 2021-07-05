@@ -20,6 +20,7 @@ import banner from "./objects/sections/banner";
 import smallSection from "./objects/sections/smallSection";
 import mediumSection from "./objects/sections/mediumSection";
 import titleAndContent from "./objects/titleAndContent";
+import youtube from "./objects/youtube";
 import button from "./objects/button";
 import socialMedia from "./objects/socialMedia";
 import bodyPortableText from "./objects/bodyPortableText";
@@ -46,6 +47,7 @@ export default createSchema({
     smallSection,
     mediumSection,
     titleAndContent,
+    youtube,
     button,
     socialMedia,
     post,

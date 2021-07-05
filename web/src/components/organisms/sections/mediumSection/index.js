@@ -9,6 +9,8 @@ const MediumSection = (props) => {
   return <Container>{renderSectionOptions[select](props)}</Container>;
 };
 
-MediumSection.propTypes = {};
+MediumSection.propTypes = {
+  select: PropTypes.string.isRequired,
+};
 
 export default MediumSection;

@@ -1,24 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
-import BlockContent from "@sanity/block-content-to-react";
-import Title from "../../../atoms/title";
-import useTheme from "../../../../hooks/useTheme.hooks";
+import isBlockType from "../../../../lib/blockTypes";
+import renderBlockType from "./renderBlockType";
+import renderYoutube from "./renderYoutube";
 
-import { Content, BlockContentJustified } from "./renderContent.styles";
+import { Content } from "./sections.styles";
 
-const renderSections = (section) => {
-  const theme = useTheme();
-  const { content, title } = section[0];
-  console.log("section", section);
-  return content.map((item) => {
+const renderTypes = {
+  block: renderBlockType,
+  youtube: renderYoutube,
+};
+
+const renderSections = (sections) => {
+  return sections.map((section, index) => {
+    const type = isBlockType(section._type) ? "block" : section._type;
     return (
-      <Content key={item._key}>
-        <Title fontSize={theme.fonts.$fontSizeLG} color={theme.colors.$blue500}>
-          {title}
-        </Title>
-        <BlockContentJustified>
-          <BlockContent blocks={item} serializers={{}} />
-        </BlockContentJustified>
+      <Content key={section._key} last={index === sections.length - 1}>
+        {renderTypes[type](section)}
       </Content>
     );
   });

@@ -94,7 +94,7 @@ export default {
             }
           }
         }),
-      of: [{ type: "titleAndContent" }],
+      of: [{ type: "titleAndContent" }, { type: "youtube" }],
     },
   ],
   preview: {

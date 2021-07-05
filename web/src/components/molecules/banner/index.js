@@ -29,9 +29,9 @@ const renderButtons = (buttons) =>
     </ButtonContainer>
   ));
 
-const Banner = ({ background, bannerText, buttons }) => {
+const Banner = ({ background, block, buttons }) => {
   const { alt } = background;
-  console.log("banner.js BLOCKCONTENT NEEDED", bannerText);
+  console.log("banner.js BLOCKCONTENT NEEDED", block);
   return (
     <Container>
       <Overlay>
@@ -39,7 +39,7 @@ const Banner = ({ background, bannerText, buttons }) => {
         <ContentContainer>
           <Content>
             <Title>
-              <BlockContent blocks={bannerText} serializers={{}} />
+              <BlockContent blocks={block} serializers={{}} />
             </Title>
             <Buttons>{renderButtons(buttons)}</Buttons>
           </Content>

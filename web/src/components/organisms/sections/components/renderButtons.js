@@ -2,7 +2,7 @@ import React from "react";
 import Button from "../../../atoms/button";
 import useTheme from "../../../../hooks/useTheme.hooks";
 
-import { Buttons, ButtonContainer } from "./renderButtons.styles";
+import { Buttons, ButtonContainer } from "./sections.styles";
 
 const renderButtons = ({ buttons }) => {
   const btns = buttons.map(({ _key, label, url }, index) => (

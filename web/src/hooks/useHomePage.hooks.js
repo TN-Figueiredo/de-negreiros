@@ -42,7 +42,7 @@ const useHomePage = () => {
                 width
               }
             }
-            bannerText {
+            block {
               _type
               children {
                 _key
@@ -70,24 +70,30 @@ const useHomePage = () => {
           ... on SanityMediumSection {
             _key
             _type
+            select
+            title
             content {
-              title
-              _key
-              _type
-              content {
+              ... on SanityTitleAndContent {
                 _key
                 _type
-                style
-                list
-                children {
+                title
+                block {
                   _key
                   _type
-                  marks
-                  text
+                  children {
+                    _key
+                    _type
+                    marks
+                    text
+                  }
                 }
               }
+              ... on SanityYoutube {
+                _key
+                _type
+                url
+              }
             }
-            select
           }
         }
       }
