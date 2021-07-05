@@ -48,16 +48,6 @@ export const Content = styled.span`
   height: 100%;
 `;
 
-export const Text = styled.span`
-  font-size: ${(props) => props.theme.fonts.$fontSizeXL};
-  font-weight: ${(props) => props.theme.fonts.$fontWeightMed};
-  color: ${(props) => props.theme.colors.$grey000};
-  line-height: ${(props) => props.theme.fonts.$lineHeightLG};
-  @media (max-width: 600px) {
-    font-size: ${(props) => props.theme.fonts.$fontSizeLG};
-  }
-`;
-
 export const Buttons = styled.div`
   display: flex;
   flex-direction: row;

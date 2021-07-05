@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import BlockContent from "@sanity/block-content-to-react";
 import Button from "../../atoms/button";
+import Title from "../../atoms/title";
 import useTheme from "../../../hooks/useTheme.hooks";
 
 import {
@@ -10,7 +11,6 @@ import {
   Overlay,
   ContentContainer,
   Content,
-  Text,
   Buttons,
   ButtonContainer,
 } from "./banner.styles";
@@ -38,9 +38,9 @@ const Banner = ({ background, bannerText, buttons }) => {
         <StyledSanityImage {...background} alt={alt} />
         <ContentContainer>
           <Content>
-            <Text>
+            <Title>
               <BlockContent blocks={bannerText} serializers={{}} />
-            </Text>
+            </Title>
             <Buttons>{renderButtons(buttons)}</Buttons>
           </Content>
         </ContentContainer>

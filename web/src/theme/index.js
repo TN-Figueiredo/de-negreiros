@@ -65,6 +65,8 @@ export default {
   $spacingXS: "8px",
   $spacingMD: "16px",
   $spacingLG: "25px",
+  $spacingXL: "36px",
+  $spacingXXL: "44px",
   $radiusSM: "6px",
   // After here is legacy
   $sizingXXS: "12px",
@@ -75,8 +77,6 @@ export default {
   $sizingXL: null,
   $spacingXXS: "4px",
   $spacingSM: "12px",
-  $spacingXL: "32px",
-  $spacingXXL: "40px",
   $level0: 0,
   $level3: "0px 2px 12px rgba(25, 37, 56, 0.15);",
   $level5: "0px 0px 30px rgba(25, 37, 56, 0.15);",

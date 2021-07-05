@@ -9,5 +9,6 @@ html {
     background-color: ${(props) => props.theme.colors.$grey100};
     margin: 0px;
     overflow-x: hidden;
+    font-family: Open Sans;
   }
 `;
