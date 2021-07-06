@@ -1,12 +1,18 @@
 import styled from "styled-components";
 
 export const Content = styled.div`
-  max-width: 570px;
-  padding: ${(props) => props.theme.$spacingXL};
+  width: 558px;
   display: flex;
+  padding-left: ${(props) => (props.index === 0 ? "" : props.theme.$spacingSM)};
+  padding-right: ${(props) =>
+    props.index === 0 ? props.theme.$spacingSM : ""};
+  padding-top: ${(props) => props.theme.$spacingMD};
+  padding-bottom: ${(props) => props.theme.$spacingMD};
   justify-content: center;
   align-items: center;
   @media (max-width: 600px) {
+    width: 330px;
+    padding: ${(props) => props.theme.$spacingMD_LG};
     padding-bottom: ${(props) => (props.last ? "" : "0px")};
     padding-top: ${(props) => (props.last ? props.theme.$spacingMD : "")};
   }
@@ -38,7 +44,11 @@ export const ButtonContainer = styled.div`
 `;
 
 export const YoutubeIframe = styled.iframe`
-  height: 190px;
+  height: 330px;
+  width: 550px;
   border-radius: ${(props) => props.theme.$radiusSM};
   border: 0px;
+  @media (max-width: 600px) {
+    height: 185px;
+  }
 `;

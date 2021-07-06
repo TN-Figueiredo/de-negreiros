@@ -15,7 +15,11 @@ const renderSections = (sections) => {
   return sections.map((section, index) => {
     const type = isBlockType(section._type) ? "block" : section._type;
     return (
-      <Content key={section._key} last={index === sections.length - 1}>
+      <Content
+        index={index}
+        key={section._key}
+        last={index === sections.length - 1}
+      >
         {renderTypes[type](section)}
       </Content>
     );

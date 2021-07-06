@@ -128,6 +128,11 @@ const useHomePage = () => {
               }
             }
           }
+          ... on SanityLatestPostsSection {
+            _key
+            _type
+            title
+          }
         }
       }
     }

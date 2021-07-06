@@ -26,15 +26,10 @@ export default {
       description: HOMEPAGE_SECTIONS_DESCRIPTION,
       validation: null,
       of: [
-        {
-          type: "banner",
-        },
-        {
-          type: "smallSection",
-        },
-        {
-          type: "mediumSection",
-        },
+        { type: "banner" },
+        { type: "smallSection" },
+        { type: "mediumSection" },
+        { type: "latestPostsSection" },
       ],
     },
   ],

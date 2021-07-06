@@ -63,7 +63,9 @@ export default {
   },
 
   $spacingXS: "8px",
+  $spacingSM: "12px",
   $spacingMD: "16px",
+  $spacingMD_LG: "20px",
   $spacingLG: "25px",
   $spacingXL: "36px",
   $spacingXXL: "44px",
@@ -76,7 +78,6 @@ export default {
   $sizingLG: "120px",
   $sizingXL: null,
   $spacingXXS: "4px",
-  $spacingSM: "12px",
   $level0: 0,
   $level3: "0px 2px 12px rgba(25, 37, 56, 0.15);",
   $level5: "0px 0px 30px rgba(25, 37, 56, 0.15);",
