@@ -23,9 +23,35 @@ const useLatestPosts = () => {
               _type
               caption
               alt
-              _rawAsset
-              _rawHotspot
-              _rawCrop
+              asset {
+                _id
+                metadata {
+                  _key
+                  _type
+                  lqip
+                  hasAlpha
+                  isOpaque
+                  _rawLocation
+                  _rawDimensions
+                  _rawPalette
+                }
+              }
+              crop {
+                _key
+                _type
+                top
+                bottom
+                left
+                right
+              }
+              hotspot {
+                _key
+                _type
+                x
+                y
+                height
+                width
+              }
             }
           }
         }

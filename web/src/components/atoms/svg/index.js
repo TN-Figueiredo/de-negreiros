@@ -1,13 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
-import UpperWave from "./upperWave";
+import ArrowLeft from "./arrowLeft";
+import ArrowRight from "./arrowRight";
 import BottomWave from "./bottomWave";
 import FacebookStyled from "./facebookStyled";
 import InstagramStyled from "./instagramStyled";
 import Menu from "./menu";
+import UpperWave from "./upperWave";
 import Whatsapp from "./whatsapp";
 
 const icons = {
+  arrowLeft: ArrowLeft,
+  arrowRight: ArrowRight,
   upperWave: UpperWave,
   bottomWave: BottomWave,
   facebookStyled: FacebookStyled,
