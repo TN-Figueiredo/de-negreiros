@@ -8,9 +8,9 @@ import { BlockContentJustified } from "./sections.styles";
 
 const renderBlockType = ({ block, title }) => {
   const theme = useTheme();
-  return block.map((block) => {
+  return block.map((block, index) => {
     return (
-      <div key={block._key}>
+      <div key={block._key || index}>
         <Title fontSize={theme.fonts.$fontSizeLG} color={theme.colors.$blue500}>
           {title}
         </Title>

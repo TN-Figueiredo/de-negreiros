@@ -13,6 +13,9 @@ const useLatestPosts = () => {
             _updatedAt(fromNow: true)
             publishedAt(fromNow: true)
             title
+            categories {
+              title
+            }
             authors {
               author {
                 name
@@ -52,6 +55,16 @@ const useLatestPosts = () => {
                 height
                 width
               }
+            }
+            excerpt {
+              children {
+                _key
+                _type
+                text
+                marks
+              }
+              _key
+              _type
             }
           }
         }

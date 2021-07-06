@@ -16,7 +16,7 @@ const upperWave = ({ fill, width, height }) => {
           transform="translate(28.968 60.056) rotate(180)"
           fill={fill ? fill : "#000000"}
           stroke={fill ? fill : "#000000"}
-          stroke-width="2"
+          strokeWidth="2"
         />
         <line
           y1="28.968"
@@ -24,7 +24,7 @@ const upperWave = ({ fill, width, height }) => {
           transform="translate(28.968 28.968) rotate(180)"
           fill={fill ? fill : "#000000"}
           stroke={fill ? fill : "#000000"}
-          stroke-width="2"
+          strokeWidth="2"
         />
       </g>
     </svg>

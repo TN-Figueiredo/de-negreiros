@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import ArrowLeft from "./arrowLeft";
 import ArrowRight from "./arrowRight";
 import BottomWave from "./bottomWave";
+import Clock from "./clock";
 import FacebookStyled from "./facebookStyled";
 import InstagramStyled from "./instagramStyled";
 import Menu from "./menu";
@@ -12,6 +13,7 @@ import Whatsapp from "./whatsapp";
 const icons = {
   arrowLeft: ArrowLeft,
   arrowRight: ArrowRight,
+  clock: Clock,
   upperWave: UpperWave,
   bottomWave: BottomWave,
   facebookStyled: FacebookStyled,
