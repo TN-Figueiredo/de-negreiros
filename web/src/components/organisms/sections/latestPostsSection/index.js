@@ -66,7 +66,6 @@ const NextArrow = ({ onClick }) => {
 const renderHighLighted = (highlights) => {
   const renderPosts = () => {
     return highlights.map(({ node: { _key, mainImage } }, index) => {
-      console.log("mainImage", mainImage);
       return (
         <HighLightedPost key={_key}>
           <HighLightedImage {...mainImage} />

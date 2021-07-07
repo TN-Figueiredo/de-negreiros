@@ -133,6 +133,57 @@ const useHomePage = () => {
             _type
             title
           }
+          ... on SanityLargeSection {
+            _key
+            _type
+            contact {
+              _key
+              _type
+              title
+              fields {
+                ... on SanityInputField {
+                  _key
+                  _type
+                  placeholder
+                  title
+                }
+                ... on SanityInputMessage {
+                  _key
+                  _type
+                  placeholder
+                  title
+                }
+                ... on SanityInputSelect {
+                  _key
+                  _type
+                  options
+                  title
+                }
+              }
+              submit
+            }
+            tabbedContent {
+              _key
+              _type
+              title
+              content {
+                _key
+                _rawBlock
+                _type
+                title
+                block {
+                  _key
+                  _type
+                  children {
+                    _key
+                    _type
+                    marks
+                    text
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }

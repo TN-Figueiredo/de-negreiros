@@ -19,8 +19,14 @@ import logo from "./objects/logo";
 import banner from "./objects/sections/banner";
 import smallSection from "./objects/sections/smallSection";
 import mediumSection from "./objects/sections/mediumSection";
+import largeSection from "./objects/sections/largeSection";
 import titleAndContent from "./objects/titleAndContent";
+import tabbedContent from "./objects/tabbedContent";
 import latestPostsSection from "./objects/sections/latestPostsSection";
+import input from "./objects/form/index.js";
+import inputField from "./objects/form/inputField";
+import inputMessage from "./objects/form/inputMessage";
+import inputSelect from "./objects/form/inputSelect";
 import youtube from "./objects/youtube";
 import button from "./objects/button";
 import socialMedia from "./objects/socialMedia";
@@ -47,8 +53,16 @@ export default createSchema({
     banner,
     smallSection,
     mediumSection,
+    largeSection,
     titleAndContent,
+    tabbedContent,
     latestPostsSection,
+    // input start
+    input,
+    inputField,
+    inputMessage,
+    inputSelect,
+    // input end
     youtube,
     button,
     socialMedia,

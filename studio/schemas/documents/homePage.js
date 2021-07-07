@@ -29,6 +29,7 @@ export default {
         { type: "banner" },
         { type: "smallSection" },
         { type: "mediumSection" },
+        { type: "largeSection" },
         { type: "latestPostsSection" },
       ],
     },
