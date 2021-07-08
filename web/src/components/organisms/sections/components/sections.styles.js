@@ -52,3 +52,59 @@ export const YoutubeIframe = styled.iframe`
     height: 185px;
   }
 `;
+
+export const TabbedContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  height: 700px;
+  width: 100%;
+  background-color: ${(props) => props.theme.colors.$blue500};
+`;
+
+export const ContentContainer = styled.div`
+  width: 570px;
+  height: 100%;
+`;
+
+export const TabbedContent = styled.div`
+  padding-top: 50px;
+  padding-bottom: 50px;
+`;
+
+export const TabView = styled.div`
+  display: flex;
+  flex-direction: row;
+  padding-top: ${(props) => props.theme.$spacingLG};
+  padding-bottom: ${(props) => props.theme.$spacingXS};
+`;
+
+export const Tab = styled.div`
+  display: flex;
+  flex: ${(props) => (props.total ? `1/${props.total}` : "0px")};
+  width: 100%;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  background-color: ${(props) =>
+    props.active ? props.theme.colors.$grey300 : props.theme.colors.$grey000};
+  border-top-left-radius: ${(props) =>
+    props.first ? props.theme.$radiusSM : "0px"};
+  border-bottom-left-radius: ${(props) =>
+    props.first ? props.theme.$radiusSM : "0px"};
+  border-top-right-radius: ${(props) =>
+    props.last ? props.theme.$radiusSM : "0px"};
+  border-bottom-right-radius: ${(props) =>
+    props.last ? props.theme.$radiusSM : "0px"};
+  margin-left: ${(props) => (props.first ? "0px" : "1px")};
+  font-family: Roboto;
+  font-weight: bold;
+  color: ${(props) => props.theme.colors.$blue500};
+  cursor: pointer;
+`;
+
+export const TabText = styled.span`
+  text-align: justify;
+  text-justify: inter-word;
+  font-size: ${(props) => props.theme.fonts.$fontSizeMD};
+  color: ${(props) => props.theme.colors.$grey000};
+`;

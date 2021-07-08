@@ -5,7 +5,6 @@ import Title from "../../../atoms/title";
 import Svg from "../../../atoms/svg";
 import useTheme from "../../../../hooks/useTheme.hooks";
 import useLatestPosts from "../../../../hooks/useLatestPosts.hooks";
-import renderBlockType from "../components/renderBlockType";
 
 import {
   Container,

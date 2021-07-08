@@ -1,6 +1,7 @@
 export default {
   colors: {
     $grey000: "#FFFFFF",
+    $grey100: "#EBEDED",
     $grey200: "#BEBEBE",
     $grey300: "#CBD0D3",
     $grey400: "#A6ADB4",

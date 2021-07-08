@@ -12,9 +12,11 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
+  margin-top: ${(props) => props.theme.$spacingSM};
   width: 1140px;
   @media (max-width: 600px) {
     width: 330px;
+    margin-top: 0px;
     padding: ${(props) => props.theme.$spacingMD_LG};
     padding-bottom: ${(props) => (props.last ? "" : "0px")};
     padding-top: ${(props) => (props.last ? props.theme.$spacingMD : "")};

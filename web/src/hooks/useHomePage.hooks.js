@@ -183,6 +183,30 @@ const useHomePage = () => {
                 }
               }
             }
+            select
+            content {
+              ... on SanityTitleAndContent {
+                _key
+                _type
+                block {
+                  children {
+                    _key
+                    _type
+                    text
+                    marks
+                  }
+                  _key
+                  _type
+                }
+                title
+              }
+              ... on SanityYoutube {
+                _key
+                _type
+                description
+                url
+              }
+            }
           }
         }
       }
