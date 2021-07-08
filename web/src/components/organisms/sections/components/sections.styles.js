@@ -59,11 +59,20 @@ export const TabbedContainer = styled.div`
   height: 700px;
   width: 100%;
   background-color: ${(props) => props.theme.colors.$blue500};
+  @media (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
 `;
 
 export const ContentContainer = styled.div`
   width: 570px;
   height: 100%;
+  @media (max-width: 600px) {
+    width: 334px;
+    padding-left: 20px;
+  }
 `;
 
 export const TabbedContent = styled.div`
@@ -76,13 +85,14 @@ export const TabView = styled.div`
   flex-direction: row;
   padding-top: ${(props) => props.theme.$spacingLG};
   padding-bottom: ${(props) => props.theme.$spacingXS};
+  text-align: center;
 `;
 
 export const Tab = styled.div`
   display: flex;
   flex: ${(props) => (props.total ? `1/${props.total}` : "0px")};
   width: 100%;
-  height: 30px;
+  height: 40px;
   justify-content: center;
   align-items: center;
   background-color: ${(props) =>
@@ -100,6 +110,12 @@ export const Tab = styled.div`
   font-weight: bold;
   color: ${(props) => props.theme.colors.$blue500};
   cursor: pointer;
+  @media (max-width: 600px) {
+    height: 40px;
+    font-size: ${(props) => props.theme.fonts.$fontSizeSM};
+    padding-left: ${(props) => props.theme.$spacingXXS};
+    padding-right: ${(props) => props.theme.$spacingXXS};
+  }
 `;
 
 export const TabText = styled.span`
