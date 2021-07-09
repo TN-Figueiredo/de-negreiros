@@ -3,13 +3,21 @@ import PropTypes from "prop-types";
 
 import { Container, Label, Selector, Option } from "./form.styles";
 
-const Select = ({ options, required, title }) => {
+const Select = (
+  { _key, options, required, title },
+  values,
+  setValue,
+  index
+) => {
+  console.log("index", index);
   return (
-    <Container>
+    <Container key={_key}>
       <Label>{title}</Label>
       <Selector>
-        {["", ...options].map((option) => (
-          <Option value={option.toLowerCase()}>{option}</Option>
+        {["", ...options].map((option, index) => (
+          <Option key={index} value={option.toLowerCase()}>
+            {option}
+          </Option>
         ))}
       </Selector>
     </Container>

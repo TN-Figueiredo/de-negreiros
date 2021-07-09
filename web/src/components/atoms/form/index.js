@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, cloneElement } from "react";
 import PropTypes from "prop-types";
 import InputText from "./input";
 import Select from "./select";
@@ -15,7 +15,7 @@ const renderInput = {
 
 const getInputType = (type) => type.replace("input", "").toLowerCase();
 
-const Form = ({ fields, submit }) => {
+const Form = ({ fields, submit, values, setValues }) => {
   const fieldsCopy = [...fields];
   const smallFields = fields.filter(
     (field) => Number.isInteger(field.maxLength) && field.maxLength < 20
@@ -34,38 +34,67 @@ const Form = ({ fields, submit }) => {
 
   let form = [];
   if (middleFields.length > 0) {
-    firstFields.map((field) => (
-      <Wrapper key={field._key} small={field.maxLength < 20}>
-        {form.push(renderInput[getInputType(field._type)](field))}
-      </Wrapper>
-    ));
+    firstFields.map((field, index) => {
+      return (
+        <Wrapper key={field._key} small={field.maxLength < 20}>
+          {form.push(
+            renderInput[getInputType(field._type)](
+              field,
+              values,
+              setValues,
+              index
+            )
+          )}
+        </Wrapper>
+      );
+    });
 
     const item = (
       <Wrapper small>
-        {middleFields.map((field) =>
-          renderInput[getInputType(field._type)](field)
-        )}
+        {middleFields.map((field, index) => {
+          const positionIndex = smallIndex + index;
+          return renderInput[getInputType(field._type)](
+            field,
+            values,
+            setValues,
+            positionIndex
+          );
+        })}
       </Wrapper>
     );
 
     form.push(item);
 
-    lastFields.map((field) => (
-      <Wrapper key={field._key} small={field.maxLength < 20}>
-        {form.push(renderInput[getInputType(field._type)](field))}
-      </Wrapper>
-    ));
+    lastFields.map((field, index) => {
+      const positionIndex = form.length + 1 + index;
+      return (
+        <Wrapper key={field._key} small={field.maxLength < 20}>
+          {form.push(
+            renderInput[getInputType(field._type)](
+              field,
+              values,
+              setValues,
+              positionIndex
+            )
+          )}
+        </Wrapper>
+      );
+    });
   } else {
     fields.map((field) => (
       <Wrapper key={field._key} small={field.maxLength < 20}>
-        {form.push(renderInput[getInputType(field._type)](field))}
+        {form.push(
+          renderInput[getInputType(field._type)](field, values, setValues)
+        )}
       </Wrapper>
     ));
   }
 
+  const keyedForm = form.map((item, key) => cloneElement(item, { key }));
+
   return (
     <FormContainer>
-      {form}
+      {keyedForm}
       <SubmitContainer>
         <Button variant="blueBorder" full>
           {submit}

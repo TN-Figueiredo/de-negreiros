@@ -60,7 +60,16 @@ const handleSubmit = (event) => {
 const renderForm = (fields, submit) => {
   const [values, setValues] = useState(new Array(fields.length).fill(""));
 
-  return <Form fields={fields} submit={submit} />;
+  console.log("values", values);
+
+  return (
+    <Form
+      fields={fields}
+      values={values}
+      setValues={setValues}
+      submit={submit}
+    />
+  );
 };
 
 const renderContact = ({ title, fields, submit }) => {

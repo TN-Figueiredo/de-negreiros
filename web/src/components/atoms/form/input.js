@@ -3,10 +3,23 @@ import PropTypes from "prop-types";
 
 import { Container, Label, Text } from "./form.styles";
 
-const InputText = ({ title, maxLength, placeholder, required }) => {
+const InputText = (
+  { _key, title, maxLength, placeholder, required },
+  values,
+  setValue,
+  valueIndex
+) => {
   const lowerTitle = title.toLowerCase();
+
+  const handleChange = (event) => {
+    const updatedValues = values.map((value, index) =>
+      index === valueIndex ? event.target.value : value
+    );
+    setValue(updatedValues);
+  };
+
   return (
-    <Container small={maxLength < 20}>
+    <Container key={_key} small={maxLength < 20}>
       <Label htmlFor={lowerTitle}>{title}</Label>
       <Text
         id={lowerTitle}
@@ -15,6 +28,8 @@ const InputText = ({ title, maxLength, placeholder, required }) => {
         maxLength={maxLength}
         required={required}
         small={maxLength < 20}
+        value={values[valueIndex]}
+        onChange={handleChange}
       />
     </Container>
   );

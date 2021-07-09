@@ -9,12 +9,11 @@ const Menu = () => {
   const menu = useNavbarMenu();
   const renderMenuItems = () => {
     return menu.map(({ identifier, title, url }) => {
-      console.log("url", window.location.pathname === url);
       return (
         <LinkItem
           key={identifier}
           to={url}
-          active={window.location.pathname === url}
+          active={(window.location.pathname === url).toString()}
         >
           {title}
         </LinkItem>
