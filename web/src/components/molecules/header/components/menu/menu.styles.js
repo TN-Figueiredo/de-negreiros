@@ -16,4 +16,11 @@ export const Container = styled.div`
 export const LinkItem = styled(Link)`
   padding-right: 30px;
   text-decoration: none;
+  font-family: Roboto;
+  color: ${(props) => props.theme.colors.$grey900};
+  font-weight: ${(props) =>
+    props.active
+      ? props.theme.fonts.$fontWeightMed
+      : props.theme.fonts.$fontWeightSM};
+  font-size: ${(props) => props.theme.fonts.$fontSizeMD_LG};
 `;

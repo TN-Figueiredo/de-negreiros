@@ -65,5 +65,6 @@ export const Option = styled.option`
 `;
 
 export const SubmitContainer = styled.div`
+  padding-top: ${(props) => props.theme.$spacingXS};
   width: 94%;
 `;
