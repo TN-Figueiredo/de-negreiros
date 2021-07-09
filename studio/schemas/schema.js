@@ -23,8 +23,8 @@ import largeSection from "./objects/sections/largeSection";
 import titleAndContent from "./objects/titleAndContent";
 import tabbedContent from "./objects/tabbedContent";
 import latestPostsSection from "./objects/sections/latestPostsSection";
-import input from "./objects/form/index.js";
-import inputField from "./objects/form/inputField";
+import form from "./objects/form";
+import inputText from "./objects/form/inputText";
 import inputMessage from "./objects/form/inputMessage";
 import inputSelect from "./objects/form/inputSelect";
 import youtube from "./objects/youtube";
@@ -58,8 +58,8 @@ export default createSchema({
     tabbedContent,
     latestPostsSection,
     // input start
-    input,
-    inputField,
+    form,
+    inputText,
     inputMessage,
     inputSelect,
     // input end

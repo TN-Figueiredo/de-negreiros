@@ -3,11 +3,11 @@ import { SchemaTypes } from "../../constants";
 
 const {
   Form: {
-    INPUT_MESSAGE_TITLE,
-    INPUT_MESSAGE_TITLE_TITLE,
-    INPUT_MESSAGE_TITLE_DESCRIPTION,
-    INPUT_MESSAGE_PLACEHOLDER_TITLE,
-    INPUT_MESSAGE_PLACEHOLDER_DESCRIPTION,
+    TEXT_FIELD_TITLE,
+    TEXT_FIELD_TITLE_TITLE,
+    TEXT_FIELD_TITLE_DESCRIPTION,
+    TEXT_FIELD_PLACEHOLDER_TITLE,
+    TEXT_FIELD_PLACEHOLDER_DESCRIPTION,
     FORM_MAX_LENGTH_TITLE,
     FORM_MAX_LENGTH_DESCRIPTION,
   },
@@ -16,20 +16,20 @@ const {
 
 export default {
   type: "object",
-  name: SchemaTypes.InputMessage,
-  title: INPUT_MESSAGE_TITLE,
+  name: SchemaTypes.inputText,
+  title: TEXT_FIELD_TITLE,
   fields: [
     {
       type: "string",
       name: "title",
-      title: INPUT_MESSAGE_TITLE_TITLE,
-      description: INPUT_MESSAGE_TITLE_DESCRIPTION,
+      title: TEXT_FIELD_TITLE_TITLE,
+      description: TEXT_FIELD_TITLE_DESCRIPTION,
     },
     {
       type: "string",
       name: "placeholder",
-      title: INPUT_MESSAGE_PLACEHOLDER_TITLE,
-      description: INPUT_MESSAGE_PLACEHOLDER_DESCRIPTION,
+      title: TEXT_FIELD_PLACEHOLDER_TITLE,
+      description: TEXT_FIELD_PLACEHOLDER_DESCRIPTION,
     },
     {
       type: "number",

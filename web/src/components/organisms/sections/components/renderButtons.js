@@ -8,13 +8,14 @@ const renderButtons = ({ buttons }) => {
   const btns = buttons.map(({ _key, label, url }, index) => (
     <ButtonContainer key={_key} first={index === 0}>
       <Button
-        label={label}
         url={url}
         variant={index === 0 ? "blueInverted" : "transparentWhite"}
         // TODO: add option for selecting icon on studio
         icon={index === 0 ? "whatsapp" : ""}
         iconFill={useTheme().colors.$green500}
-      />
+      >
+        {label}
+      </Button>
     </ButtonContainer>
   ));
   return (

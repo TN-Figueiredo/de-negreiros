@@ -1,6 +1,6 @@
 export const SchemaTypes = {
   Form: "form",
-  InputField: "inputField",
+  inputText: "inputText",
   InputSelect: "inputSelect",
   InputMessage: "inputMessage",
 };

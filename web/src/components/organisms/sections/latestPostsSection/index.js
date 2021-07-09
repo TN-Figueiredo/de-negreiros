@@ -122,7 +122,7 @@ const renderExtraPosts = (posts) => {
               <Clock>
                 <Svg name="clock" fill={theme.colors.$grey300} />
               </Clock>
-              3h ago by <Author>{authors[0].author.name}</Author>
+              3h ago by <Author to="/">{authors[0].author.name}</Author>
             </Details>
           </ArticleBody>
         </MoreArticles>

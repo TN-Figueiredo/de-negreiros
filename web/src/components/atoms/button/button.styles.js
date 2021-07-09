@@ -5,6 +5,7 @@ const getButtonBackground = (props) => {
     ["positive"]: props.theme.colors.$green600,
     ["blue"]: props.theme.colors.$blue500,
     ["blueInverted"]: props.theme.colors.$grey000,
+    ["blueBorder"]: props.theme.colors.$blue500,
     ["transparentWhite"]: "transparent",
   };
   return backgroundOptions[props.variant]
@@ -17,6 +18,7 @@ const getButtonBorder = (props) => {
     ["positive"]: `1px solid ${props.theme.colors.$green600}`,
     ["blue"]: `1px solid ${props.theme.colors.$blue500}`,
     ["blueInverted"]: `1px solid ${props.theme.colors.$grey000}`,
+    ["blueBorder"]: `1px solid ${props.theme.colors.$grey000}`,
     ["transparentWhite"]: `1px solid ${props.theme.colors.$grey000}`,
   };
   return borderOptions[props.variant]
@@ -29,6 +31,7 @@ export const getButtonText = (props) => {
     ["positive"]: props.theme.colors.$green600,
     ["blue"]: props.theme.colors.$grey000,
     ["blueInverted"]: props.theme.colors.$blue500,
+    ["blueBorder"]: props.theme.colors.$grey000,
     ["transparentWhite"]: props.theme.colors.$grey000,
   };
   return textOptions[props.variant]
@@ -41,8 +44,8 @@ export const StyledButton = styled.a`
   border: ${(props) => getButtonBorder(props)};
   color: ${(props) => getButtonText(props)};
   height: 40px;
-  width: 185px;
-  font-size: 1.4rem;
+  width: ${(props) => (props.full ? "100%" : "185px")};
+  font-size: 1.2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,7 +59,7 @@ export const StyledButton = styled.a`
 `;
 
 export const StyledIcon = styled.div`
-  margin-top: 2px;
+  margin-top: ${(props) => props.theme.$spacingXS};
   margin-left: ${(props) => props.theme.$spacingLG};
   @media (max-width: 600px) {
     margin-left: ${(props) => props.theme.$spacingXS};

@@ -8,7 +8,7 @@ import { StyledButton, StyledIcon } from "./button.styles";
 
 const renderIcon = (icon, iconFill) => (
   <StyledIcon>
-    <Svg name={icon} fill={iconFill} />
+    <Svg name={icon} fill={iconFill} height={24} width={24} />
   </StyledIcon>
 );
 
@@ -23,14 +23,15 @@ const handleClick = (url, site, icon) => {
   }
 };
 
-const Button = ({ label, url, variant, icon, iconFill }) => {
+const Button = ({ children, url, variant, icon, iconFill, full }) => {
   const site = useSiteSettings();
   return (
     <StyledButton
       onClick={() => handleClick(url, site, icon)}
       variant={variant}
+      full={full}
     >
-      {label}
+      {children}
       {icon && renderIcon(icon, iconFill)}
     </StyledButton>
   );

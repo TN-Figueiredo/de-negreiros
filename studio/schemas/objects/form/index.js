@@ -28,7 +28,7 @@ export default {
       name: "fields",
       title: FORM_FIELDS_TITLE,
       of: [
-        { type: SchemaTypes.InputField },
+        { type: SchemaTypes.inputText },
         { type: SchemaTypes.InputSelect },
         { type: SchemaTypes.InputMessage },
       ],

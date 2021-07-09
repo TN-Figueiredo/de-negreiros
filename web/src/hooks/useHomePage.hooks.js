@@ -141,23 +141,28 @@ const useHomePage = () => {
               _type
               title
               fields {
-                ... on SanityInputField {
+                ... on SanityInputText {
                   _key
                   _type
                   placeholder
                   title
+                  maxLength
+                  required
                 }
                 ... on SanityInputMessage {
                   _key
                   _type
                   placeholder
                   title
+                  maxLength
+                  required
                 }
                 ... on SanityInputSelect {
                   _key
                   _type
                   options
                   title
+                  required
                 }
               }
               submit

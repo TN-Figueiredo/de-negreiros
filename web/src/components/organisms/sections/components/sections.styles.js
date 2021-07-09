@@ -67,11 +67,15 @@ export const TabbedContainer = styled.div`
 `;
 
 export const ContentContainer = styled.div`
-  width: 570px;
+  width: 555px;
   height: 100%;
+  padding-left: ${(props) => (props.first ? "" : "15px")};
+  padding-right: ${(props) => (props.first ? "15px" : "")};
   @media (max-width: 600px) {
     width: 334px;
     padding-left: 20px;
+    padding-right: 0px;
+    display: ${(props) => (!props.first ? "none" : "")};
   }
 `;
 

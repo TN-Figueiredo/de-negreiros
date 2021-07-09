@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import BlockContent from "@sanity/block-content-to-react";
 import Title from "../../../atoms/title";
+import Form from "../../../atoms/form";
 import useTheme from "../../../../hooks/useTheme.hooks";
 
 import {
@@ -41,12 +42,34 @@ const renderTabViews = (content) => {
 
 const renderTabbed = ({ title, content }) => {
   const theme = useTheme();
-  console.log("content", content);
+  return (
+    <ContentContainer first>
+      <TabbedContent>
+        <Title fontSize={theme.fonts.$fontSizeLG}>{title}</Title>
+        {renderTabViews(content)}
+      </TabbedContent>
+    </ContentContainer>
+  );
+};
+
+const handleSubmit = (event) => {
+  console.log("event", event);
+  event.preventDefault();
+};
+
+const renderForm = (fields, submit) => {
+  const [values, setValues] = useState(new Array(fields.length).fill(""));
+
+  return <Form fields={fields} submit={submit} />;
+};
+
+const renderContact = ({ title, fields, submit }) => {
+  const theme = useTheme();
   return (
     <ContentContainer>
       <TabbedContent>
         <Title fontSize={theme.fonts.$fontSizeLG}>{title}</Title>
-        {renderTabViews(content)}
+        {renderForm(fields, submit)}
       </TabbedContent>
     </ContentContainer>
   );
@@ -56,8 +79,7 @@ const RenderTabbedContent = ({ tabbedContent, contact }) => {
   return (
     <TabbedContainer>
       {renderTabbed(tabbedContent)}
-
-      <ContentContainer>Dois</ContentContainer>
+      {renderContact(contact)}
     </TabbedContainer>
   );
 };

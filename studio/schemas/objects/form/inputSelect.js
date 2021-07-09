@@ -8,6 +8,7 @@ const {
     INPUT_SELECT_TITLE_DESCRIPTION,
     INPUT_SELECT_OPTIONS_TITLE,
   },
+  General: { REQUIRED },
 } = useLanguage();
 
 export default {
@@ -26,6 +27,11 @@ export default {
       name: "options",
       title: INPUT_SELECT_OPTIONS_TITLE,
       of: [{ type: "string" }],
+    },
+    {
+      type: "boolean",
+      name: "required",
+      title: REQUIRED,
     },
   ],
   preview: {
