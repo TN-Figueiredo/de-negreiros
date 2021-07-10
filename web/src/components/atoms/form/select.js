@@ -7,17 +7,25 @@ const Select = (
   { _key, options, required, title },
   values,
   setValue,
-  index
+  valueIndex
 ) => {
-  console.log("index", index);
+  const handleChange = (event) => {
+    const updatedValues = values.map((value, index) =>
+      index === valueIndex ? event.target.value : value
+    );
+    setValue(updatedValues);
+  };
+
   return (
     <Container key={_key}>
       <Label>{title}</Label>
-      <Selector>
+      <Selector
+        value={values[valueIndex]}
+        onChange={handleChange}
+        required={required}
+      >
         {["", ...options].map((option, index) => (
-          <Option key={index} value={option.toLowerCase()}>
-            {option}
-          </Option>
+          <Option key={index}>{option}</Option>
         ))}
       </Selector>
     </Container>

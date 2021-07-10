@@ -52,6 +52,7 @@ export const StyledButton = styled.a`
   padding-left: ${(props) => props.theme.$spacingMD};
   padding-right: ${(props) => props.theme.$spacingMD};
   border-radius: ${(props) => props.theme.$radiusSM};
+  cursor: pointer;
   @media (max-width: 600px) {
     height: 34px;
     width: 160px;

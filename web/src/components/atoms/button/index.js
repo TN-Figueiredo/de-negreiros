@@ -23,11 +23,11 @@ const handleClick = (url, site, icon) => {
   }
 };
 
-const Button = ({ children, url, variant, icon, iconFill, full }) => {
+const Button = ({ children, url, variant, icon, iconFill, full, onClick }) => {
   const site = useSiteSettings();
   return (
     <StyledButton
-      onClick={() => handleClick(url, site, icon)}
+      onClick={onClick ? onClick : () => handleClick(url, site, icon)}
       variant={variant}
       full={full}
     >

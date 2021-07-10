@@ -3,9 +3,8 @@ import PropTypes from "prop-types";
 import InputText from "./input";
 import Select from "./select";
 import Message from "./message";
-import Button from "../button";
 
-import { FormContainer, Wrapper, SubmitContainer } from "./form.styles";
+import { FormContainer, Wrapper, SubmitContainer, Submit } from "./form.styles";
 
 const renderInput = {
   select: Select,
@@ -15,7 +14,9 @@ const renderInput = {
 
 const getInputType = (type) => type.replace("input", "").toLowerCase();
 
-const Form = ({ fields, submit, values, setValues }) => {
+const Form = ({ fields, submit }) => {
+  const [values, setValues] = useState(new Array(fields.length).fill(""));
+  const [errors, setErrors] = useState(new Array(fields.length).fill(null));
   const fieldsCopy = [...fields];
   const smallFields = fields.filter(
     (field) => Number.isInteger(field.maxLength) && field.maxLength < 20
@@ -92,14 +93,19 @@ const Form = ({ fields, submit, values, setValues }) => {
 
   const keyedForm = form.map((item, key) => cloneElement(item, { key }));
 
+  const handleSubmit = (event) => {
+    console.log("event", event);
+    event.preventDefault();
+  };
+
   return (
     <FormContainer>
-      {keyedForm}
-      <SubmitContainer>
-        <Button variant="blueBorder" full>
-          {submit}
-        </Button>
-      </SubmitContainer>
+      <form onSubmit={handleSubmit}>
+        {keyedForm}
+        <SubmitContainer>
+          <Submit type="submit" value={submit} />
+        </SubmitContainer>
+      </form>
     </FormContainer>
   );
 };

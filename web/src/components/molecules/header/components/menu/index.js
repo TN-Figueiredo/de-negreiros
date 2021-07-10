@@ -13,7 +13,7 @@ const Menu = () => {
         <LinkItem
           key={identifier}
           to={url}
-          active={(window.location.pathname === url).toString()}
+          active={window.location.pathname === url ? 1 : 0}
         >
           {title}
         </LinkItem>

@@ -66,5 +66,20 @@ export const Option = styled.option`
 
 export const SubmitContainer = styled.div`
   padding-top: ${(props) => props.theme.$spacingXS};
-  width: 94%;
+`;
+
+export const Submit = styled.input`
+  background-color: ${(props) => props.theme.colors.$blue500};
+  border: ${(props) => `1px solid ${props.theme.colors.$grey000}`};
+  color: ${(props) => props.theme.colors.$grey000};
+  height: 40px;
+  width: 100%;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: ${(props) => props.theme.$spacingMD};
+  padding-right: ${(props) => props.theme.$spacingMD};
+  border-radius: ${(props) => props.theme.$radiusSM};
+  cursor: pointer;
 `;

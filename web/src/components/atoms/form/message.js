@@ -7,9 +7,15 @@ const Message = (
   { maxLength, placeholder, required, title },
   values,
   setValue,
-  index
+  valueIndex
 ) => {
-  console.log("index", index);
+  const handleChange = (event) => {
+    const updatedValues = values.map((value, index) =>
+      index === valueIndex ? event.target.value : value
+    );
+    setValue(updatedValues);
+  };
+
   return (
     <Container>
       <Label>{title}</Label>
@@ -17,6 +23,8 @@ const Message = (
         placeholder={placeholder}
         maxLength={maxLength}
         required={required}
+        value={values[valueIndex]}
+        onChange={handleChange}
       />
     </Container>
   );

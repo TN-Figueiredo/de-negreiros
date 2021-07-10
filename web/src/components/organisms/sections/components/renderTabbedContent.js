@@ -52,33 +52,13 @@ const renderTabbed = ({ title, content }) => {
   );
 };
 
-const handleSubmit = (event) => {
-  console.log("event", event);
-  event.preventDefault();
-};
-
-const renderForm = (fields, submit) => {
-  const [values, setValues] = useState(new Array(fields.length).fill(""));
-
-  console.log("values", values);
-
-  return (
-    <Form
-      fields={fields}
-      values={values}
-      setValues={setValues}
-      submit={submit}
-    />
-  );
-};
-
 const renderContact = ({ title, fields, submit }) => {
   const theme = useTheme();
   return (
     <ContentContainer>
       <TabbedContent>
         <Title fontSize={theme.fonts.$fontSizeLG}>{title}</Title>
-        {renderForm(fields, submit)}
+        <Form fields={fields} submit={submit} />
       </TabbedContent>
     </ContentContainer>
   );
