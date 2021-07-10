@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Container, Label, Text } from "./form.styles";
+import { Container, Label, Text, Phone } from "./form.styles";
 
 const InputText = (
   { _key, title, maxLength, placeholder, required },
@@ -18,32 +18,44 @@ const InputText = (
     setValue(updatedValues);
   };
 
-  console.log("required", title);
-
   const isPhone = () =>
     lowerTitle === "telephone" ||
     lowerTitle === "phone" ||
     lowerTitle === "telefone";
 
-  console.log("isPhone", isPhone() ? "tel" : lowerTitle);
+  if (isPhone()) {
+    return (
+      <Container key={_key} small={maxLength < 20}>
+        <Label htmlFor={lowerTitle}>{title}</Label>
+        <Phone
+          id={lowerTitle}
+          type={lowerTitle}
+          placeholder={placeholder}
+          minLength="16"
+          required={required}
+          small={maxLength < 20}
+          value={values[valueIndex]}
+          onChange={handleChange}
+          mask="(99) 9 9999-9999"
+          maskChar=" "
+          permanents="[2,5]"
+        />
+      </Container>
+    );
+  }
 
   return (
     <Container key={_key} small={maxLength < 20}>
       <Label htmlFor={lowerTitle}>{title}</Label>
       <Text
         id={lowerTitle}
-        type={isPhone() ? "tel" : lowerTitle}
+        type={lowerTitle}
         placeholder={placeholder}
         maxLength={maxLength}
         required={required}
         small={maxLength < 20}
         value={values[valueIndex]}
         onChange={handleChange}
-        pattern={
-          isPhone()
-            ? "(^\\([0-9]{2}\\)((3[0-9]{3}-[0-9]{4})|(9[0-9]{3}-[0-9]{5}))$)"
-            : null
-        }
       />
     </Container>
   );

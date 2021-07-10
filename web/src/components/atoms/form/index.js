@@ -16,7 +16,6 @@ const getInputType = (type) => type.replace("input", "").toLowerCase();
 
 const Form = ({ fields, submit }) => {
   const [values, setValues] = useState(new Array(fields.length).fill(""));
-  const [errors, setErrors] = useState(new Array(fields.length).fill(null));
   const fieldsCopy = [...fields];
   const smallFields = fields.filter(
     (field) => Number.isInteger(field.maxLength) && field.maxLength < 20

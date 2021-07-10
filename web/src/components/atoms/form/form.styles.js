@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import InputMask from "react-input-mask";
 
 export const FormContainer = styled.div`
   margin-top: ${(props) => props.theme.$spacingXS};
@@ -28,6 +29,17 @@ export const Label = styled.label`
   margin-top: ${(props) => props.theme.$spacingXS};
   margin-bottom: ${(props) => props.theme.$spacingXS};
   font-weight: ${(props) => props.theme.fonts.$fontWeightMed};
+`;
+
+export const Phone = styled(InputMask)`
+  display: flex;
+  height: ${(props) => props.theme.$spacingXL};
+  margin-bottom: ${(props) => props.theme.$spacingXS};
+  border-radius: ${(props) => props.theme.$radiusSM};
+  border: ${(props) => `1px solid ${props.theme.colors.$grey000}`};
+  padding-left: ${(props) => props.theme.$spacingSM};
+  padding-right: ${(props) => props.theme.$spacingSM};
+  width: ${(props) => (props.small ? "85%" : "")};
 `;
 
 export const Text = styled.input`
