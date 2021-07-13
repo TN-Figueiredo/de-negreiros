@@ -1,24 +1,25 @@
 import React from "react";
 import PropTypes from "prop-types";
-import useSiteSettings from "../../../hooks/useSiteSettings.hooks";
-import SanityImage from "gatsby-plugin-sanity-image";
 
-const Logo = ({ width, height, style }) => {
-  const {
-    site: { logo },
-  } = useSiteSettings();
+import { StyledSanityImage } from "./logo.styles";
+
+const Logo = ({ logo, width, height, style, navbar = false }) => {
   return (
-    <SanityImage
+    <StyledSanityImage
       {...logo}
       alt="logo"
+      style={style}
       width={width}
       height={height}
-      style={style}
+      // added toString() function because of warning complaining of boolean writing to the DOM
+      navbar={navbar.toString()}
     />
   );
 };
 
 Logo.propTypes = {
+  navbar: PropTypes.bool,
+  logo: PropTypes.shape({}),
   width: PropTypes.number,
   height: PropTypes.number,
   style: PropTypes.shape({}),

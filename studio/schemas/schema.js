@@ -7,6 +7,8 @@ import schemaTypes from "all:part:@sanity/base/schema-type";
 // document schemas
 import siteSettings from "./documents/siteSettings";
 import navbarMenu from "./documents/navbarMenu";
+import homePage from "./documents/homePage";
+import page from "./documents/page";
 import author from "./documents/author";
 import category from "./documents/category";
 import post from "./documents/post";
@@ -14,6 +16,20 @@ import post from "./documents/post";
 // Object types
 import navbarMenuItems from "./objects/navbarMenuItems";
 import logo from "./objects/logo";
+import banner from "./objects/sections/banner";
+import smallSection from "./objects/sections/smallSection";
+import mediumSection from "./objects/sections/mediumSection";
+import largeSection from "./objects/sections/largeSection";
+import titleAndContent from "./objects/titleAndContent";
+import tabbedContent from "./objects/tabbedContent";
+import latestPostsSection from "./objects/sections/latestPostsSection";
+import form from "./objects/form";
+import inputText from "./objects/form/inputText";
+import inputMessage from "./objects/form/inputMessage";
+import inputSelect from "./objects/form/inputSelect";
+import youtube from "./objects/youtube";
+import button from "./objects/button";
+import socialMedia from "./objects/socialMedia";
 import bodyPortableText from "./objects/bodyPortableText";
 import bioPortableText from "./objects/bioPortableText";
 import excerptPortableText from "./objects/excerptPortableText";
@@ -30,8 +46,26 @@ export default createSchema({
     // The following are document types which will appear
     // in the studio.
     siteSettings,
+    homePage,
+    page,
     navbarMenu,
     navbarMenuItems,
+    banner,
+    smallSection,
+    mediumSection,
+    largeSection,
+    titleAndContent,
+    tabbedContent,
+    latestPostsSection,
+    // input start
+    form,
+    inputText,
+    inputMessage,
+    inputSelect,
+    // input end
+    youtube,
+    button,
+    socialMedia,
     post,
     category,
     author,

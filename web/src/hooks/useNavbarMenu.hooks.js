@@ -10,7 +10,6 @@ const useNavbarMenu = () => {
           identifier
           title
           url
-          weight
         }
       }
     }

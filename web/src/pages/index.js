@@ -1,10 +1,17 @@
 import React from "react";
-import useSiteSettings from "../hooks/useSiteSettings.hooks";
 import Layout from "../components/organisms/layout";
+import renderSections from "../components/organisms/sections";
+import useHomePage from "../hooks/useHomePage.hooks";
+
+import { Container } from "./index.styles";
 
 const IndexPage = () => {
-  const site = useSiteSettings();
-  return <Layout>Aqui vem o website</Layout>;
+  const { sections } = useHomePage();
+  return (
+    <Layout>
+      <Container>{renderSections(sections)}</Container>
+    </Layout>
+  );
 };
 
 export default IndexPage;
