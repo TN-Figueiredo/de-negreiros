@@ -48,5 +48,12 @@ module.exports = {
         dataset: "production",
       },
     },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`Roboto`, `Open Sans`],
+        display: "swap",
+      },
+    },
   ],
 };

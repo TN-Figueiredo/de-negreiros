@@ -1,7 +1,7 @@
 import { graphql, useStaticQuery } from "gatsby";
 
 const useSiteSettings = () => {
-  return useStaticQuery(graphql`
+  const { site } = useStaticQuery(graphql`
     {
       site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
         title
@@ -10,9 +10,20 @@ const useSiteSettings = () => {
         logo {
           ...Logo
         }
+        footerLogo {
+          ...Logo
+        }
+        email
+        socialMedia {
+          name
+          url
+        }
+        whatsapp
+        whatsappMessage
       }
     }
   `);
+  return site;
 };
 
 export default useSiteSettings;

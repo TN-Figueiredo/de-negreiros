@@ -9,8 +9,6 @@ const {
     NAVBAR_MENU_TITLE_DESCRIPTION,
     NAVBAR_MENU_URL_TITLE,
     NAVBAR_MENU_URL_DESCRIPTION,
-    NAVBAR_MENU_WEIGHT_TITLE,
-    NAVBAR_MENU_WEIGHT_DESCRIPTION,
   },
 } = useLanguage();
 
@@ -39,13 +37,6 @@ export default {
       title: NAVBAR_MENU_URL_TITLE,
       description: NAVBAR_MENU_URL_DESCRIPTION,
       validation: (Rule) => Rule.required(),
-    },
-    {
-      type: "number",
-      name: "weight",
-      title: NAVBAR_MENU_WEIGHT_TITLE,
-      description: NAVBAR_MENU_WEIGHT_DESCRIPTION,
-      validation: (Rule) => Rule.integer(),
     },
   ],
   preview: {
