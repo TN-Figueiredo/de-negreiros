@@ -10,7 +10,6 @@ const isProd = process.env.NODE_ENV === "production";
 module.exports = {
   plugins: [
     "gatsby-plugin-postcss",
-    "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-source-sanity",
@@ -22,10 +21,10 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-gtag`,
+      resolve: "gatsby-plugin-google-gtag",
       options: {
         trackingIds: [
-          "G-F5PJRTLESS", // Google Analytics / GA
+          process.env.GATSBY_SANITY_GOOGLE_ANALYTICS, // Google Analytics / GA
           // "AW-CONVERSION_ID", // Google Ads / Adwords / AW
           // "DC-FLOODIGHT_ID", // Marketing Platform advertising products (Display & Video 360, Search Ads 360, and Campaign Manager)
         ],
@@ -39,6 +38,14 @@ module.exports = {
           respectDNT: true,
           exclude: ["/preview/**", "/do-not-track/me/too/", "/dev/**"],
         },
+      },
+    },
+    "gatsby-plugin-styled-components",
+    {
+      resolve: "gatsby-plugin-sanity-image",
+      options: {
+        projectId: process.env.GATSBY_SANITY_PROJECT_ID,
+        dataset: "production",
       },
     },
   ],
