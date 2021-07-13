@@ -9,6 +9,7 @@ const Select = (
   setValue,
   valueIndex
 ) => {
+  const lowerTitle = title.toLowerCase();
   const handleChange = (event) => {
     const updatedValues = values.map((value, index) =>
       index === valueIndex ? event.target.value : value
@@ -18,8 +19,9 @@ const Select = (
 
   return (
     <Container key={_key}>
-      <Label>{title}</Label>
+      <Label htmlFor={lowerTitle}>{title}</Label>
       <Selector
+        id={lowerTitle}
         value={values[valueIndex]}
         onChange={handleChange}
         required={required}

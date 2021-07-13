@@ -9,6 +9,7 @@ const Message = (
   setValue,
   valueIndex
 ) => {
+  const lowerTitle = title.toLowerCase();
   const handleChange = (event) => {
     const updatedValues = values.map((value, index) =>
       index === valueIndex ? event.target.value : value
@@ -18,8 +19,9 @@ const Message = (
 
   return (
     <Container>
-      <Label>{title}</Label>
+      <Label htmlFor={lowerTitle}>{title}</Label>
       <TextArea
+        id={lowerTitle}
         placeholder={placeholder}
         maxLength={maxLength}
         required={required}

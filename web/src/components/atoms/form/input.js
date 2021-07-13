@@ -25,7 +25,7 @@ const InputText = (
 
   if (isPhone()) {
     return (
-      <Container key={_key} small={maxLength < 20}>
+      <Container key={_key} small={maxLength < 20 ? 1 : 0}>
         <Label htmlFor={lowerTitle}>{title}</Label>
         <Phone
           id={lowerTitle}
@@ -33,7 +33,7 @@ const InputText = (
           placeholder={placeholder}
           minLength="16"
           required={required}
-          small={maxLength < 20}
+          small={maxLength < 20 ? 1 : 0}
           value={values[valueIndex]}
           onChange={handleChange}
           mask="(99) 9 9999-9999"
@@ -45,7 +45,7 @@ const InputText = (
   }
 
   return (
-    <Container key={_key} small={maxLength < 20}>
+    <Container key={_key} small={maxLength < 20 ? 1 : 0}>
       <Label htmlFor={lowerTitle}>{title}</Label>
       <Text
         id={lowerTitle}
@@ -53,7 +53,7 @@ const InputText = (
         placeholder={placeholder}
         maxLength={maxLength}
         required={required}
-        small={maxLength < 20}
+        small={maxLength < 20 ? 1 : 0}
         value={values[valueIndex]}
         onChange={handleChange}
       />

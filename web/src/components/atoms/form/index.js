@@ -36,7 +36,7 @@ const Form = ({ fields, submit }) => {
   if (middleFields.length > 0) {
     firstFields.map((field, index) => {
       return (
-        <Wrapper key={field._key} small={field.maxLength < 20}>
+        <Wrapper key={field._key} small={field.maxLength < 20 ? 1 : 0}>
           {form.push(
             renderInput[getInputType(field._type)](
               field,
@@ -50,7 +50,7 @@ const Form = ({ fields, submit }) => {
     });
 
     const item = (
-      <Wrapper small>
+      <Wrapper small={1}>
         {middleFields.map((field, index) => {
           const positionIndex = smallIndex + index;
           return renderInput[getInputType(field._type)](
@@ -68,7 +68,7 @@ const Form = ({ fields, submit }) => {
     lastFields.map((field, index) => {
       const positionIndex = form.length + 1 + index;
       return (
-        <Wrapper key={field._key} small={field.maxLength < 20}>
+        <Wrapper key={field._key} small={field.maxLength < 20 ? 1 : 0}>
           {form.push(
             renderInput[getInputType(field._type)](
               field,
@@ -82,7 +82,7 @@ const Form = ({ fields, submit }) => {
     });
   } else {
     fields.map((field) => (
-      <Wrapper key={field._key} small={field.maxLength < 20}>
+      <Wrapper key={field._key} small={field.maxLength < 20 ? 1 : 0}>
         {form.push(
           renderInput[getInputType(field._type)](field, values, setValues)
         )}
@@ -92,15 +92,74 @@ const Form = ({ fields, submit }) => {
 
   const keyedForm = form.map((item, key) => cloneElement(item, { key }));
 
-  const handleSubmit = (event) => {
-    console.log("event", event);
+  const handleSubmit = async (event) => {
     event.preventDefault();
+    // setSubmitText("Submitting ...");
+    const formElements = [...event.currentTarget.elements];
+    const isValid =
+      formElements.filter((elem) => elem.name === "bot-field")[0].value === "";
+
+    const validFormElements = isValid ? formElements : [];
+
+    if (validFormElements.length < 1) {
+      // or some other cheeky error message
+      // setSubmitText("It looks like you filled out too many fields!");
+    } else {
+      const filledOutElements = validFormElements
+        .filter((elem) => !!elem.value)
+        .map(
+          (element) =>
+            encodeURIComponent(element.name) +
+            "=" +
+            encodeURIComponent(element.value)
+        )
+        .join("&");
+
+      console.log("filledOutElements", filledOutElements);
+
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: filledOutElements,
+      })
+        .then(() => {
+          // setSubmitText("Successfully submitted!");
+          alert("Success!!!");
+        })
+        .catch((_) => {
+          alert("Error");
+          // setSubmitText(
+          //   "There was an error with your submission, please email me using the address above."
+          // );
+        });
+    }
   };
 
   return (
     <FormContainer>
-      <form onSubmit={handleSubmit}>
+      <form
+        name="contact"
+        method="post"
+        netlify={1}
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        data-netlify-recaptcha="true"
+        onSubmit={handleSubmit}
+      >
+        <p style={{ display: "none" }}>
+          <label>
+            Don’t fill this out if you expect to hear from me!
+            <input name="bot-field" />
+          </label>
+        </p>
+        <input
+          style={{ display: "none" }}
+          name="form-name"
+          value="contact"
+          readOnly={true}
+        />
         {keyedForm}
+        <div data-netlify-recaptcha="true"></div>
         <SubmitContainer>
           <Submit type="submit" value={submit} />
         </SubmitContainer>
