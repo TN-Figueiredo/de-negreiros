@@ -52,23 +52,23 @@ const renderTabbed = ({ title, content }) => {
   );
 };
 
-const renderContact = ({ title, fields, submit }) => {
+const renderForm = ({ title, fields, submit }) => {
   const theme = useTheme();
   return (
     <ContentContainer>
       <TabbedContent>
         <Title fontSize={theme.fonts.$fontSizeLG}>{title}</Title>
-        <Form fields={fields} submit={submit} />
+        <Form title={title} fields={fields} submit={submit} />
       </TabbedContent>
     </ContentContainer>
   );
 };
 
-const RenderTabbedContent = ({ tabbedContent, contact }) => {
+const RenderTabbedContent = ({ tabbedContent, form }) => {
   return (
     <TabbedContainer>
       {renderTabbed(tabbedContent)}
-      {renderContact(contact)}
+      {renderForm(form)}
     </TabbedContainer>
   );
 };

@@ -51,56 +51,99 @@ const createCustomPages = async (graphql, actions) => {
   const result = await graphql(`
     {
       allSanityPage {
-        nodes {
-          title
-          slug {
-            current
-          }
-          sections {
-            _key
-            _type
-            background {
-              caption
-              alt
-              asset {
-                _id
-                metadata {
+        edges {
+          node {
+            title
+            slug {
+              current
+            }
+            sections {
+              ... on SanityBanner {
+                _key
+                _type
+                background {
                   _key
                   _type
-                  lqip
-                  hasAlpha
-                  isOpaque
-                  _rawLocation
-                  _rawDimensions
-                  _rawPalette
+                  alt
+                  caption
+                  asset {
+                    _id
+                    metadata {
+                      _key
+                      _type
+                      lqip
+                      hasAlpha
+                      isOpaque
+                      _rawLocation
+                      _rawDimensions
+                      _rawPalette
+                    }
+                  }
+                  crop {
+                    _key
+                    _type
+                    top
+                    bottom
+                    left
+                    right
+                  }
+                  hotspot {
+                    _key
+                    _type
+                    x
+                    y
+                    height
+                    width
+                  }
+                }
+                block {
+                  _key
+                  _type
+                  children {
+                    _key
+                    _type
+                    marks
+                    text
+                  }
+                }
+                buttons {
+                  _key
+                  _type
+                  label
+                  url
                 }
               }
-              crop {
+              ... on SanityForm {
                 _key
                 _type
-                top
-                bottom
-                left
-                right
+                title
+                fields {
+                  ... on SanityInputMessage {
+                    _key
+                    _type
+                    maxLength
+                    placeholder
+                    required
+                    title
+                  }
+                  ... on SanityInputSelect {
+                    _key
+                    _type
+                    options
+                    required
+                    title
+                  }
+                  ... on SanityInputText {
+                    _key
+                    _type
+                    maxLength
+                    placeholder
+                    required
+                    title
+                  }
+                }
+                submit
               }
-              hotspot {
-                _key
-                _type
-                x
-                y
-                height
-                width
-              }
-            }
-            block {
-              children {
-                text
-                marks
-              }
-            }
-            buttons {
-              label
-              url
             }
           }
         }
@@ -110,18 +153,26 @@ const createCustomPages = async (graphql, actions) => {
 
   if (result.errors) throw result.errors;
 
-  const { nodes } = result.data.allSanityPage;
+  const { edges } = result.data.allSanityPage;
 
-  nodes.forEach(({ title, slug: { current }, sections }) => {
-    createPage({
-      path: `/${current}`,
-      component: require.resolve("./src/templates/page.js"),
-      context: { title, sections },
-    });
-  });
+  edges.forEach(
+    ({
+      node: {
+        title,
+        slug: { current },
+        sections,
+      },
+    }) => {
+      createPage({
+        path: `/${current}`,
+        component: require.resolve("./src/templates/page.js"),
+        context: { title, sections },
+      });
+    }
+  );
 };
 
 exports.createPages = async ({ graphql, actions }) => {
-  await createCustomPages(graphql, actions);
+  // await createCustomPages(graphql, actions);
   // await createBlogPostPages(graphql, actions);
 };

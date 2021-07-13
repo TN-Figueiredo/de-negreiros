@@ -136,7 +136,7 @@ const useHomePage = () => {
           ... on SanityLargeSection {
             _key
             _type
-            contact {
+            form {
               _key
               _type
               title

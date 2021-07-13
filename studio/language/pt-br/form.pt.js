@@ -1,6 +1,6 @@
 // index.js
 export const FORM_TITLE = "Text";
-export const FORM_TITLE_TITLE = "Text input name";
+export const FORM_TITLE_TITLE = "Form name";
 export const FORM_TITLE_DESCRIPTION = "Name of the section that holds the form";
 export const FORM_FIELDS_TITLE = "Form fields";
 export const FORM_SUBMIT_TITLE = "Submit button";

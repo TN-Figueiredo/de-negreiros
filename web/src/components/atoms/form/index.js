@@ -14,7 +14,7 @@ const renderInput = {
 
 const getInputType = (type) => type.replace("input", "").toLowerCase();
 
-const Form = ({ fields, submit }) => {
+const Form = ({ fields, submit, title }) => {
   const [values, setValues] = useState(new Array(fields.length).fill(""));
   const fieldsCopy = [...fields];
   const smallFields = fields.filter(
@@ -138,7 +138,7 @@ const Form = ({ fields, submit }) => {
   return (
     <FormContainer>
       <form
-        name="contact"
+        name={title}
         method="post"
         netlify={1}
         data-netlify="true"
@@ -155,7 +155,7 @@ const Form = ({ fields, submit }) => {
         <input
           style={{ display: "none" }}
           name="form-name"
-          value="contact"
+          value={title}
           readOnly={true}
         />
         {keyedForm}
