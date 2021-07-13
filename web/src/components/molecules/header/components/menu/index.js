@@ -5,6 +5,7 @@ import useNavbarMenu from "../../../../../hooks/useNavbarMenu.hooks";
 
 import { Container, LinkItem } from "./menu.styles";
 
+// TODO: fix production to display inicio active in first load
 const isActive = (url) =>
   typeof window !== "undefined" && window.location.pathname === url;
 
