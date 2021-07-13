@@ -3,4 +3,5 @@ export const SchemaTypes = {
   inputText: "inputText",
   InputSelect: "inputSelect",
   InputMessage: "inputMessage",
+  WhatsAppPlaceholder: "whatsAppPlaceholder",
 };

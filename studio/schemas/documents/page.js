@@ -61,6 +61,9 @@ export default {
         {
           type: SchemaTypes.Form,
         },
+        {
+          type: "smallSection",
+        },
       ],
     },
   ],

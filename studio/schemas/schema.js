@@ -27,6 +27,7 @@ import form from "./objects/form";
 import inputText from "./objects/form/inputText";
 import inputMessage from "./objects/form/inputMessage";
 import inputSelect from "./objects/form/inputSelect";
+import whatsappPlaceholder from "./objects/whatsappPlaceholder";
 import youtube from "./objects/youtube";
 import button from "./objects/button";
 import socialMedia from "./objects/socialMedia";
@@ -63,6 +64,9 @@ export default createSchema({
     inputMessage,
     inputSelect,
     // input end
+    // placeholders
+    whatsappPlaceholder,
+    //
     youtube,
     button,
     socialMedia,

@@ -9,6 +9,7 @@ import InstagramStyled from "./instagramStyled";
 import Menu from "./menu";
 import UpperWave from "./upperWave";
 import Whatsapp from "./whatsapp";
+import Phone from "./phone";
 
 const icons = {
   arrowLeft: ArrowLeft,
@@ -20,6 +21,7 @@ const icons = {
   instagramStyled: InstagramStyled,
   menu: Menu,
   whatsapp: Whatsapp,
+  phone: Phone,
 };
 
 const Svg = ({ name, fill, width = 16, height = 16 }) => {

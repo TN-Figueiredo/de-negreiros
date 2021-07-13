@@ -40,7 +40,7 @@ const Banner = ({ background, block, buttons }) => {
         <ContentContainer>
           <Content>
             <Title>
-              <BlockContent blocks={block} serializers={{}} />
+              <BlockContent blocks={block || []} serializers={{}} />
             </Title>
             <Buttons>{renderButtons(buttons)}</Buttons>
           </Content>

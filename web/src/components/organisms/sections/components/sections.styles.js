@@ -128,3 +128,31 @@ export const TabText = styled.span`
   font-size: ${(props) => props.theme.fonts.$fontSizeMD};
   color: ${(props) => props.theme.colors.$grey000};
 `;
+
+export const WhatsAppPlaceHolderContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+`;
+
+export const Phone = styled.div`
+  position: relative;
+`;
+
+export const IconContainer = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`;
+
+export const WhatsApp = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const Spacing = styled.div`
+  padding-top: ${(props) => props.theme.$spacingMD};
+`;

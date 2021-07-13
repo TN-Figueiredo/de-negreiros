@@ -9,6 +9,7 @@ export const SECTION_SELECT_TITLE = "Selecione o item para exibir";
 export const SECTION_SELECT_ITEM1 = "Botões";
 export const SECTION_SELECT_ITEM2 = "Conteúdo";
 export const SECTION_SELECT_ITEM3 = "Conteúdo em abas";
+export const SECTION_SELECT_ITEM4 = "Mostrar WhatsApp";
 
 export const SECTION_BUTTONS_TITLE = "Item da seção";
 export const SECTION_BUTTONS_DESCRIPTION =

@@ -144,6 +144,58 @@ const createCustomPages = async (graphql, actions) => {
                 }
                 submit
               }
+              ... on SanitySmallSection {
+                _key
+                _type
+                title
+                select
+                buttons {
+                  _key
+                  _type
+                  label
+                  url
+                }
+                background {
+                  _key
+                  _type
+                  alt
+                  caption
+                  asset {
+                    _id
+                    metadata {
+                      _key
+                      _type
+                      lqip
+                      hasAlpha
+                      isOpaque
+                      _rawLocation
+                      _rawDimensions
+                      _rawPalette
+                    }
+                  }
+                  crop {
+                    _key
+                    _type
+                    top
+                    bottom
+                    left
+                    right
+                  }
+                  hotspot {
+                    _key
+                    _type
+                    x
+                    y
+                    height
+                    width
+                  }
+                }
+                whatsAppPlaceholder {
+                  Show
+                  _key
+                  _type
+                }
+              }
             }
           }
         }
@@ -173,6 +225,6 @@ const createCustomPages = async (graphql, actions) => {
 };
 
 exports.createPages = async ({ graphql, actions }) => {
-  // await createCustomPages(graphql, actions);
+  await createCustomPages(graphql, actions);
   // await createBlogPostPages(graphql, actions);
 };
