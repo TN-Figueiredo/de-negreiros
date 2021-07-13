@@ -5,7 +5,8 @@ import useNavbarMenu from "../../../../../hooks/useNavbarMenu.hooks";
 
 import { Container, LinkItem } from "./menu.styles";
 
-const isActive = (url) => window && window.location.pathname === url;
+const isActive = (url) =>
+  typeof window !== "undefined" && window.location.pathname === url;
 
 const Menu = () => {
   const menu = useNavbarMenu();
