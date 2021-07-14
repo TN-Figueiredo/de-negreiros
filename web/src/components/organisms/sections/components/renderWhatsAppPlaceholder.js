@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Svg from "../../../atoms/svg";
 import Title from "../../../atoms/title";
 import useSiteSettings from "../../../../hooks/useSiteSettings.hooks";
+import { getWindowDimensions } from "../../../../lib/helpers";
 
 import {
   WhatsAppPlaceHolderContainer,
@@ -26,6 +27,26 @@ const handleClick = (whatsapp, whatsappMessage) => {
   );
 };
 
+const phoneSize = () => {
+  const { width } = getWindowDimensions();
+  const size = 134;
+  if (width > 600) {
+    return size;
+  } else {
+    return size / 2;
+  }
+};
+
+const whatsAppIcon = () => {
+  const { width } = getWindowDimensions();
+  const size = 34;
+  if (width > 600) {
+    return size;
+  } else {
+    return size / 2;
+  }
+};
+
 const renderWhatsAppPlaceholder = () => {
   const { whatsapp, whatsappMessage } = useSiteSettings();
   return (
@@ -33,9 +54,9 @@ const renderWhatsAppPlaceholder = () => {
       onClick={() => handleClick(whatsapp, whatsappMessage)}
     >
       <Phone>
-        <Svg name="phone" height={134} width={134} />
+        <Svg name="phone" height={phoneSize()} width={phoneSize()} />
         <IconContainer>
-          <Svg name="whatsapp" height={34} width={34} />
+          <Svg name="whatsapp" height={whatsAppIcon()} width={whatsAppIcon()} />
         </IconContainer>
       </Phone>
       <WhatsApp>

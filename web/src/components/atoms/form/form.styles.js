@@ -20,6 +20,9 @@ export const Container = styled.div`
   flex-direction: column;
   width: 100%;
   flex-basis: ${(props) => (props.small ? "39%; " : "60%")};
+  @media (max-width: 600px) {
+    flex-basis: ${(props) => (props.small ? "36%; " : "59%")};
+  }
 `;
 
 export const Content = styled.div``;

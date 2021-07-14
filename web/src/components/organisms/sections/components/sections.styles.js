@@ -139,10 +139,15 @@ export const WhatsAppPlaceHolderContainer = styled.div`
   display: flex;
   flex-direction: row;
   cursor: pointer;
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
 `;
 
 export const Phone = styled.div`
   position: relative;
+  display: flex;
+  justify-content: center;
 `;
 
 export const IconContainer = styled.div`
@@ -157,8 +162,14 @@ export const WhatsApp = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media (max-width: 600px) {
+    padding-top: ${(props) => props.theme.$spacingSM};
+  }
 `;
 
 export const Spacing = styled.div`
   padding-top: ${(props) => props.theme.$spacingMD};
+  @media (max-width: 600px) {
+    padding-top: 0px;
+  }
 `;

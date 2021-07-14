@@ -15,4 +15,8 @@ export const Content = styled.div`
   width: 580px;
   margin-bottom: ${(props) => props.theme.$spacingLG};
   margin-top: ${(props) => props.theme.$spacingLG};
+  @media (max-width: 600px) {
+    width: 334px;
+    padding-left: ${(props) => props.theme.$spacingMD_LG};
+  }
 `;

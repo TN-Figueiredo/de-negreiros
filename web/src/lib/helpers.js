@@ -31,6 +31,11 @@ export const getYoutubeEmbed = (url) => {
   return resolvedUrl.replace("/embed/?", "/embed/");
 };
 
+export const getWindowDimensions = () => {
+  const { innerWidth: width, innerHeight: height } = window;
+  return { width, height };
+};
+
 export const handleColor = (backgroundColor, theme) =>
   backgroundColor === "white" ? theme.colors.$blue500 : theme.colors.$grey000;
 
