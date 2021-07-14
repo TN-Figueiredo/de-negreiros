@@ -34,12 +34,11 @@ const MobileMenu = (props) => {
     );
   };
 
-  console.log("menu", menu);
   const renderMenuItems = () => {
     return menu.map(({ identifier, title, url }, index) => (
-      <LinkContainer>
+      <LinkContainer key={identifier}>
         {renderIcon(index, url)}
-        <LinkItem key={identifier} to={url} active={isActive(url) ? 1 : 0}>
+        <LinkItem to={url} active={isActive(url) ? 1 : 0}>
           {title}
         </LinkItem>
       </LinkContainer>

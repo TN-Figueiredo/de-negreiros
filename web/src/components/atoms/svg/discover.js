@@ -12,7 +12,7 @@ const discover = ({ fill, width, height }) => {
       <path
         d="M13.5,4.5,7.538,7.538,4.5,13.5l5.963-3.038ZM9,18a9,9,0,1,1,9-9A9.026,9.026,0,0,1,9,18Z"
         fill={fill}
-        fill-rule="evenodd"
+        fillRule="evenodd"
       />
     </svg>
   );

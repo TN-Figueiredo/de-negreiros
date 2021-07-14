@@ -12,7 +12,7 @@ const upperWave = ({ fill, width, height }) => {
       <path
         d="M0,9,9,0l9,9v9H12.375V11.25H5.625V18H0Z"
         fill={fill}
-        fill-rule="evenodd"
+        fillRule="evenodd"
       />
     </svg>
   );
