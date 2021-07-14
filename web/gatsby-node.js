@@ -202,6 +202,66 @@ const createCustomPages = async (graphql, actions) => {
                   _type
                 }
               }
+              ... on SanityAuthorList {
+                _key
+                _type
+                authors {
+                  _key
+                  author {
+                    _key
+                    name
+                    slug {
+                      current
+                    }
+                    bio {
+                      _key
+                      children {
+                        _key
+                        _type
+                        marks
+                        text
+                      }
+                      _type
+                    }
+                    image {
+                      _key
+                      caption
+                      alt
+                      asset {
+                        metadata {
+                          _key
+                          _type
+                          lqip
+                          hasAlpha
+                          isOpaque
+                          _rawLocation
+                          _rawDimensions
+                          _rawPalette
+                        }
+                        _id
+                      }
+                      crop {
+                        _key
+                        _type
+                        top
+                        bottom
+                        left
+                        right
+                      }
+                      hotspot {
+                        _key
+                        _type
+                        x
+                        y
+                        height
+                        width
+                      }
+                    }
+                    _type
+                  }
+                  _type
+                }
+              }
             }
           }
         }

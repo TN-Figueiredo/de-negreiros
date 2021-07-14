@@ -36,6 +36,7 @@ import bioPortableText from "./objects/bioPortableText";
 import excerptPortableText from "./objects/excerptPortableText";
 import mainImage from "./objects/mainImage";
 import authorReference from "./objects/authorReference";
+import authorList from "./objects/author/authorList";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -76,6 +77,7 @@ export default createSchema({
     logo,
     mainImage,
     authorReference,
+    authorList,
     bodyPortableText,
     bioPortableText,
     excerptPortableText,

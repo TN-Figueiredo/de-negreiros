@@ -1,3 +1,4 @@
+import AuthorList from "../../molecules/authorList";
 import Banner from "../../molecules/banner";
 import FormSection from "./formSection";
 import MediumSection from "./mediumSection";
@@ -6,6 +7,7 @@ import LatestPostsSection from "./latestPostsSection";
 import SmallSection from "./smallSection";
 
 export default {
+  authorList: AuthorList,
   banner: Banner,
   smallSection: SmallSection,
   mediumSection: MediumSection,
