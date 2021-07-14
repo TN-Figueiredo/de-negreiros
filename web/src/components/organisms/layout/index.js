@@ -1,18 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { ThemeProvider } from "styled-components";
 import Header from "../../molecules/header";
+import MobileMenu from "../../molecules/mobileMenu";
 import Footer from "../../molecules/footer";
 
 import theme from "../../../theme";
 import { ThemeContainer } from "./layout.styles";
 
 const Layout = ({ children }) => {
+  const [drawerOpen, setDrawerOpen] = useState(false);
+
+  const handleDrawer = () => setDrawerOpen(!drawerOpen);
   return (
     <ThemeProvider theme={theme}>
       <ThemeContainer theme={theme} />
-      <Header />
-      {children}
+      <Header handleDrawer={handleDrawer} />
+      {drawerOpen ? <MobileMenu /> : children}
       <Footer />
     </ThemeProvider>
   );

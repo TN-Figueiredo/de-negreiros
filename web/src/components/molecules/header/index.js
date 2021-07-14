@@ -16,13 +16,13 @@ import {
   SvgContainer,
 } from "./header.styles";
 
-const Header = () => {
+const Header = ({ handleDrawer }) => {
   const { logo } = useSiteSettings();
   const theme = useTheme();
   return (
     <HeaderTag>
       <Navbar>
-        <MobileMenuIcon>
+        <MobileMenuIcon onClick={handleDrawer}>
           <Svg name="menu" height={16} fill={theme.colors.$grey700} />
         </MobileMenuIcon>
         <LogoContainer onClick={() => navigate("/")}>
@@ -34,6 +34,8 @@ const Header = () => {
   );
 };
 
-Header.propTypes = {};
+Header.propTypes = {
+  handleDrawer: PropTypes.func.isRequired,
+};
 
 export default Header;
