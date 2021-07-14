@@ -124,8 +124,6 @@ const Form = ({ fields, submit, title, backgroundColor }) => {
         )
         .join("&");
 
-      console.log("filledOutElements", filledOutElements);
-
       await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },

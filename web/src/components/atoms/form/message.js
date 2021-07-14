@@ -8,7 +8,8 @@ const Message = (
   values,
   setValue,
   valueIndex,
-  backgroundColor
+  backgroundColor,
+  black
 ) => {
   const lowerTitle = title.toLowerCase();
   const handleChange = (event) => {
@@ -20,7 +21,11 @@ const Message = (
 
   return (
     <Container>
-      <Label htmlFor={lowerTitle} backgroundColor={backgroundColor}>
+      <Label
+        htmlFor={lowerTitle}
+        backgroundcolor={backgroundColor}
+        black={black}
+      >
         {title}
       </Label>
       <TextArea
@@ -30,7 +35,8 @@ const Message = (
         required={required}
         value={values[valueIndex]}
         onChange={handleChange}
-        backgroundColor={backgroundColor}
+        backgroundcolor={backgroundColor}
+        black={black}
       />
     </Container>
   );

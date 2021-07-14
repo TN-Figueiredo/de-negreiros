@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import InputMask from "react-input-mask";
-import { handleColor } from "../../organisms/sections/formSection/formSection.styles";
+import { handleColor, handleColorBlack } from "../../../lib/helpers";
 
 export const FormContainer = styled.div`
   margin-top: ${(props) => props.theme.$spacingXS};
@@ -26,7 +26,7 @@ export const Content = styled.div``;
 
 export const Label = styled.label`
   font-size: ${(props) => props.theme.fonts.$fontSizeMD};
-  color: ${(props) => handleColor(props.backgroundColor, props.theme)};
+  color: ${(props) => handleColorBlack(props.backgroundcolor, props.theme)};
   margin-top: ${(props) => props.theme.$spacingXS};
   margin-bottom: ${(props) => props.theme.$spacingXS};
   font-weight: ${(props) => props.theme.fonts.$fontWeightMed};
@@ -38,7 +38,7 @@ export const Phone = styled(InputMask)`
   margin-bottom: ${(props) => props.theme.$spacingXS};
   border-radius: ${(props) => props.theme.$radiusSM};
   border: ${(props) =>
-    `1px solid ${handleColor(props.backgroundColor, props.theme)}`};
+    `1px solid ${handleColorBlack(props.backgroundcolor, props.theme)}`};
   padding-left: ${(props) => props.theme.$spacingSM};
   padding-right: ${(props) => props.theme.$spacingSM};
   width: ${(props) => (props.small ? "85%" : "")};
@@ -50,7 +50,7 @@ export const Text = styled.input`
   margin-bottom: ${(props) => props.theme.$spacingXS};
   border-radius: ${(props) => props.theme.$radiusSM};
   border: ${(props) =>
-    `1px solid ${handleColor(props.backgroundColor, props.theme)}`};
+    `1px solid ${handleColorBlack(props.backgroundcolor, props.theme)}`};
   padding-left: ${(props) => props.theme.$spacingSM};
   padding-right: ${(props) => props.theme.$spacingSM};
   width: ${(props) => (props.small ? "85%" : "")};
@@ -61,7 +61,7 @@ export const TextArea = styled.textarea`
   padding-left: ${(props) => props.theme.$spacingSM};
   padding-right: ${(props) => props.theme.$spacingSM};
   border: ${(props) =>
-    `1px solid ${handleColor(props.backgroundColor, props.theme)}`};
+    `1px solid ${handleColorBlack(props.backgroundcolor, props.theme)}`};
   border-radius: ${(props) => props.theme.$radiusSM};
   margin-bottom: ${(props) => props.theme.$spacingMD};
 `;
@@ -71,7 +71,7 @@ export const Selector = styled.select`
   margin-bottom: ${(props) => props.theme.$spacingXS};
   border-radius: ${(props) => props.theme.$radiusSM};
   border: ${(props) =>
-    `1px solid ${handleColor(props.backgroundColor, props.theme)}`};
+    `1px solid ${handleColorBlack(props.backgroundcolor, props.theme)}`};
   padding-left: ${(props) => props.theme.$spacingSM};
   padding-right: ${(props) => props.theme.$spacingSM};
   font-size: ${(props) => props.theme.fonts.$fontSizeMD};
@@ -88,7 +88,7 @@ export const SubmitContainer = styled.div`
 export const Submit = styled.input`
   background-color: ${(props) => props.theme.colors.$blue500};
   border: ${(props) =>
-    `1px solid ${handleColor(props.backgroundColor, props.theme)}`};
+    `1px solid ${handleColor(props.backgroundcolor, props.theme)}`};
   color: ${(props) => props.theme.colors.$grey000};
   height: 40px;
   width: 100%;

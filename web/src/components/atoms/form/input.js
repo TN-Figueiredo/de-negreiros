@@ -8,7 +8,8 @@ const InputText = (
   values,
   setValue,
   valueIndex,
-  backgroundColor
+  backgroundColor,
+  black
 ) => {
   const lowerTitle = title.toLowerCase();
 
@@ -27,7 +28,11 @@ const InputText = (
   if (isPhone()) {
     return (
       <Container key={_key} small={maxLength < 20 ? 1 : 0}>
-        <Label htmlFor={lowerTitle} backgroundColor={backgroundColor}>
+        <Label
+          htmlFor={lowerTitle}
+          backgroundcolor={backgroundColor}
+          black={black}
+        >
           {title}
         </Label>
         <Phone
@@ -42,7 +47,8 @@ const InputText = (
           mask="(99) 9 9999-9999"
           maskChar=" "
           permanents="[2,5]"
-          backgroundColor={backgroundColor}
+          backgroundcolor={backgroundColor}
+          black={black}
         />
       </Container>
     );
@@ -50,7 +56,11 @@ const InputText = (
 
   return (
     <Container key={_key} small={maxLength < 20 ? 1 : 0}>
-      <Label htmlFor={lowerTitle} backgroundColor={backgroundColor}>
+      <Label
+        htmlFor={lowerTitle}
+        backgroundcolor={backgroundColor}
+        black={black}
+      >
         {title}
       </Label>
       <Text
@@ -62,7 +72,8 @@ const InputText = (
         small={maxLength < 20 ? 1 : 0}
         value={values[valueIndex]}
         onChange={handleChange}
-        backgroundColor={backgroundColor}
+        backgroundcolor={backgroundColor}
+        black={black}
       />
     </Container>
   );

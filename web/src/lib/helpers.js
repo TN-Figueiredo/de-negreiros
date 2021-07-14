@@ -31,6 +31,15 @@ export const getYoutubeEmbed = (url) => {
   return resolvedUrl.replace("/embed/?", "/embed/");
 };
 
+export const handleColor = (backgroundColor, theme) =>
+  backgroundColor === "white" ? theme.colors.$blue500 : theme.colors.$grey000;
+
+export const handleColorBlack = (backgroundColor, theme) =>
+  backgroundColor === "white" ? theme.colors.$grey900 : theme.colors.$grey000;
+
+export const handleBackgroundColor = (backgroundColor, theme) =>
+  backgroundColor === "blue" ? theme.colors.$blue500 : theme.colors.$grey100;
+
 export function cn(...args) {
   return args.filter(Boolean).join(" ");
 }

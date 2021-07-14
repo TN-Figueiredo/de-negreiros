@@ -140,6 +140,8 @@ const useHomePage = () => {
               _key
               _type
               title
+              backgroundColor
+              submit
               fields {
                 ... on SanityInputText {
                   _key
@@ -165,11 +167,11 @@ const useHomePage = () => {
                   required
                 }
               }
-              submit
             }
             tabbedContent {
               _key
               _type
+              backgroundColor
               title
               content {
                 _key

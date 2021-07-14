@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import Form from "../../../atoms/form";
 import useTheme from "../../../../hooks/useTheme.hooks";
 import Title from "../../../atoms/title";
-
-import { handleColor, Container, Content } from "./formSection.styles";
+import { handleColor } from "../../../../lib/helpers";
+import { Container, Content } from "./formSection.styles";
 
 const FormSection = ({ title, fields, backgroundColor, submit }) => {
   const theme = useTheme();

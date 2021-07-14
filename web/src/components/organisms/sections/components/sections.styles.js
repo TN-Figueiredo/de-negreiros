@@ -1,4 +1,8 @@
 import styled from "styled-components";
+import {
+  handleColorBlack,
+  handleBackgroundColor,
+} from "../../../../lib/helpers";
 
 export const Content = styled.div`
   width: 558px;
@@ -22,6 +26,7 @@ export const Content = styled.div`
 export const BlockContentJustified = styled.span`
   text-align: justify;
   text-justify: inter-word;
+  color: ${(props) => props.theme.colors.$grey000};
 `;
 
 export const Buttons = styled.div`
@@ -58,7 +63,8 @@ export const TabbedContainer = styled.div`
   justify-content: center;
   height: 700px;
   width: 100%;
-  background-color: ${(props) => props.theme.colors.$blue500};
+  background-color: ${(props) =>
+    handleBackgroundColor(props.backgroundColor, props.theme)};
   @media (max-width: 600px) {
     display: flex;
     flex-direction: column;
@@ -126,7 +132,7 @@ export const TabText = styled.span`
   text-align: justify;
   text-justify: inter-word;
   font-size: ${(props) => props.theme.fonts.$fontSizeMD};
-  color: ${(props) => props.theme.colors.$grey000};
+  color: ${(props) => handleColorBlack(props.backgroundColor, props.theme)};
 `;
 
 export const WhatsAppPlaceHolderContainer = styled.div`

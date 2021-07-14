@@ -1,10 +1,5 @@
 import styled from "styled-components";
-
-export const handleColor = (backgroundColor, theme) =>
-  backgroundColor === "white" ? theme.colors.$blue500 : theme.colors.$grey000;
-
-export const handleBackgroundColor = (backgroundColor, theme) =>
-  backgroundColor === "blue" ? theme.colors.$blue500 : theme.colors.$grey500;
+import { handleBackgroundColor } from "../../../../lib/helpers";
 
 export const Container = styled.div`
   display: flex;

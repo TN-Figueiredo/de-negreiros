@@ -1,17 +1,15 @@
 export default {
   colors: {
     $grey000: "#FFFFFF",
-    $grey100: "#EBEDED",
+    $grey100: "#F2F2F2",
     $grey200: "#BEBEBE",
     $grey300: "#CBD0D3",
     $grey400: "#A6ADB4",
-    $grey500: "#F6F6F6",
     $grey600: "#393939",
     $grey700: "#343638",
     $grey900: "#000000",
     $blue500: "#206390",
     // After here is legacy
-    $grey100: "#F2F2F2",
     $grey050: "#FBFBFB",
     $grey500: "#C4C4C4",
     $grey800: "#343536",
