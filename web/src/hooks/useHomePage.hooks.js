@@ -42,13 +42,19 @@ const useHomePage = () => {
                 width
               }
             }
-            block {
+            titleAndContent {
+              _key
               _type
-              children {
+              title
+              block {
                 _key
                 _type
-                marks
-                text
+                children {
+                  _key
+                  _type
+                  marks
+                  text
+                }
               }
             }
             buttons {
