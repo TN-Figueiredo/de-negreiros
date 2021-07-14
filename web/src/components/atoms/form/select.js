@@ -7,7 +7,8 @@ const Select = (
   { _key, options, required, title },
   values,
   setValue,
-  valueIndex
+  valueIndex,
+  backgroundColor
 ) => {
   const lowerTitle = title.toLowerCase();
   const handleChange = (event) => {
@@ -19,12 +20,15 @@ const Select = (
 
   return (
     <Container key={_key}>
-      <Label htmlFor={lowerTitle}>{title}</Label>
+      <Label htmlFor={lowerTitle} backgroundColor={backgroundColor}>
+        {title}
+      </Label>
       <Selector
         id={lowerTitle}
         value={values[valueIndex]}
         onChange={handleChange}
         required={required}
+        backgroundColor={backgroundColor}
       >
         {["", ...options].map((option, index) => (
           <Option key={index}>{option}</Option>

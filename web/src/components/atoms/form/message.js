@@ -7,7 +7,8 @@ const Message = (
   { maxLength, placeholder, required, title },
   values,
   setValue,
-  valueIndex
+  valueIndex,
+  backgroundColor
 ) => {
   const lowerTitle = title.toLowerCase();
   const handleChange = (event) => {
@@ -19,7 +20,9 @@ const Message = (
 
   return (
     <Container>
-      <Label htmlFor={lowerTitle}>{title}</Label>
+      <Label htmlFor={lowerTitle} backgroundColor={backgroundColor}>
+        {title}
+      </Label>
       <TextArea
         id={lowerTitle}
         placeholder={placeholder}
@@ -27,6 +30,7 @@ const Message = (
         required={required}
         value={values[valueIndex]}
         onChange={handleChange}
+        backgroundColor={backgroundColor}
       />
     </Container>
   );

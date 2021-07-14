@@ -117,6 +117,8 @@ const createCustomPages = async (graphql, actions) => {
                 _key
                 _type
                 title
+                backgroundColor
+                submit
                 fields {
                   ... on SanityInputMessage {
                     _key
@@ -142,7 +144,6 @@ const createCustomPages = async (graphql, actions) => {
                     title
                   }
                 }
-                submit
               }
               ... on SanitySmallSection {
                 _key

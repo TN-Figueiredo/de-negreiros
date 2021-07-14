@@ -5,6 +5,7 @@ export default {
     $grey200: "#BEBEBE",
     $grey300: "#CBD0D3",
     $grey400: "#A6ADB4",
+    $grey500: "#F6F6F6",
     $grey600: "#393939",
     $grey700: "#343638",
     $grey900: "#000000",

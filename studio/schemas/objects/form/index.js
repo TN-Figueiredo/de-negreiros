@@ -10,6 +10,11 @@ const {
     FORM_SUBMIT_TITLE,
     FORM_SUBMIT_DESCRIPTION,
   },
+  General: {
+    BACKGROUND_COLOR_TITLE,
+    BACKGROUND_COLOR_OPTION_1,
+    BACKGROUND_COLOR_OPTION_2,
+  },
 } = useLanguage();
 
 export default {
@@ -38,6 +43,24 @@ export default {
       name: "submit",
       title: FORM_SUBMIT_TITLE,
       description: FORM_SUBMIT_DESCRIPTION,
+    },
+    {
+      type: "string",
+      name: "backgroundColor",
+      title: BACKGROUND_COLOR_TITLE,
+      options: {
+        list: [
+          {
+            title: BACKGROUND_COLOR_OPTION_1,
+            value: BACKGROUND_COLOR_OPTION_1.toLowerCase(),
+          },
+          {
+            title: BACKGROUND_COLOR_OPTION_2,
+            value: BACKGROUND_COLOR_OPTION_2.toLowerCase(),
+          },
+        ],
+        layout: "radio",
+      },
     },
   ],
   preview: {

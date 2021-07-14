@@ -7,7 +7,8 @@ const InputText = (
   { _key, title, maxLength, placeholder, required },
   values,
   setValue,
-  valueIndex
+  valueIndex,
+  backgroundColor
 ) => {
   const lowerTitle = title.toLowerCase();
 
@@ -26,7 +27,9 @@ const InputText = (
   if (isPhone()) {
     return (
       <Container key={_key} small={maxLength < 20 ? 1 : 0}>
-        <Label htmlFor={lowerTitle}>{title}</Label>
+        <Label htmlFor={lowerTitle} backgroundColor={backgroundColor}>
+          {title}
+        </Label>
         <Phone
           id={lowerTitle}
           type={lowerTitle}
@@ -39,6 +42,7 @@ const InputText = (
           mask="(99) 9 9999-9999"
           maskChar=" "
           permanents="[2,5]"
+          backgroundColor={backgroundColor}
         />
       </Container>
     );
@@ -46,7 +50,9 @@ const InputText = (
 
   return (
     <Container key={_key} small={maxLength < 20 ? 1 : 0}>
-      <Label htmlFor={lowerTitle}>{title}</Label>
+      <Label htmlFor={lowerTitle} backgroundColor={backgroundColor}>
+        {title}
+      </Label>
       <Text
         id={lowerTitle}
         type={lowerTitle}
@@ -56,6 +62,7 @@ const InputText = (
         small={maxLength < 20 ? 1 : 0}
         value={values[valueIndex]}
         onChange={handleChange}
+        backgroundColor={backgroundColor}
       />
     </Container>
   );
