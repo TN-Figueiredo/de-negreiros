@@ -37,9 +37,23 @@ export const HighLightedPostContainer = styled.div`
 
 export const HighLightedPost = styled.div`
   height: 425px;
+  position: relative;
   @media (max-width: 600px) {
     width: 330px;
     height: 330px;
+  }
+`;
+
+export const HighLightedPostInfo = styled.div`
+  position: absolute;
+  z-index: 10;
+  background-color: red;
+  width: 70%;
+  height: 150px;
+  bottom: ${(props) => props.theme.$spacingXL};
+  left: ${(props) => props.theme.$spacingXL};
+  @media (max-width: 600px) {
+    display: none;
   }
 `;
 

@@ -12,6 +12,7 @@ import {
   Upper,
   Lower,
   HighLightedPostContainer,
+  HighLightedPostInfo,
   LeftArrowContainer,
   LeftArrow,
   RightArrowContainer,
@@ -68,6 +69,7 @@ const renderHighLighted = (highlights) => {
       return (
         <HighLightedPost key={_key}>
           <HighLightedImage {...mainImage} />
+          <HighLightedPostInfo>O</HighLightedPostInfo>
         </HighLightedPost>
       );
     });

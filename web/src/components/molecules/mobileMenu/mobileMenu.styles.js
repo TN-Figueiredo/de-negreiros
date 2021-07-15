@@ -1,9 +1,7 @@
 import styled from "styled-components";
 import { Link } from "gatsby";
 import { getWindowDimensions } from "../../../lib/helpers";
-
-const HEADER_HEIGHT = 90;
-const FOOTER_HEIGHT = 270;
+import { HEADER_HEIGHT, FOOTER_HEIGHT } from "../../../lib/constants";
 
 export const Container = styled.div`
   height: ${getWindowDimensions().height - (HEADER_HEIGHT + FOOTER_HEIGHT)}px;
