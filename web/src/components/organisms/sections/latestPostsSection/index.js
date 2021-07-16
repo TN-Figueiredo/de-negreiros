@@ -1,10 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Slider from "react-slick";
+import BlockContent from "@sanity/block-content-to-react";
 import Title from "../../../atoms/title";
 import Svg from "../../../atoms/svg";
 import useTheme from "../../../../hooks/useTheme.hooks";
 import useLatestPosts from "../../../../hooks/useLatestPosts.hooks";
+import { getWindowDimensions } from "../../../../lib/helpers";
 
 import {
   Container,
@@ -13,6 +15,12 @@ import {
   Lower,
   HighLightedPostContainer,
   HighLightedPostInfo,
+  HighLightedPostTitle,
+  HighLightedPostExcerpt,
+  HighLightedPostPublishedAt,
+  MobileHighlightedPost,
+  MobileHighlightedCategory,
+  MobileHighlightedTitle,
   LeftArrowContainer,
   LeftArrow,
   RightArrowContainer,
@@ -65,32 +73,72 @@ const NextArrow = ({ onClick }) => {
 
 const renderHighLighted = (highlights) => {
   const renderPosts = () => {
-    return highlights.map(({ node: { _key, mainImage } }, index) => {
-      return (
-        <HighLightedPost key={_key}>
-          <HighLightedImage {...mainImage} />
-          <HighLightedPostInfo>O</HighLightedPostInfo>
-        </HighLightedPost>
-      );
-    });
+    return highlights.map(
+      (
+        { node: { _key, categories, mainImage, title, publishedAt, excerpt } },
+        index
+      ) => {
+        return (
+          <HighLightedPost key={_key}>
+            <HighLightedImage {...mainImage} />
+            <HighLightedPostInfo>
+              <HighLightedPostTitle>{title}</HighLightedPostTitle>
+              <HighLightedPostExcerpt>
+                <BlockContent blocks={excerpt || []} serializers={{}} />
+              </HighLightedPostExcerpt>
+              <HighLightedPostPublishedAt>
+                {publishedAt}
+              </HighLightedPostPublishedAt>
+            </HighLightedPostInfo>
+            <MobileHighlightedPost>
+              <MobileHighlightedCategory>
+                {categories[0].title}
+              </MobileHighlightedCategory>
+              <MobileHighlightedTitle>{title}</MobileHighlightedTitle>
+            </MobileHighlightedPost>
+          </HighLightedPost>
+        );
+      }
+    );
   };
-  return (
-    <HighLightedPostContainer>
-      <Slider
-        dots={true}
-        infinite={true}
-        speed={500}
-        slidesToShow={1}
-        slidesToScroll={1}
-        autoplay={true}
-        autoplaySpeed={3000}
-        prevArrow={<BackArrow />}
-        nextArrow={<NextArrow />}
-      >
-        {renderPosts()}
-      </Slider>
-    </HighLightedPostContainer>
-  );
+
+  const slider = () => {
+    if (getWindowDimensions().width < 601) {
+      return (
+        <Slider
+          dots={true}
+          infinite={true}
+          speed={500}
+          slidesToShow={1}
+          slidesToScroll={1}
+          autoplay={true}
+          autoplaySpeed={3000}
+          prevArrow={<BackArrow />}
+          nextArrow={<NextArrow />}
+          appendDots={() => <div></div>}
+        >
+          {renderPosts()}
+        </Slider>
+      );
+    } else {
+      return (
+        <Slider
+          dots={true}
+          infinite={true}
+          speed={500}
+          slidesToShow={1}
+          slidesToScroll={1}
+          autoplay={true}
+          autoplaySpeed={3000}
+          prevArrow={<BackArrow />}
+          nextArrow={<NextArrow />}
+        >
+          {renderPosts()}
+        </Slider>
+      );
+    }
+  };
+  return <HighLightedPostContainer>{slider()}</HighLightedPostContainer>;
 };
 
 const renderExtraPosts = (posts) => {

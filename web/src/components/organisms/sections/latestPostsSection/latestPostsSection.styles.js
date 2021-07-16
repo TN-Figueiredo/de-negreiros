@@ -47,7 +47,6 @@ export const HighLightedPost = styled.div`
 export const HighLightedPostInfo = styled.div`
   position: absolute;
   z-index: 10;
-  background-color: red;
   width: 70%;
   height: 150px;
   bottom: ${(props) => props.theme.$spacingXL};
@@ -55,6 +54,23 @@ export const HighLightedPostInfo = styled.div`
   @media (max-width: 600px) {
     display: none;
   }
+`;
+
+export const HighLightedPostTitle = styled.span`
+  font-size: ${(props) => props.theme.fonts.$fontSizeLG};
+  font-family: Roboto;
+  font-weight: bold;
+  color: ${(props) => props.theme.colors.$grey000};
+`;
+
+export const HighLightedPostExcerpt = styled.span`
+  font-size: ${(props) => props.theme.fonts.$fontSizeMD_LG};
+  color: ${(props) => props.theme.colors.$grey000};
+`;
+
+export const HighLightedPostPublishedAt = styled.span`
+  color: ${(props) => props.theme.colors.$grey300};
+  font-size: ${(props) => props.theme.fonts.$fontSizeMD};
 `;
 
 export const HighLightedImage = styled(SanityImage)`
@@ -67,11 +83,33 @@ export const HighLightedImage = styled(SanityImage)`
   }
 `;
 
+export const MobileHighlightedPost = styled.div`
+  display: none;
+  @media (max-width: 600px) {
+    display: initial;
+    height: 500px;
+  }
+`;
+
+export const MobileHighlightedCategory = styled.div`
+  font-size: ${(props) => props.theme.fonts.$fontSizeXS};
+  margin-top: ${(props) => props.theme.$spacingXXS};
+  margin-bottom: ${(props) => props.theme.$spacingXXS};
+  color: ${(props) => props.theme.colors.$grey400};
+`;
+
+export const MobileHighlightedTitle = styled.div`
+  font-size: ${(props) => props.theme.fonts.$fontSizeMD};
+  font-weight: bold;
+  color: ${(props) => props.theme.colors.$grey900};
+`;
+
 export const Lower = styled.div`
   display: flex;
   margin-bottom: ${(props) => props.theme.$spacingSM};
   margin-top: ${(props) => props.theme.$spacingLG};
   @media (max-width: 600px) {
+    margin-top: ${(props) => props.theme.$spacingXXL};
     flex-direction: column;
   }
 `;
