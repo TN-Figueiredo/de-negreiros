@@ -18,7 +18,9 @@ const NotFoundPage = () => {
   const menu = useNavbarMenu();
   const renderMenuItems = () => {
     return menu.map(({ identifier, title, url }, index) => (
-      <LinkItem to={url}>{title}</LinkItem>
+      <LinkItem key={identifier} to={url}>
+        {title}
+      </LinkItem>
     ));
   };
   return (

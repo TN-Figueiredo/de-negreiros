@@ -1,7 +1,5 @@
 import styled from "styled-components";
 import SanityImage from "gatsby-plugin-sanity-image";
-import { Link } from "gatsby";
-import Title from "../../../atoms/title";
 
 export const Container = styled.div`
   display: flex;
@@ -225,7 +223,7 @@ export const MoreView = styled.div`
   margin-bottom: ${(props) => props.theme.$spacingLG};
 `;
 
-export const More = styled(Link)`
+export const More = styled.div`
   cursor: pointer;
   font-family: Roboto;
   font-size: ${(props) => props.theme.fonts.$fontSizeMD};
@@ -243,7 +241,7 @@ export const Details = styled.span`
   }
 `;
 
-export const Author = styled(Link)`
+export const Author = styled.div`
   text-decoration: underline;
   padding-left: ${(props) => props.theme.$spacingXXS};
 `;

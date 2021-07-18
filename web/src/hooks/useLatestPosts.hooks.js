@@ -10,8 +10,8 @@ const useLatestPosts = () => {
           node {
             _key
             _type
-            _updatedAt(fromNow: true)
-            publishedAt(fromNow: true)
+            _updatedAt
+            publishedAt
             title
             categories {
               title
@@ -37,6 +37,13 @@ const useLatestPosts = () => {
                   _rawLocation
                   _rawDimensions
                   _rawPalette
+                }
+                source {
+                  _key
+                  _type
+                  id
+                  name
+                  url
                 }
               }
               crop {

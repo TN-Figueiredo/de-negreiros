@@ -36,7 +36,7 @@ async function createBlogPostPages(graphql, actions) {
     .forEach((edge) => {
       const { id, slug = {}, publishedAt } = edge.node;
       const dateSegment = format(new Date(publishedAt), "yyyy/MM");
-      const path = `/article/${dateSegment}/${slug.current}/`;
+      const path = `/artigos/${dateSegment}/${slug.current}/`;
 
       createPage({
         path,
