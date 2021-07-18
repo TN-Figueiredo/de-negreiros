@@ -12,8 +12,7 @@ export default {
                 "NOTE: Because these sites are static builds, they need to be re-deployed to see the changes when documents are published.",
               sites: [
                 {
-                  buildHookId:
-                    "60d66d392a97bc0b80f573c9",
+                  buildHookId: "60d66d392a97bc0b80f573c9",
                   title: "Sanity Studio",
                   name: "de-negreiros-studio",
                   apiId: "6ecb9fec-d468-477a-a09b-5199a7270cdc",
@@ -31,8 +30,7 @@ export default {
         data: [
           {
             title: "GitHub repo",
-            value:
-              "https://github.com/TN-Figueiredo/de-negreiros",
+            value: "https://github.com/TN-Figueiredo/de-negreiros",
             category: "Code",
           },
           {
@@ -47,7 +45,7 @@ export default {
     {
       name: "document-list",
       options: {
-        title: "Recent blog posts",
+        title: "Recent articles",
         order: "_createdAt desc",
         types: ["post"],
       },

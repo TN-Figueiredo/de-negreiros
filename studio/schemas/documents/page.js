@@ -55,18 +55,11 @@ export default {
       description: PAGE_SECTIONS_DESCRIPTION,
       validation: null,
       of: [
-        {
-          type: "banner",
-        },
-        {
-          type: SchemaTypes.Form,
-        },
-        {
-          type: "smallSection",
-        },
-        {
-          type: "authorList",
-        },
+        { type: "banner" },
+        { type: SchemaTypes.Form },
+        { type: "smallSection" },
+        { type: "authorList" },
+        { type: "latestPostsSection" },
       ],
     },
   ],

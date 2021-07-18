@@ -66,6 +66,9 @@ const useLatestPosts = () => {
               _key
               _type
             }
+            slug {
+              current
+            }
           }
         }
       }

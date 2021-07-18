@@ -7,44 +7,44 @@ const { isFuture } = require("date-fns");
 
 const { format } = require("date-fns");
 
-// async function createBlogPostPages(graphql, actions) {
-//   const { createPage } = actions;
-//   const result = await graphql(`
-//     {
-//       allSanityPost(
-//         filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
-//       ) {
-//         edges {
-//           node {
-//             id
-//             publishedAt
-//             slug {
-//               current
-//             }
-//           }
-//         }
-//       }
-//     }
-//   `);
+async function createBlogPostPages(graphql, actions) {
+  const { createPage } = actions;
+  const result = await graphql(`
+    {
+      allSanityPost(
+        filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
+      ) {
+        edges {
+          node {
+            id
+            publishedAt
+            slug {
+              current
+            }
+          }
+        }
+      }
+    }
+  `);
 
-//   if (result.errors) throw result.errors;
+  if (result.errors) throw result.errors;
 
-//   const postEdges = (result.data.allSanityPost || {}).edges || [];
+  const postEdges = (result.data.allSanityPost || {}).edges || [];
 
-//   postEdges
-//     .filter((edge) => !isFuture(new Date(edge.node.publishedAt)))
-//     .forEach((edge) => {
-//       const { id, slug = {}, publishedAt } = edge.node;
-//       const dateSegment = format(new Date(publishedAt), "yyyy/MM");
-//       const path = `/blog/${dateSegment}/${slug.current}/`;
+  postEdges
+    .filter((edge) => !isFuture(new Date(edge.node.publishedAt)))
+    .forEach((edge) => {
+      const { id, slug = {}, publishedAt } = edge.node;
+      const dateSegment = format(new Date(publishedAt), "yyyy/MM");
+      const path = `/article/${dateSegment}/${slug.current}/`;
 
-//       createPage({
-//         path,
-//         component: require.resolve("./src/templates/blog-post.js"),
-//         context: { id },
-//       });
-//     });
-// }
+      createPage({
+        path,
+        component: require.resolve("./src/templates/article.js"),
+        context: { id },
+      });
+    });
+}
 
 const createCustomPages = async (graphql, actions) => {
   const { createPage } = actions;
@@ -262,6 +262,11 @@ const createCustomPages = async (graphql, actions) => {
                   _type
                 }
               }
+              ... on SanityLatestPostsSection {
+                _key
+                _type
+                title
+              }
             }
           }
         }
@@ -271,9 +276,9 @@ const createCustomPages = async (graphql, actions) => {
 
   if (result.errors) throw result.errors;
 
-  const { edges } = result.data.allSanityPage;
+  const pageEdges = (result.data.allSanityPage || {}).edges || [];
 
-  edges.forEach(
+  pageEdges.forEach(
     ({
       node: {
         title,
@@ -292,5 +297,5 @@ const createCustomPages = async (graphql, actions) => {
 
 exports.createPages = async ({ graphql, actions }) => {
   await createCustomPages(graphql, actions);
-  // await createBlogPostPages(graphql, actions);
+  await createBlogPostPages(graphql, actions);
 };

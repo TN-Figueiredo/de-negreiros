@@ -75,12 +75,26 @@ const renderHighLighted = (highlights) => {
   const renderPosts = () => {
     return highlights.map(
       (
-        { node: { _key, categories, mainImage, title, publishedAt, excerpt } },
+        {
+          node: {
+            _key,
+            categories,
+            mainImage,
+            title,
+            publishedAt,
+            excerpt,
+            slug,
+          },
+        },
         index
       ) => {
+        console.log("slug", slug);
         return (
           <HighLightedPost key={_key}>
-            <HighLightedImage {...mainImage} />
+            <HighLightedImage
+              onClick={() => console.log("clicked")}
+              {...mainImage}
+            />
             <HighLightedPostInfo>
               <HighLightedPostTitle>{title}</HighLightedPostTitle>
               <HighLightedPostExcerpt>
