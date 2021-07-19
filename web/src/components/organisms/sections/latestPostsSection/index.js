@@ -201,11 +201,12 @@ const renderExtraPosts = (posts) => {
 };
 
 const renderLatestPosts = (posts) => {
-  const highlights = posts.splice(0, 3);
+  const highlights = posts.slice(0, 3);
+  const normalPosts = posts.slice(3, posts.length);
   return (
     <>
       <Upper>{renderHighLighted(highlights)}</Upper>
-      <Lower>{renderExtraPosts(posts)}</Lower>
+      <Lower>{renderExtraPosts(normalPosts)}</Lower>
     </>
   );
 };
@@ -213,6 +214,7 @@ const renderLatestPosts = (posts) => {
 const LatestPostsSection = ({ title }) => {
   const theme = useTheme();
   const latestPosts = useLatestPosts();
+
   return (
     <Container>
       <Content>
