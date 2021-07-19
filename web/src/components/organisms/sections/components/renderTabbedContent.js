@@ -4,6 +4,7 @@ import BlockContent from "@sanity/block-content-to-react";
 import Title from "../../../atoms/title";
 import Form from "../../../atoms/form";
 import useTheme from "../../../../hooks/useTheme.hooks";
+import { handleColor } from "../../../../lib/helpers";
 
 import {
   TabbedContainer,
@@ -14,7 +15,7 @@ import {
   TabText,
 } from "./sections.styles";
 
-const renderTabViews = (content) => {
+const renderTabViews = (content, backgroundColor) => {
   const [tab, setTab] = useState(0);
   const tabs = content.map(({ title, _key }, index) => {
     return (
@@ -33,42 +34,64 @@ const renderTabViews = (content) => {
   return (
     <>
       <TabView>{tabs}</TabView>
-      <TabText>
+      <TabText backgroundColor={backgroundColor}>
         <BlockContent blocks={content[tab].block} serializers={{}} />
       </TabText>
     </>
   );
 };
 
-const renderTabbed = ({ title, content }) => {
+const renderTabbed = ({ backgroundColor, title, content }) => {
   const theme = useTheme();
   return (
     <ContentContainer first>
       <TabbedContent>
-        <Title fontSize={theme.fonts.$fontSizeLG}>{title}</Title>
-        {renderTabViews(content)}
+        <Title
+          fontSize={theme.fonts.$fontSizeLG}
+          color={handleColor(backgroundColor, theme)}
+        >
+          {title}
+        </Title>
+        {renderTabViews(content, backgroundColor)}
       </TabbedContent>
     </ContentContainer>
   );
 };
 
-const renderContact = ({ title, fields, submit }) => {
+const renderForm = ({ backgroundColor, title, fields, submit }) => {
   const theme = useTheme();
   return (
     <ContentContainer>
       <TabbedContent>
-        <Title fontSize={theme.fonts.$fontSizeLG}>{title}</Title>
-        <Form fields={fields} submit={submit} />
+        <Title
+          fontSize={theme.fonts.$fontSizeLG}
+          color={handleColor(backgroundColor, theme)}
+        >
+          {title}
+        </Title>
+        <Form
+          title={title}
+          fields={fields}
+          submit={submit}
+          backgroundColor={backgroundColor}
+          black={1}
+        />
       </TabbedContent>
     </ContentContainer>
   );
 };
 
-const RenderTabbedContent = ({ tabbedContent, contact }) => {
+const RenderTabbedContent = ({ tabbedContent, form }) => {
   return (
-    <TabbedContainer>
+    <TabbedContainer
+      backgroundColor={
+        tabbedContent.backgroundColor === form.backgroundColor
+          ? tabbedContent.backgroundColor
+          : null
+      }
+    >
       {renderTabbed(tabbedContent)}
-      {renderContact(contact)}
+      {renderForm(form)}
     </TabbedContainer>
   );
 };

@@ -13,6 +13,7 @@ import {
   Content,
   Buttons,
   ButtonContainer,
+  BannerText,
 } from "./banner.styles";
 
 const renderButtons = (buttons) =>
@@ -30,18 +31,33 @@ const renderButtons = (buttons) =>
     </ButtonContainer>
   ));
 
-const Banner = ({ background, block, buttons }) => {
-  const { alt } = background;
-  console.log("banner.js BLOCKCONTENT NEEDED", block);
+const Banner = ({ background, block, buttons, titleAndContent }) => {
+  const renderTitleAndContent = ({ title, block }) => {
+    if (title) {
+      return (
+        <>
+          <Title>{title}</Title>
+          <BannerText>
+            <BlockContent blocks={block || []} serializers={{}} />
+          </BannerText>
+        </>
+      );
+    } else {
+      return (
+        <Title>
+          <BlockContent blocks={block || []} serializers={{}} />
+        </Title>
+      );
+    }
+  };
+
   return (
     <Container>
       <Overlay>
-        <StyledSanityImage {...background} alt={alt} />
+        <StyledSanityImage {...background} alt={background?.alt} />
         <ContentContainer>
           <Content>
-            <Title>
-              <BlockContent blocks={block} serializers={{}} />
-            </Title>
+            {renderTitleAndContent(titleAndContent)}
             <Buttons>{renderButtons(buttons)}</Buttons>
           </Content>
         </ContentContainer>

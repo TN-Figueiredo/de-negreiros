@@ -1,4 +1,5 @@
 import useLanguage from "../../hooks/useLanguage";
+import { SchemaTypes } from "../constants";
 
 const {
   Page: {
@@ -10,6 +11,7 @@ const {
     PAGE_SECTIONS_TITLE,
     PAGE_SECTIONS_DESCRIPTION,
   },
+  Form: { FORM_TITLE },
 } = useLanguage();
 
 export default {
@@ -53,9 +55,11 @@ export default {
       description: PAGE_SECTIONS_DESCRIPTION,
       validation: null,
       of: [
-        {
-          type: "banner",
-        },
+        { type: "banner" },
+        { type: SchemaTypes.Form },
+        { type: "smallSection" },
+        { type: "authorList" },
+        { type: "latestPostsSection" },
       ],
     },
   ],

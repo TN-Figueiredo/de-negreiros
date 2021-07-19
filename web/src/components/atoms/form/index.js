@@ -14,7 +14,7 @@ const renderInput = {
 
 const getInputType = (type) => type.replace("input", "").toLowerCase();
 
-const Form = ({ fields, submit }) => {
+const Form = ({ fields, submit, title, backgroundColor }) => {
   const [values, setValues] = useState(new Array(fields.length).fill(""));
   const fieldsCopy = [...fields];
   const smallFields = fields.filter(
@@ -42,7 +42,8 @@ const Form = ({ fields, submit }) => {
               field,
               values,
               setValues,
-              index
+              index,
+              backgroundColor
             )
           )}
         </Wrapper>
@@ -57,7 +58,8 @@ const Form = ({ fields, submit }) => {
             field,
             values,
             setValues,
-            positionIndex
+            positionIndex,
+            backgroundColor
           );
         })}
       </Wrapper>
@@ -74,7 +76,8 @@ const Form = ({ fields, submit }) => {
               field,
               values,
               setValues,
-              positionIndex
+              positionIndex,
+              backgroundColor
             )
           )}
         </Wrapper>
@@ -84,7 +87,13 @@ const Form = ({ fields, submit }) => {
     fields.map((field) => (
       <Wrapper key={field._key} small={field.maxLength < 20 ? 1 : 0}>
         {form.push(
-          renderInput[getInputType(field._type)](field, values, setValues)
+          renderInput[getInputType(field._type)](
+            field,
+            values,
+            setValues,
+            null,
+            backgroundColor
+          )
         )}
       </Wrapper>
     ));
@@ -115,8 +124,6 @@ const Form = ({ fields, submit }) => {
         )
         .join("&");
 
-      console.log("filledOutElements", filledOutElements);
-
       await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -138,7 +145,7 @@ const Form = ({ fields, submit }) => {
   return (
     <FormContainer>
       <form
-        name="contact"
+        name={title}
         method="post"
         netlify={1}
         data-netlify="true"
@@ -155,13 +162,17 @@ const Form = ({ fields, submit }) => {
         <input
           style={{ display: "none" }}
           name="form-name"
-          value="contact"
+          value={title}
           readOnly={true}
         />
         {keyedForm}
         <div data-netlify-recaptcha="true"></div>
         <SubmitContainer>
-          <Submit type="submit" value={submit} />
+          <Submit
+            type="submit"
+            value={submit}
+            backgroundColor={backgroundColor}
+          />
         </SubmitContainer>
       </form>
     </FormContainer>

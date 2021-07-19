@@ -24,11 +24,10 @@ export default {
       description: BANNER_BACKGROUND_DESCRIPTION,
     },
     {
-      type: "array",
-      name: "block",
+      type: "titleAndContent",
+      name: "titleAndContent",
       title: BANNER_TEXT_TITLE,
       description: BANNER_TEXT_DESCRIPTION,
-      of: [{ type: "block" }],
     },
     {
       type: "array",

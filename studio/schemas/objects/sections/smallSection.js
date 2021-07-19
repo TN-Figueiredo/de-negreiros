@@ -1,4 +1,5 @@
 import useLanguage from "../../../hooks/useLanguage";
+import { SchemaTypes } from "../../constants";
 
 const {
   SizedSection: {
@@ -9,10 +10,12 @@ const {
     SECTION_SELECT_TITLE,
     SECTION_SELECT_ITEM1,
     SECTION_SELECT_ITEM2,
+    SECTION_SELECT_ITEM4,
     SECTION_BUTTONS_TITLE,
     SECTION_BUTTONS_DESCRIPTION,
     SECTION_BUTTONS_ERROR,
   },
+  General: { WHATSAPP_PLACEHOLDER_TITLE, WHATSAPP_PLACEHOLDER_TITLE_TITLE },
 } = useLanguage();
 
 export default {
@@ -38,7 +41,10 @@ export default {
       options: {
         list: [
           { title: SECTION_SELECT_ITEM1, value: "button" },
-          { title: SECTION_SELECT_ITEM2, value: "content" },
+          {
+            title: SECTION_SELECT_ITEM4,
+            value: SchemaTypes.WhatsAppPlaceholder,
+          },
         ],
         layout: "dropdown", // <-- defaults to 'dropdown'
       },
@@ -58,15 +64,25 @@ export default {
             (section) => section._type === "smallSection"
           );
 
-          const isSelected = section[0].hasOwnProperty("select");
           const selection = section[0].select;
-          if (isSelected && selection === "button") {
+          const hasButtonSelected = section[0].buttons.length > 0;
+
+          if (selection === undefined) {
             return true;
           } else {
-            return SECTION_BUTTONS_ERROR;
+            if (selection !== "button" && hasButtonSelected) {
+              return SECTION_BUTTONS_ERROR;
+            } else {
+              return true;
+            }
           }
         }),
       of: [{ type: "button" }],
+    },
+    {
+      type: SchemaTypes.WhatsAppPlaceholder,
+      name: SchemaTypes.WhatsAppPlaceholder,
+      title: WHATSAPP_PLACEHOLDER_TITLE_TITLE,
     },
   ],
   preview: {

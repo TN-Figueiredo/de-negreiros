@@ -4,7 +4,7 @@ import SanityImage from "gatsby-plugin-sanity-image";
 export const Container = styled.div`
   height: 225px;
   background-color: ${(props) =>
-    props.background.asset ? "" : props.theme.colors.$blue500};
+    props.background?.asset ? "" : props.theme.colors.$blue500};
 `;
 
 export const Overlay = styled.div`
@@ -12,7 +12,8 @@ export const Overlay = styled.div`
   position: absolute;
   height: 225px;
   flex-direction: column;
-  background-color: rgba(0, 0, 0, 0.47);
+  background-color: ${(props) =>
+    props.background?.asset ? `rgba(0, 0, 0, 0.47)` : ""};
   display: flex;
   justify-content: center;
   align-items: center;

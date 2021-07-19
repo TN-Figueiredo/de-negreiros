@@ -7,6 +7,11 @@ const {
     TABBED_CONTENT_TITLE_DESCRIPTION,
   },
   TitleAndContent: { TITLE_AND_CONTENT_CONTENT },
+  General: {
+    BACKGROUND_COLOR_TITLE,
+    BACKGROUND_COLOR_OPTION_1,
+    BACKGROUND_COLOR_OPTION_2,
+  },
 } = useLanguage();
 
 export default {
@@ -25,6 +30,24 @@ export default {
       name: "content",
       title: TITLE_AND_CONTENT_CONTENT,
       of: [{ type: "titleAndContent" }],
+    },
+    {
+      type: "string",
+      name: "backgroundColor",
+      title: BACKGROUND_COLOR_TITLE,
+      options: {
+        list: [
+          {
+            title: BACKGROUND_COLOR_OPTION_1,
+            value: BACKGROUND_COLOR_OPTION_1.toLowerCase(),
+          },
+          {
+            title: BACKGROUND_COLOR_OPTION_2,
+            value: BACKGROUND_COLOR_OPTION_2.toLowerCase(),
+          },
+        ],
+        layout: "radio",
+      },
     },
   ],
   preview: {

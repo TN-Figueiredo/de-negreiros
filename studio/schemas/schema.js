@@ -27,6 +27,7 @@ import form from "./objects/form";
 import inputText from "./objects/form/inputText";
 import inputMessage from "./objects/form/inputMessage";
 import inputSelect from "./objects/form/inputSelect";
+import whatsappPlaceholder from "./objects/whatsappPlaceholder";
 import youtube from "./objects/youtube";
 import button from "./objects/button";
 import socialMedia from "./objects/socialMedia";
@@ -35,6 +36,7 @@ import bioPortableText from "./objects/bioPortableText";
 import excerptPortableText from "./objects/excerptPortableText";
 import mainImage from "./objects/mainImage";
 import authorReference from "./objects/authorReference";
+import authorList from "./objects/author/authorList";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -63,6 +65,9 @@ export default createSchema({
     inputMessage,
     inputSelect,
     // input end
+    // placeholders
+    whatsappPlaceholder,
+    //
     youtube,
     button,
     socialMedia,
@@ -72,6 +77,7 @@ export default createSchema({
     logo,
     mainImage,
     authorReference,
+    authorList,
     bodyPortableText,
     bioPortableText,
     excerptPortableText,

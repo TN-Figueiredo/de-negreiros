@@ -11,7 +11,7 @@ const renderBlockType = ({ block, title }) => {
   return block.map((block, index) => {
     return (
       <div key={block._key || index}>
-        <Title fontSize={theme.fonts.$fontSizeLG} color={theme.colors.$blue500}>
+        <Title fontSize={theme.fonts.$fontSizeLG} color={theme.colors.$grey000}>
           {title}
         </Title>
         <BlockContentJustified>

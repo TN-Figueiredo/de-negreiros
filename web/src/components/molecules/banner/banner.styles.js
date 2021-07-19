@@ -66,3 +66,14 @@ export const ButtonContainer = styled.div`
     margin-top: ${(props) => (props.first ? "0px" : "7px")};
   }
 `;
+
+export const BannerText = styled.span`
+  color: ${(props) => props.theme.colors.$grey000};
+  line-height: ${(props) => props.theme.fonts.$lineHeightMD};
+  padding: ${(props) => props.theme.$spacingLG};
+  width: 580px;
+  @media (max-width: 600px) {
+    width: 340px;
+    padding: ${(props) => props.theme.$spacingLG};
+  }
+`;

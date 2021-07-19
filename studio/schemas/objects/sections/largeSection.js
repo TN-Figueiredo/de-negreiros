@@ -100,7 +100,7 @@ export default {
     },
     {
       type: SchemaTypes.Form,
-      name: "contact",
+      name: "form",
       title: FORM_TITLE,
     },
   ],

@@ -1,10 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { navigate } from "gatsby";
 import Slider from "react-slick";
+import BlockContent from "@sanity/block-content-to-react";
+import { format } from "date-fns";
 import Title from "../../../atoms/title";
 import Svg from "../../../atoms/svg";
 import useTheme from "../../../../hooks/useTheme.hooks";
 import useLatestPosts from "../../../../hooks/useLatestPosts.hooks";
+import { getWindowDimensions } from "../../../../lib/helpers";
 
 import {
   Container,
@@ -12,6 +16,13 @@ import {
   Upper,
   Lower,
   HighLightedPostContainer,
+  HighLightedPostInfo,
+  HighLightedPostTitle,
+  HighLightedPostExcerpt,
+  HighLightedPostPublishedAt,
+  MobileHighlightedPost,
+  MobileHighlightedCategory,
+  MobileHighlightedTitle,
   LeftArrowContainer,
   LeftArrow,
   RightArrowContainer,
@@ -64,31 +75,83 @@ const NextArrow = ({ onClick }) => {
 
 const renderHighLighted = (highlights) => {
   const renderPosts = () => {
-    return highlights.map(({ node: { _key, mainImage } }, index) => {
-      return (
-        <HighLightedPost key={_key}>
-          <HighLightedImage {...mainImage} />
-        </HighLightedPost>
-      );
-    });
+    return highlights.map(
+      ({
+        node: {
+          _key,
+          categories,
+          mainImage,
+          title,
+          publishedAt,
+          excerpt,
+          slug: { current },
+        },
+      }) => {
+        const dateSegment = format(new Date(publishedAt), "yyyy/MM");
+        return (
+          <HighLightedPost key={_key}>
+            <HighLightedImage
+              onClick={() => navigate(`/artigos/${dateSegment}/${current}`)}
+              {...mainImage}
+            />
+            <HighLightedPostInfo>
+              <HighLightedPostTitle>{title}</HighLightedPostTitle>
+              <HighLightedPostExcerpt>
+                <BlockContent blocks={excerpt || []} serializers={{}} />
+              </HighLightedPostExcerpt>
+              <HighLightedPostPublishedAt>
+                {publishedAt}
+              </HighLightedPostPublishedAt>
+            </HighLightedPostInfo>
+            <MobileHighlightedPost>
+              <MobileHighlightedCategory>
+                {categories[0].title}
+              </MobileHighlightedCategory>
+              <MobileHighlightedTitle>{title}</MobileHighlightedTitle>
+            </MobileHighlightedPost>
+          </HighLightedPost>
+        );
+      }
+    );
   };
-  return (
-    <HighLightedPostContainer>
-      <Slider
-        dots={true}
-        infinite={true}
-        speed={500}
-        slidesToShow={1}
-        slidesToScroll={1}
-        autoplay={true}
-        autoplaySpeed={3000}
-        prevArrow={<BackArrow />}
-        nextArrow={<NextArrow />}
-      >
-        {renderPosts()}
-      </Slider>
-    </HighLightedPostContainer>
-  );
+
+  const slider = () => {
+    if (getWindowDimensions().width < 601) {
+      return (
+        <Slider
+          dots={true}
+          infinite={true}
+          speed={500}
+          slidesToShow={1}
+          slidesToScroll={1}
+          autoplay={true}
+          autoplaySpeed={3000}
+          prevArrow={<BackArrow />}
+          nextArrow={<NextArrow />}
+          appendDots={() => <div></div>}
+        >
+          {renderPosts()}
+        </Slider>
+      );
+    } else {
+      return (
+        <Slider
+          dots={true}
+          infinite={true}
+          speed={500}
+          slidesToShow={1}
+          slidesToScroll={1}
+          autoplay={true}
+          autoplaySpeed={3000}
+          prevArrow={<BackArrow />}
+          nextArrow={<NextArrow />}
+        >
+          {renderPosts()}
+        </Slider>
+      );
+    }
+  };
+  return <HighLightedPostContainer>{slider()}</HighLightedPostContainer>;
 };
 
 const renderExtraPosts = (posts) => {
@@ -104,18 +167,24 @@ const renderExtraPosts = (posts) => {
           publishedAt,
           title,
           updatedAt,
+          slug: { current },
         },
       },
       index
     ) => {
+      console.log("current", current);
+      const dateSegment = format(new Date(publishedAt), "yyyy/MM");
       return (
         <MoreArticles
           key={index}
-          first={index === 0}
-          last={index === posts.length - 1}
+          first={index === 0 ? 1 : 0}
+          last={index === posts.length - 1 ? 1 : 0}
         >
-          <ArticleImage {...mainImage} />
-          <ArticleBody>
+          <ArticleImage
+            {...mainImage}
+            onClick={() => navigate(`/artigos/${dateSegment}/${current}`)}
+          />
+          <ArticleBody to={`/artigos/${dateSegment}/${current}`}>
             <Category>{categories[0].title}</Category>
             <ArticleTitle>{title}</ArticleTitle>
             <Details>
@@ -132,11 +201,12 @@ const renderExtraPosts = (posts) => {
 };
 
 const renderLatestPosts = (posts) => {
-  const highlights = posts.splice(0, 3);
+  const highlights = posts.slice(0, 3);
+  const normalPosts = posts.slice(3, posts.length);
   return (
     <>
       <Upper>{renderHighLighted(highlights)}</Upper>
-      <Lower>{renderExtraPosts(posts)}</Lower>
+      <Lower>{renderExtraPosts(normalPosts)}</Lower>
     </>
   );
 };
@@ -144,6 +214,7 @@ const renderLatestPosts = (posts) => {
 const LatestPostsSection = ({ title }) => {
   const theme = useTheme();
   const latestPosts = useLatestPosts();
+
   return (
     <Container>
       <Content>
