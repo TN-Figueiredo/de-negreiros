@@ -32,8 +32,11 @@ export const getYoutubeEmbed = (url) => {
 };
 
 export const getWindowDimensions = () => {
-  const { innerWidth: width, innerHeight: height } = window;
-  return { width, height };
+  if (window) {
+    const { innerWidth: width, innerHeight: height } = window;
+    return { width, height };
+  }
+  return undefined;
 };
 
 export const handleColor = (backgroundColor, theme) =>
