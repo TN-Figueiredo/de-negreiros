@@ -36,6 +36,7 @@ export const getWindowDimensions = () => {
     const { innerWidth: width, innerHeight: height } = window;
     return { width, height };
   }
+  return { width: 0, height: 0 };
 };
 
 export const handleColor = (backgroundColor, theme) =>
