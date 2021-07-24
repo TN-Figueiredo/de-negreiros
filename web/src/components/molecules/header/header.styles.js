@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+export const HeaderContainer = styled.div`
+  width: 100vw;
+  background-color: ${(props) => props.theme.colors.$grey000};
+`;
+
 export const HeaderTag = styled.header`
   max-width: 1140px;
   margin: auto;

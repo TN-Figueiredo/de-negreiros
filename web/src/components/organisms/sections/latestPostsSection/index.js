@@ -87,11 +87,10 @@ const renderHighLighted = (highlights) => {
           slug: { current },
         },
       }) => {
-        const dateSegment = format(new Date(publishedAt), "yyyy/MM");
         return (
           <HighLightedPost key={_key}>
             <HighLightedImage
-              onClick={() => navigate(`/artigos/${dateSegment}/${current}`)}
+              onClick={() => navigate(`/artigos/${current}`)}
               {...mainImage}
             />
             <HighLightedPostInfo>
@@ -172,8 +171,6 @@ const renderExtraPosts = (posts) => {
       },
       index
     ) => {
-      console.log("current", current);
-      const dateSegment = format(new Date(publishedAt), "yyyy/MM");
       return (
         <MoreArticles
           key={index}
@@ -182,9 +179,9 @@ const renderExtraPosts = (posts) => {
         >
           <ArticleImage
             {...mainImage}
-            onClick={() => navigate(`/artigos/${dateSegment}/${current}`)}
+            onClick={() => navigate(`/artigos/${current}`)}
           />
-          <ArticleBody to={`/artigos/${dateSegment}/${current}`}>
+          <ArticleBody to={`/artigos/${current}`}>
             <Category>{categories[0].title}</Category>
             <ArticleTitle>{title}</ArticleTitle>
             <Details>

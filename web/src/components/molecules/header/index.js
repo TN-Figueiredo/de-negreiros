@@ -9,6 +9,7 @@ import Logo from "../../atoms/logo";
 import Svg from "../../atoms/svg";
 
 import {
+  HeaderContainer,
   HeaderTag,
   Navbar,
   MobileMenuIcon,
@@ -20,17 +21,19 @@ const Header = ({ handleDrawer }) => {
   const { logo } = useSiteSettings();
   const theme = useTheme();
   return (
-    <HeaderTag>
-      <Navbar>
-        <MobileMenuIcon onClick={handleDrawer}>
-          <Svg name="menu" height={16} fill={theme.colors.$grey700} />
-        </MobileMenuIcon>
-        <LogoContainer onClick={() => navigate("/")}>
-          <Logo navbar logo={logo} width={500} />
-        </LogoContainer>
-        <Menu />
-      </Navbar>
-    </HeaderTag>
+    <HeaderContainer>
+      <HeaderTag>
+        <Navbar>
+          <MobileMenuIcon onClick={handleDrawer}>
+            <Svg name="menu" height={16} fill={theme.colors.$grey700} />
+          </MobileMenuIcon>
+          <LogoContainer onClick={() => navigate("/")}>
+            <Logo navbar logo={logo} width={500} />
+          </LogoContainer>
+          <Menu />
+        </Navbar>
+      </HeaderTag>
+    </HeaderContainer>
   );
 };
 
