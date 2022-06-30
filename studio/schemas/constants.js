@@ -7,6 +7,7 @@ export const SchemaTypes = {
   InputSelect: "inputSelect",
   InputMessage: "inputMessage",
   WhatsAppPlaceholder: "whatsAppPlaceholder",
+  SmallSection: "smallSection",
   OverlaySection: "overlaySection",
   WhatsappOverlay: "whatsappOverlay",
 };
