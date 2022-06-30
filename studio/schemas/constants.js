@@ -8,5 +8,5 @@ export const SchemaTypes = {
   InputMessage: "inputMessage",
   WhatsAppPlaceholder: "whatsAppPlaceholder",
   OverlaySection: "overlaySection",
-  WhatsappOverlay: "whatsappOverlay"
+  WhatsappOverlay: "whatsappOverlay",
 };

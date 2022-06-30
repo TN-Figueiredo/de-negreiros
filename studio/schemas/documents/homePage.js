@@ -32,7 +32,7 @@ export default {
         { type: "mediumSection" },
         { type: "largeSection" },
         { type: "latestPostsSection" },
-        { type: SchemaTypes.OverlaySection }
+        { type: SchemaTypes.OverlaySection },
       ],
     },
   ],
