@@ -46,6 +46,21 @@ async function createBlogPostPages(graphql, actions) {
     });
 }
 
+exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+  if (stage === "build-html" || stage === "develop-html") {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /bad-module/,
+            use: loaders.null(),
+          },
+        ],
+      },
+    })
+  }
+}
+
 const createCustomPages = async (graphql, actions) => {
   const { createPage } = actions;
   const result = await graphql(`
@@ -266,6 +281,13 @@ const createCustomPages = async (graphql, actions) => {
                 _key
                 _type
                 title
+              }
+              ... on SanityOverlaySection {
+                _key
+                _type
+                whatsappOverlay {
+                  Show
+                }
               }
             }
           }
