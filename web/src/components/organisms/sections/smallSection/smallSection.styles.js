@@ -13,7 +13,7 @@ export const Overlay = styled.div`
   height: 225px;
   flex-direction: column;
   background-color: ${(props) =>
-    props.background?.asset ? `rgba(0, 0, 0, 0.47)` : ""};
+    props.background?.asset ? `rgba(0, 0, 0, 0.77)` : ""};
   display: flex;
   justify-content: center;
   align-items: center;
