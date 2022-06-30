@@ -1,4 +1,5 @@
 import useLanguage from "../../hooks/useLanguage";
+import { SchemaTypes } from "../constants";
 
 const {
   HomePage: {
@@ -31,6 +32,7 @@ export default {
         { type: "mediumSection" },
         { type: "largeSection" },
         { type: "latestPostsSection" },
+        { type: SchemaTypes.OverlaySection }
       ],
     },
   ],

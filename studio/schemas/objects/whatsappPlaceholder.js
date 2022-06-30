@@ -6,7 +6,7 @@ const {
 } = useLanguage();
 
 export default {
-  type: "object",
+  type: SchemaTypes.Object,
   name: SchemaTypes.WhatsAppPlaceholder,
   title: WHATSAPP_PLACEHOLDER_TITLE,
   fields: [

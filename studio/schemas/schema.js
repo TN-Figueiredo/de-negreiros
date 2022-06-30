@@ -20,6 +20,7 @@ import banner from "./objects/sections/banner";
 import smallSection from "./objects/sections/smallSection";
 import mediumSection from "./objects/sections/mediumSection";
 import largeSection from "./objects/sections/largeSection";
+import overlaySection from "./objects/sections/overlaySection";
 import titleAndContent from "./objects/titleAndContent";
 import tabbedContent from "./objects/tabbedContent";
 import latestPostsSection from "./objects/sections/latestPostsSection";
@@ -37,6 +38,7 @@ import excerptPortableText from "./objects/excerptPortableText";
 import mainImage from "./objects/mainImage";
 import authorReference from "./objects/authorReference";
 import authorList from "./objects/author/authorList";
+import whatsappOverlay from "./objects/whatsappOverlay";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -81,7 +83,8 @@ export default createSchema({
     bodyPortableText,
     bioPortableText,
     excerptPortableText,
-
+    overlaySection,
+    whatsappOverlay,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
   ]),
