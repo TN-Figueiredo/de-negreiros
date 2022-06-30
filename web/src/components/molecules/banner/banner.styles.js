@@ -1,5 +1,5 @@
-import styled from "styled-components";
 import SanityImage from "gatsby-plugin-sanity-image";
+import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100vw;
@@ -21,7 +21,7 @@ export const Overlay = styled.div`
   height: 700px;
   display: flex;
   flex-direction: column;
-  background-color: rgba(0, 0, 0, 0.47);
+  background-color: rgba(0, 0, 0, 0.77);
   @media (max-width: 600px) {
     height: 530px;
   }
