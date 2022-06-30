@@ -28,11 +28,11 @@ export default {
       validation: null,
       of: [
         { type: "banner" },
-        { type: "smallSection" },
+        { type: SchemaTypes.SmallSection },
         { type: "mediumSection" },
         { type: "largeSection" },
         { type: "latestPostsSection" },
-        { type: SchemaTypes.OverlaySection },
+        { type: SchemaTypes.OverlaySection }
       ],
     },
   ],

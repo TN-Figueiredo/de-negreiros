@@ -60,6 +60,7 @@ export default {
         { type: "smallSection" },
         { type: "authorList" },
         { type: "latestPostsSection" },
+        { type: SchemaTypes.OverlaySection }
       ],
     },
   ],
