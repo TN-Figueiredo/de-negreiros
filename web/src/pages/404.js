@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../components/organisms/layout";
-import Image from "../../public/balanca-justica.png";
+import Image from "../../static/balanca-justica.png";
 import useNavbarMenu from "../hooks/useNavbarMenu.hooks";
 
 import {
