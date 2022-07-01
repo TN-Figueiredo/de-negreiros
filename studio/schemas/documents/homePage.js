@@ -1,4 +1,5 @@
 import useLanguage from "../../hooks/useLanguage";
+import { SchemaTypes } from "../constants";
 
 const {
   HomePage: {
@@ -27,10 +28,11 @@ export default {
       validation: null,
       of: [
         { type: "banner" },
-        { type: "smallSection" },
+        { type: SchemaTypes.SmallSection },
         { type: "mediumSection" },
         { type: "largeSection" },
         { type: "latestPostsSection" },
+        { type: SchemaTypes.OverlaySection }
       ],
     },
   ],

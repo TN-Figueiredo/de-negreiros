@@ -4,6 +4,7 @@ import * as Form from "./form.en";
 import * as General from "./general.en";
 import * as HomePage from "./homePage.en";
 import * as NavbarMenu from "./navbarMenu.en";
+import * as OverlaySection from "./overlaySection.en"
 import * as Page from "./page.en";
 import * as SiteSettings from "./siteSettings.en";
 import * as SizedSection from "./sizedSection.en";
@@ -24,4 +25,5 @@ export {
   SocialMedia,
   TabbedContent,
   TitleAndContent,
+  OverlaySection,
 };

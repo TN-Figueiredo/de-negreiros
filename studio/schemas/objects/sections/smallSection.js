@@ -19,13 +19,13 @@ const {
 } = useLanguage();
 
 export default {
-  type: "object",
-  name: "smallSection",
+  type: SchemaTypes.Object,
+  name: SchemaTypes.SmallSection,
   title: SMALL_SECTION_TITLE,
   fields: [
     {
-      type: "string",
-      name: "title",
+      type: SchemaTypes.String,
+      name: SchemaTypes.Title,
       title: SMALL_SECTION_TITLE_TITLE,
     },
     {

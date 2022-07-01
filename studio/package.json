@@ -5,6 +5,7 @@
   "main": "package.json",
   "author": "Sanity <hello@sanity.io>",
   "scripts": {
+    "login": "sanity login",
     "dev": "sanity start",
     "format": "prettier-eslint --write \"**/*.js\" \"!node_modules/**\"",
     "build": "sanity build",
