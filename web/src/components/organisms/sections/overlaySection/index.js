@@ -7,7 +7,6 @@ import Felipe from "../../../../../static/felipe.jpg"
 const OverlaySection = (props) => {
     const { whatsappOverlay: { Show: showWhatsapp } } = props;
     const { whatsapp } = useSiteSettings();
-    console.log("useSiteSettings",useSiteSettings())
     return (
         <>
             {showWhatsapp && <FloatingWhatsApp phoneNumber={whatsapp} accountName="Felipe Negreiros" avatar={Felipe} statusMessage="Geralmente responde em até 1 hora" chatMessage={`Olá! 🤝 \nComo podemos ajudar?`} placeholder="Digite aqui como podemos ajudá-lo ..." />}

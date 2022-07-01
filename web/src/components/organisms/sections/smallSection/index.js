@@ -10,7 +10,7 @@ const SmallSection = (props) => {
     <Container background={background}>
       <Overlay background={background}>
         {background?.asset && <StyledSanityImage {...background} />}
-        {renderSectionOptions[select](props)}
+        {select && renderSectionOptions[select](props)}
       </Overlay>
     </Container>
   );
