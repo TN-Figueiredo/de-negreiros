@@ -21,6 +21,9 @@ const useHomePage = () => {
           ... on SanityLargeSection {
             ...LargeSection
           }
+          ... on SanityOverlaySection {
+            ...OverlaySection
+          }
         }
       }
     }

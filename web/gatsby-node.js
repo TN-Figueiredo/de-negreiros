@@ -267,6 +267,13 @@ const createCustomPages = async (graphql, actions) => {
                 _type
                 title
               }
+              ... on SanityOverlaySection {
+                _key
+                _type
+                whatsappOverlay {
+                  Show
+                }
+              }
             }
           }
         }
