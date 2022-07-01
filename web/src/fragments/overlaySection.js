@@ -1,7 +1,7 @@
 import { graphql, useStaticQuery } from "gatsby";
 
 const SanityOverlaySectionQuery = () => {
-    return useStaticQuery(graphql`
+  return useStaticQuery(graphql`
     fragment OverlaySection on SanityOverlaySection {
         _key
         _type
