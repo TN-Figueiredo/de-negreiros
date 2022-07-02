@@ -16,7 +16,7 @@ const handleClick = (url, site, icon) => {
   const { whatsapp, whatsappMessage } = site;
   if (icon === "whatsapp") {
     return window.open(
-      `https://web.whatsapp.com/send?l=pt_br&phone=55${whatsapp}&text=${whatsappMessage}`
+      `https://api.whatsapp.com/send?l=pt_br&phone=55${whatsapp}&text=${whatsappMessage}`
     );
   } else {
     return navigate(url);

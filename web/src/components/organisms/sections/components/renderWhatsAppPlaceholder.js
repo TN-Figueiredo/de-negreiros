@@ -1,17 +1,11 @@
-import React from "react";
 import PropTypes from "prop-types";
-import Svg from "../../../atoms/svg";
-import Title from "../../../atoms/title";
+import React from "react";
+
 import useSiteSettings from "../../../../hooks/useSiteSettings.hooks";
 import { getWindowDimensions } from "../../../../lib/helpers";
-
-import {
-  WhatsAppPlaceHolderContainer,
-  Phone,
-  IconContainer,
-  WhatsApp,
-  Spacing,
-} from "./sections.styles";
+import Svg from "../../../atoms/svg";
+import Title from "../../../atoms/title";
+import { IconContainer, Phone, Spacing, WhatsApp, WhatsAppPlaceHolderContainer } from "./sections.styles";
 
 const renderNumber = (number) => {
   const cityCode = number.slice(0, 2);
