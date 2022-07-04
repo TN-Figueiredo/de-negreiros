@@ -19,6 +19,8 @@ export const Content = styled.div`
     padding: ${(props) => props.theme.$spacingMD_LG};
     padding-bottom: ${(props) => (props.last ? "" : "0px")};
     padding-top: ${(props) => (props.last ? props.theme.$spacingMD : "")};
+    margin-left: auto;
+    margin-right: auto;
   }
 `;
 
@@ -79,7 +81,8 @@ export const ContentContainer = styled.div`
   padding-right: ${(props) => (props.first ? "15px" : "")};
   @media (max-width: 600px) {
     width: 334px;
-    padding-left: 20px;
+    margin-left: auto;
+    margin-right: auto;
     padding-right: 0px;
     display: ${(props) => (!props.first ? "none" : "")};
   }
