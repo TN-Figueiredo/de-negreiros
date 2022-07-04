@@ -6,6 +6,7 @@ import LargeSection from "./largeSection";
 import LatestPostsSection from "./latestPostsSection";
 import SmallSection from "./smallSection";
 import OverlaySection from "./overlaySection";
+import TopicsListSection from "./topicsListSection"
 
 export default {
   authorList: AuthorList,
@@ -16,4 +17,5 @@ export default {
   latestPostsSection: LatestPostsSection,
   form: FormSection,
   overlaySection: OverlaySection,
+  topicsListSection: TopicsListSection,
 };

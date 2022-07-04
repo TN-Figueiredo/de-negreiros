@@ -17,7 +17,7 @@ const renderNumber = (number) => {
 
 const handleClick = (whatsapp, whatsappMessage) => {
   return window.open(
-    `https://web.whatsapp.com/send?l=pt_br&phone=55${whatsapp}&text=${whatsappMessage}`
+    `https://api.whatsapp.com/send?l=pt_br&phone=55${whatsapp}&text=${whatsappMessage}`
   );
 };
 

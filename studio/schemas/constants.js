@@ -10,4 +10,5 @@ export const SchemaTypes = {
   SmallSection: "smallSection",
   OverlaySection: "overlaySection",
   WhatsappOverlay: "whatsappOverlay",
+  TopicsListSection: "topicsListSection",
 };

@@ -24,6 +24,9 @@ const useHomePage = () => {
           ... on SanityOverlaySection {
             ...OverlaySection
           }
+          ... on SanityTopicsListSection {
+            ...TopicsListSection
+          }
         }
       }
     }

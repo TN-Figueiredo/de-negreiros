@@ -11,6 +11,7 @@ import * as SizedSection from "./sizedSection.en";
 import * as SocialMedia from "./socialMedia.en";
 import * as TabbedContent from "./tabbedContent.en";
 import * as TitleAndContent from "./titleAndContent.en";
+import * as TopicsList from "./topicsList.en"
 
 export {
   Banner,
@@ -26,4 +27,5 @@ export {
   TabbedContent,
   TitleAndContent,
   OverlaySection,
+  TopicsList,
 };
