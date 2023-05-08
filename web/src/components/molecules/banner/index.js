@@ -14,6 +14,7 @@ import {
   Buttons,
   ButtonContainer,
   BannerText,
+  TitleWrapper,
 } from "./banner.styles";
 
 const renderButtons = (buttons) =>
@@ -44,7 +45,7 @@ const Banner = ({ background, block, buttons, titleAndContent }) => {
       );
     } else {
       return (
-        <Title>
+        <Title style={{lineHeight: '48px'}}>
           <BlockContent blocks={block || []} serializers={{}} />
         </Title>
       );
@@ -57,7 +58,9 @@ const Banner = ({ background, block, buttons, titleAndContent }) => {
         <StyledSanityImage {...background} alt={background?.alt} />
         <ContentContainer>
           <Content>
-            {renderTitleAndContent(titleAndContent)}
+            <TitleWrapper>
+              {renderTitleAndContent(titleAndContent)}
+            </TitleWrapper>
             <Buttons>{renderButtons(buttons)}</Buttons>
           </Content>
         </ContentContainer>

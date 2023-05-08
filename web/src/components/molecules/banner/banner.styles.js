@@ -67,6 +67,10 @@ export const ButtonContainer = styled.div`
   }
 `;
 
+export const TitleWrapper = styled.span`
+  max-width: 1080px;
+`;
+
 export const BannerText = styled.span`
   color: ${(props) => props.theme.colors.$grey000};
   line-height: ${(props) => props.theme.fonts.$lineHeightMD};
