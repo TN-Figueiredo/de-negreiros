@@ -1,6 +1,8 @@
 import useLanguage from "../../hooks/useLanguage";
 import { validateEmail, validatePhone } from "../../lib/helpers";
 
+import ApiCallSelector from "../../Components/ApiCallSelector"
+
 const {
   SiteSettings: {
     SITE_SETTINGS_TITLE,
@@ -26,6 +28,12 @@ export default {
   title: "Site Settings",
   __experimental_actions: ["update", /* 'create', 'delete', */ "publish"],
   fields: [
+    {
+      name: "apiCall",
+      title: "Api Call",
+      type: "string",
+      inputComponent: ApiCallSelector
+    },
     {
       name: "title",
       type: "string",
@@ -83,5 +91,6 @@ export default {
       title: SITE_SETTINGS_WHATSAPP_MESSAGE_TITLE,
       description: SITE_SETTINGS_WHATSAPP_MESSAGE_DESCRIPTION,
     },
+
   ],
 };
